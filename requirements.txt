@@ -1,4 +1,6 @@
 Django==2.2.3
 djangorestframework==3.10.2
+django-allauth==0.39.1
+channels==2.2.0
 mysqlclient==1.4.2.post1
 Cython==0.29.13
