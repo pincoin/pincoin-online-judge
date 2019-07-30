@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from sandbox import sandbox
+from . import sandbox
 
 
 class SandboxTest(TestCase):
