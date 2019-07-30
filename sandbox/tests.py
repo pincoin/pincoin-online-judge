@@ -1,5 +1,7 @@
 from django.test import TestCase
 
+from sandbox import sandbox
+
 
 class SandboxTest(TestCase):
     def setUp(self) -> None:
@@ -8,8 +10,5 @@ class SandboxTest(TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_something_that_will_pass(self) -> None:
-        self.assertFalse(False)
-
-    def test_something_that_will_fail(self) -> None:
-        self.assertTrue(False)
+    def test_sandbox_run_date(self) -> None:
+        self.assertEquals(sandbox.examine(['/bin/date', ]), 0)
