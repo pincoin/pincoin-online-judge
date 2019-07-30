@@ -21,12 +21,16 @@
 #define IN 1
 #define OUT 0
 
-static int examine();
-static void run_solution(char **args);
+static int examine(char **args, int problem, int time_limit, int memory_limit);
+static void run_solution(char **args, int problem, int time_limit, int memory_limit);
 static void watch_program(pid_t pid);
 
 extern int test_examine(int argc, char *argv[]) {
     char **args = malloc(sizeof(char *) * argc + 1);
+
+    int problem = 1;
+    int time_limit = TIME_LIMIT;
+    int memory_limit = MEMORY_LIMIT;
 
     /* 1. make sure if argv provided */
     if (argc < 2) {
@@ -41,7 +45,7 @@ extern int test_examine(int argc, char *argv[]) {
     args[argc - 1] = NULL;
 
     /* 3. perform examine */
-    examine(args);
+    examine(args, problem, time_limit, memory_limit);
 
     /* 4. clean up */
     if (args) {
@@ -51,7 +55,7 @@ extern int test_examine(int argc, char *argv[]) {
     return 0;
 }
 
-extern int py_examine(int argc, char *argv[]) {
+extern int py_examine(int argc, char *argv[], int problem, int time_limit, int memory_limit) {
     char **args = malloc(sizeof(char *) * argc + 1);
     
     /* 1. make sure if argv provided */
@@ -67,7 +71,7 @@ extern int py_examine(int argc, char *argv[]) {
     args[argc] = NULL;
 
     /* 3. perform examine */
-    examine(args);
+    examine(args, problem, time_limit, memory_limit);
 
     /* 4. clean up */
     if (args) {
@@ -77,7 +81,7 @@ extern int py_examine(int argc, char *argv[]) {
     return 0;
 }
 
-extern int examine(char **args) {
+static int examine(char **args, int problem, int time_limit, int memory_limit) {
     pid_t  pid;
 
     /* 1. process control */
@@ -97,7 +101,7 @@ extern int examine(char **args) {
             exit(EXIT_FAILURE);
         case 0:
             /* 2-1. run a solution as a child */
-            run_solution(args);
+            run_solution(args, problem, time_limit, memory_limit);
             fprintf(stderr, "failed to replace process with %s\n", args[0]);
             exit(EXIT_FAILURE);
     }
@@ -108,7 +112,7 @@ extern int examine(char **args) {
     return 0;
 }
 
-static void run_solution(char **args) {
+static void run_solution(char **args, int problem, int time_limit, int memory_limit) {
     /* NOTE: ctx variable is auto in order not to intefere parent syscalls */
     scmp_filter_ctx ctx;
 
@@ -124,9 +128,9 @@ static void run_solution(char **args) {
     if (freopen("stderr.log", "w", stderr)) {};
 
     /* 3. set resource limit */
-    rlim.rlim_cur = rlim.rlim_max = TIME_LIMIT;
+    rlim.rlim_cur = rlim.rlim_max = time_limit;
     if (setrlimit(RLIMIT_CPU, &rlim) < 0) {
-        fprintf(stderr, "failed to limit cpu time: %dsec\n", TIME_LIMIT);
+        fprintf(stderr, "failed to limit cpu time: %dsec\n", time_limit);
     }
 
     /* 4. use seccomp sandbox */
