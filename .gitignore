@@ -245,3 +245,6 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Temp
+sandbox/sandbox.c
