@@ -164,17 +164,20 @@ static void watch_program(pid_t pid) {
     int state = OUT;
 #endif
 
+#ifdef USE_MTRACE
     char pid_status_path[PID_STATUS_PATH_MAX];
     FILE *pid_status_file;
     int data = 0, stack = 0, max_total = 0;
     char *vm;
     char buf[PID_STATUS_FILE_MAX];
 
+    snprintf(pid_status_path, PID_STATUS_PATH_MAX, "/proc/%d/status", pid);
+#endif
+
     struct timespec tstart = { 0, 0}, tend = { 0, 0};
 
     struct rusage resource_usage;
 
-    snprintf(pid_status_path, PID_STATUS_PATH_MAX, "/proc/%d/status", pid);
 
     clock_gettime(CLOCK_MONOTONIC, &tstart);
 
@@ -233,6 +236,7 @@ static void watch_program(pid_t pid) {
         ptrace(PTRACE_SYSCALL, pid, NULL, NULL);
 #endif
 
+#ifdef USE_MTRACE
         /* 5. check memory limit */
         pid_status_file = fopen(pid_status_path, "r");
 
@@ -253,17 +257,15 @@ static void watch_program(pid_t pid) {
             if (data + stack > max_total) {
                 max_total = data + stack;
             }
-
-            if (max_total > MEMORY_LIMIT) {
-                fprintf(stderr, "kill child due to over memory limit: %dkB\n", max_total);
-                kill(pid, SIGKILL);
-            }
         }
+#endif
     }
 
     clock_gettime(CLOCK_MONOTONIC, &tend);
 
+#ifdef USE_MTRACE
     fprintf(stderr, "%s stack+data=%dkB\n", pid_status_path, max_total);
+#endif
 
     fprintf(stderr, "elapsed time: %.5f ms\n",
             (((double)tend.tv_sec + 1.0e-9*tend.tv_nsec) - ((double)tstart.tv_sec + 1.0e-9*tstart.tv_nsec))*1000);
