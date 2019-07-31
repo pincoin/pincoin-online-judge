@@ -1,15 +1,17 @@
+import json
 import os
+
+from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '&l)5ya2!*07hu2bdf_94_rk_pbv109*kauqzvxz*#1w0an2x_8'
+secret = json.loads(open(os.path.join(BASE_DIR, 'secret.json')).read())
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['*']
+SECRET_KEY = secret['SECRET_KEY']
+ALLOWED_HOSTS = secret['ALLOWED_HOSTS']
+DEBUG = secret['DEBUG']
+DATABASES = secret['DATABASES']
 
 # Application definition
 
@@ -57,13 +59,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'conf.wsgi.application'
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator', },
