@@ -10,6 +10,6 @@
 #define TIME_LIMIT 1
 
 extern int test_examine(int argc, char *argv[]);
-extern int py_examine(int argc, char *argv[], int problem, int time_limit, int memory_limit);
+extern int py_examine(int argc, char *argv[], int user_id, int problem, int time_limit, int memory_limit);
 
 #endif

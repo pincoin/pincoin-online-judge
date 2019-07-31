@@ -21,8 +21,8 @@
 #define IN 1
 #define OUT 0
 
-static int examine(char **args, int problem, int time_limit, int memory_limit);
-static void run_solution(char **args, int problem, int time_limit, int memory_limit);
+static int examine(char **args, int user_id, int problem, int time_limit, int memory_limit);
+static void run_solution(char **args, int user_id, int problem, int time_limit, int memory_limit);
 static void watch_program(pid_t pid);
 
 extern int test_examine(int argc, char *argv[]) {
@@ -45,7 +45,7 @@ extern int test_examine(int argc, char *argv[]) {
     args[argc - 1] = NULL;
 
     /* 3. perform examine */
-    examine(args, problem, time_limit, memory_limit);
+    examine(args, 0, problem, time_limit, memory_limit);
 
     /* 4. clean up */
     if (args) {
@@ -55,7 +55,7 @@ extern int test_examine(int argc, char *argv[]) {
     return 0;
 }
 
-extern int py_examine(int argc, char *argv[], int problem, int time_limit, int memory_limit) {
+extern int py_examine(int argc, char *argv[], int user_id, int problem, int time_limit, int memory_limit) {
     char **args = malloc(sizeof(char *) * argc + 1);
     
     /* 1. make sure if argv provided */
@@ -71,7 +71,7 @@ extern int py_examine(int argc, char *argv[], int problem, int time_limit, int m
     args[argc] = NULL;
 
     /* 3. perform examine */
-    examine(args, problem, time_limit, memory_limit);
+    examine(args, user_id, problem, time_limit, memory_limit);
 
     /* 4. clean up */
     if (args) {
@@ -81,7 +81,7 @@ extern int py_examine(int argc, char *argv[], int problem, int time_limit, int m
     return 0;
 }
 
-static int examine(char **args, int problem, int time_limit, int memory_limit) {
+static int examine(char **args, int user_id, int problem, int time_limit, int memory_limit) {
     pid_t  pid;
 
     /* 1. process control */
@@ -101,7 +101,7 @@ static int examine(char **args, int problem, int time_limit, int memory_limit) {
             exit(EXIT_FAILURE);
         case 0:
             /* 2-1. run a solution as a child */
-            run_solution(args, problem, time_limit, memory_limit);
+            run_solution(args, user_id, problem, time_limit, memory_limit);
             fprintf(stderr, "failed to replace process with %s\n", args[0]);
             exit(EXIT_FAILURE);
     }
@@ -112,7 +112,7 @@ static int examine(char **args, int problem, int time_limit, int memory_limit) {
     return 0;
 }
 
-static void run_solution(char **args, int problem, int time_limit, int memory_limit) {
+static void run_solution(char **args, int user_id, int problem, int time_limit, int memory_limit) {
     /* NOTE: ctx variable is auto in order not to intefere parent syscalls */
     scmp_filter_ctx ctx;
 
