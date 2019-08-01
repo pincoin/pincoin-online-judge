@@ -21,8 +21,8 @@
 #define IN 1
 #define OUT 0
 
-static int examine(char **args, int user_id, int problem, int time_limit, int memory_limit);
-static void run_solution(char **args, int user_id, int problem, int time_limit, int memory_limit);
+static int examine(char **args, int user_id, int problem, int time_limit, int memory_stack_limit, int memory_data_limit);
+static void run_solution(char **args, int user_id, int problem, int time_limit, int memory_stack_limit, int memory_data_limit);
 static void watch_program(pid_t pid);
 
 extern int test_examine(int argc, char *argv[]) {
@@ -30,7 +30,8 @@ extern int test_examine(int argc, char *argv[]) {
 
     int problem = 1;
     int time_limit = TIME_LIMIT;
-    int memory_limit = MEMORY_LIMIT;
+    int memory_stack_limit = MEMORY_STACK_LIMIT;
+    int memory_data_limit = MEMORY_DATA_LIMIT;
 
     /* 1. make sure if argv provided */
     if (argc < 2) {
@@ -45,7 +46,7 @@ extern int test_examine(int argc, char *argv[]) {
     args[argc - 1] = NULL;
 
     /* 3. perform examine */
-    examine(args, 0, problem, time_limit, memory_limit);
+    examine(args, 0, problem, time_limit, memory_stack_limit, memory_data_limit);
 
     /* 4. clean up */
     if (args) {
@@ -55,7 +56,7 @@ extern int test_examine(int argc, char *argv[]) {
     return 0;
 }
 
-extern int py_examine(int argc, char *argv[], int user_id, int problem, int time_limit, int memory_limit) {
+extern int py_examine(int argc, char *argv[], int user_id, int problem, int time_limit, int memory_stack_limit, int memory_data_limit) {
     char **args = malloc(sizeof(char *) * argc + 1);
     
     /* 1. make sure if argv provided */
@@ -71,7 +72,7 @@ extern int py_examine(int argc, char *argv[], int user_id, int problem, int time
     args[argc] = NULL;
 
     /* 3. perform examine */
-    examine(args, user_id, problem, time_limit, memory_limit);
+    examine(args, user_id, problem, time_limit, memory_stack_limit, memory_data_limit);
 
     /* 4. clean up */
     if (args) {
@@ -81,7 +82,7 @@ extern int py_examine(int argc, char *argv[], int user_id, int problem, int time
     return 0;
 }
 
-static int examine(char **args, int user_id, int problem, int time_limit, int memory_limit) {
+static int examine(char **args, int user_id, int problem, int time_limit, int memory_stack_limit, int memory_data_limit) {
     pid_t  pid;
 
     /* 1. process control */
@@ -101,7 +102,7 @@ static int examine(char **args, int user_id, int problem, int time_limit, int me
             exit(EXIT_FAILURE);
         case 0:
             /* 2-1. run a solution as a child */
-            run_solution(args, user_id, problem, time_limit, memory_limit);
+            run_solution(args, user_id, problem, time_limit, memory_stack_limit, memory_data_limit);
             fprintf(stderr, "failed to replace process with %s\n", args[0]);
             exit(EXIT_FAILURE);
     }
@@ -112,7 +113,7 @@ static int examine(char **args, int user_id, int problem, int time_limit, int me
     return 0;
 }
 
-static void run_solution(char **args, int user_id, int problem, int time_limit, int memory_limit) {
+static void run_solution(char **args, int user_id, int problem, int time_limit, int memory_stack_limit, int memory_data_limit) {
     /* NOTE: ctx variable is auto in order not to intefere parent syscalls */
     scmp_filter_ctx ctx;
 
@@ -133,14 +134,14 @@ static void run_solution(char **args, int user_id, int problem, int time_limit, 
         fprintf(stderr, "failed to limit cpu time: %dsec\n", time_limit);
     }
 
-    rlim.rlim_cur = rlim.rlim_max = MB(64);
-    if (setrlimit(RLIMIT_DATA, &rlim) < 0) {
-        fprintf(stderr, "failed to limit data memory: %ldbytes\n", rlim.rlim_cur);
-    }
-
-    rlim.rlim_cur = rlim.rlim_max = KB(64);
+    rlim.rlim_cur = rlim.rlim_max = MB(memory_stack_limit);
     if (setrlimit(RLIMIT_STACK, &rlim) < 0) {
         fprintf(stderr, "failed to limit stack memory: %ldbytes\n", rlim.rlim_cur);
+    }
+
+    rlim.rlim_cur = rlim.rlim_max = MB(memory_data_limit);
+    if (setrlimit(RLIMIT_DATA, &rlim) < 0) {
+        fprintf(stderr, "failed to limit data memory: %ldbytes\n", rlim.rlim_cur);
     }
 
     /* 4. use seccomp sandbox */
