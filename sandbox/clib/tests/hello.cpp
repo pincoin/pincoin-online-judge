@@ -1,3 +1,4 @@
+/* compile: g++ hello.cc -o hello -O2 -Wall -lm -static -std=gnu++14 */
 #include <iostream>
 using namespace std;
 
