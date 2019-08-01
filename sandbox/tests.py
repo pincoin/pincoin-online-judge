@@ -11,4 +11,4 @@ class SandboxTest(TestCase):
         pass
 
     def test_sandbox_run_date(self) -> None:
-        self.assertEquals(sandbox.examine(['/bin/date', ]), 0)
+        self.assertEquals(sandbox.examine(['/bin/date', ], 0, 1), 0)
