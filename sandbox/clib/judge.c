@@ -133,12 +133,12 @@ static void run_solution(char **args, int user_id, int problem, int time_limit, 
         fprintf(stderr, "failed to limit cpu time: %dsec\n", time_limit);
     }
 
-    rlim.rlim_cur = rlim.rlim_max = 64 * MB;
+    rlim.rlim_cur = rlim.rlim_max = MB(64);
     if (setrlimit(RLIMIT_DATA, &rlim) < 0) {
         fprintf(stderr, "failed to limit data memory: %ldbytes\n", rlim.rlim_cur);
     }
 
-    rlim.rlim_cur = rlim.rlim_max = 64 * KB;
+    rlim.rlim_cur = rlim.rlim_max = KB(64);
     if (setrlimit(RLIMIT_STACK, &rlim) < 0) {
         fprintf(stderr, "failed to limit stack memory: %ldbytes\n", rlim.rlim_cur);
     }
