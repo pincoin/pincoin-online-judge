@@ -133,6 +133,16 @@ static void run_solution(char **args, int user_id, int problem, int time_limit, 
         fprintf(stderr, "failed to limit cpu time: %dsec\n", time_limit);
     }
 
+    rlim.rlim_cur = rlim.rlim_max = 64 * MB;
+    if (setrlimit(RLIMIT_DATA, &rlim) < 0) {
+        fprintf(stderr, "failed to limit data memory: %ldbytes\n", rlim.rlim_cur);
+    }
+
+    rlim.rlim_cur = rlim.rlim_max = 64 * KB;
+    if (setrlimit(RLIMIT_STACK, &rlim) < 0) {
+        fprintf(stderr, "failed to limit stack memory: %ldbytes\n", rlim.rlim_cur);
+    }
+
     /* 4. use seccomp sandbox */
     /* 4-1. initalize seccomp */
     ctx = seccomp_init(SCMP_ACT_KILL);
@@ -264,7 +274,8 @@ static void watch_program(pid_t pid) {
     clock_gettime(CLOCK_MONOTONIC, &tend);
 
 #ifdef USE_MTRACE
-    fprintf(stderr, "%s stack+data=%dkB\n", pid_status_path, max_total);
+    fprintf(stderr, "%s stack(%d)+data(%d)=%dkB\n",
+            pid_status_path, stack, data, max_total);
 #endif
 
     fprintf(stderr, "elapsed time: %.5f ms\n",
