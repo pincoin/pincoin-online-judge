@@ -136,12 +136,12 @@ static void run_solution(char **args, int user_id, int problem, int time_limit, 
 
     rlim.rlim_cur = rlim.rlim_max = MB(memory_stack_limit);
     if (setrlimit(RLIMIT_STACK, &rlim) < 0) {
-        fprintf(stderr, "failed to limit stack memory: %ldbytes\n", rlim.rlim_cur);
+        fprintf(stderr, "failed to limit STACK memory: %ldbytes\n", rlim.rlim_cur);
     }
 
     rlim.rlim_cur = rlim.rlim_max = MB(memory_data_limit);
     if (setrlimit(RLIMIT_DATA, &rlim) < 0) {
-        fprintf(stderr, "failed to limit data memory: %ldbytes\n", rlim.rlim_cur);
+        fprintf(stderr, "failed to limit DATA memory: %ldbytes\n", rlim.rlim_cur);
     }
 
     /* 4. use seccomp sandbox */
@@ -178,7 +178,8 @@ static void watch_program(pid_t pid) {
 #ifdef USE_MTRACE
     char pid_status_path[PID_STATUS_PATH_MAX];
     FILE *pid_status_file;
-    int data = 0, stack = 0, max_total = 0;
+    int data = 0, stack = 0, peak = 0, size = 0, exe = 0, lib = 0;
+    int max_total = 0, max_data = 0, max_stack = 0, max_peak = 0, max_size = 0, max_exe = 0, max_lib = 0;
     char *vm;
     char buf[PID_STATUS_FILE_MAX];
 
@@ -264,9 +265,43 @@ static void watch_program(pid_t pid) {
             if (vm) {
                 sscanf(vm, "%*s %d", &stack);
             }
+            vm = strstr(buf, "VmPeak:");
+            if (vm) {
+                sscanf(vm, "%*s %d", &peak);
+            }
+            vm = strstr(buf, "VmSize:");
+            if (vm) {
+                sscanf(vm, "%*s %d", &size);
+            }
+            vm = strstr(buf, "VmExe:");
+            if (vm) {
+                sscanf(vm, "%*s %d", &exe);
+            }
+            vm = strstr(buf, "VmLib:");
+            if (vm) {
+                sscanf(vm, "%*s %d", &lib);
+            }
 
             if (data + stack > max_total) {
                 max_total = data + stack;
+            }
+            if (data > max_data) {
+                max_data = data;
+            }
+            if (stack > max_stack) {
+                max_stack = stack;
+            }
+            if (peak > max_peak ) {
+                max_peak = peak;
+            }
+            if (size > max_size) {
+                max_size = size;
+            }
+            if (exe > max_exe) {
+                max_exe = exe;
+            }
+            if (lib > max_lib) {
+                max_lib = lib;
             }
         }
 #endif
@@ -275,8 +310,8 @@ static void watch_program(pid_t pid) {
     clock_gettime(CLOCK_MONOTONIC, &tend);
 
 #ifdef USE_MTRACE
-    fprintf(stderr, "%s stack(%d)+data(%d)=%dkB\n",
-            pid_status_path, stack, data, max_total);
+    fprintf(stderr, "%s peak(%d) size(%d) exe(%d) lib(%d) stack(%d)+data(%d)=%dkB\n",
+            pid_status_path, max_peak, max_size, max_exe, max_lib, max_stack, max_data, max_total);
 #endif
 
     fprintf(stderr, "elapsed time: %.5f ms\n",

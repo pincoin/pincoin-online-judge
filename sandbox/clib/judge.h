@@ -11,7 +11,7 @@
 
 #define MEMORY_STACK_LIMIT 2
 #define MEMORY_DATA_LIMIT 64
-#define TIME_LIMIT 1
+#define TIME_LIMIT 3
 
 extern int test_examine(int argc, char *argv[]);
 extern int py_examine(int argc, char *argv[], int user_id, int problem, int time_limit, int memory_stack_limit, int memory_data_limit);
