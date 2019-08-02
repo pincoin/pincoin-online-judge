@@ -1,6 +1,6 @@
 CC = /usr/bin/gcc
 AR = /usr/bin/ar
-CFLAGS = -Wall -DUSE_PTRACE -O2 -fPIC
+CFLAGS = -Wall -DUSE_PTRACE -DUSE_MTRACE -O2 -fPIC
 LDFLAGS = -lseccomp
 ARFLAGS = rcs
 
