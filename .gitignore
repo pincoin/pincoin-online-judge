@@ -250,3 +250,4 @@ dkms.conf
 sandbox/sandbox.c
 sandbox/clib/sandbox
 secret.json
+*.class
