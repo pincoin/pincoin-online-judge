@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define MAX 2000000
+#define MAX 20000000
 
 int a[MAX] = {1};
 

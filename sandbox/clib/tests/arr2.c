@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX 10000000
+#define MAX 60000000
 
 int main(int argc, char *argv[]) {
     int *a = (int *)malloc(sizeof(int) * MAX);

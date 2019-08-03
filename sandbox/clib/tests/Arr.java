@@ -1,7 +1,7 @@
 package tests;
 
 public class Arr {
-    public static final int MAX  = 2000000;
+    public static final int MAX = 20000000;
 
     public static void main(String[] args) {
         int[] a = new int[MAX];

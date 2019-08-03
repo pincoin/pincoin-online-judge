@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdlib>
-#define MAX 10000000
+#define MAX 200000000
 using namespace std;
 
 int main(int argc, char *argv[]) {
