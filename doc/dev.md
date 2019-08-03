@@ -28,7 +28,7 @@
 # reboot
 ```
 
-### user
+### users and groups
 ```
 # groupadd devops
 # useradd -g devops -G sudo,devops -b /home -m -s /bin/bash dev
@@ -93,7 +93,7 @@ $ sudo service ssh restart
 $ sudo apt-get install build-essential python3 python3-dev openjdk-11-jdk php-cli
 ```
 
-### pyenv
+### PyEnv
 
 ```
 $ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
@@ -103,20 +103,21 @@ $ echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\
 $ pyenv install --list
 ```
 
-```
-$ sudo apt-get install zlib1g-dev libffi-dev libbz2-dev libreadline-dev libssl-dev libsqlite3-dev
-```
+Build Python
 
 ```
+$ sudo apt-get install zlib1g-dev libffi-dev libbz2-dev libreadline-dev libssl-dev libsqlite3-dev
 $ pyenv install 3.7.4
 ```
+
+VirtualEnv
 
 ```
 $ git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 $ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.profile
 ```
 
-### github
+### Github
 
 ```
 $ ssh-keygen -t rsa -b 4096 -C "test@example.com"
@@ -124,4 +125,33 @@ $ eval `ssh-agent -s`
 $ git clone git@github.com:pincoin/pincoin-online-judge.git poj
 ```
 
-## Django / MySQL
+## Security
+### UFW
+
+### SECCOMP
+```
+$ sudo apt-get install libseccomp-dev
+```
+
+### Chroot
+
+## Django
+
+### Django
+
+```
+pip install django
+```
+
+### Redis
+
+### Memcached
+
+### RabbitMQ
+
+### Maria DB
+
+### NGINX
+
+### Gunicorn
+
