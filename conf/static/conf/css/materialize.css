@@ -3294,19 +3294,19 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   font-weight: inherit; }
 
 h1 {
-  font-size: 2.7rem;
+  font-size: 2.2rem;
   line-height: 110%;
-  margin: 1.8rem 0 1.08rem 0; }
+  margin: 1.4666666667rem 0 0.88rem 0; }
 
 h2 {
-  font-size: 2.3rem;
-  line-height: 110%;
-  margin: 1.5333333333rem 0 0.92rem 0; }
-
-h3 {
   font-size: 2.1rem;
   line-height: 110%;
   margin: 1.4rem 0 0.84rem 0; }
+
+h3 {
+  font-size: 2rem;
+  line-height: 110%;
+  margin: 1.3333333333rem 0 0.8rem 0; }
 
 h4 {
   font-size: 1.9rem;
@@ -3314,14 +3314,14 @@ h4 {
   margin: 1.2666666667rem 0 0.76rem 0; }
 
 h5 {
+  font-size: 1.8rem;
+  line-height: 110%;
+  margin: 1.2rem 0 0.72rem 0; }
+
+h6 {
   font-size: 1.7rem;
   line-height: 110%;
   margin: 1.1333333333rem 0 0.68rem 0; }
-
-h6 {
-  font-size: 1.6rem;
-  line-height: 110%;
-  margin: 1.0666666667rem 0 0.64rem 0; }
 
 em {
   font-style: italic; }
