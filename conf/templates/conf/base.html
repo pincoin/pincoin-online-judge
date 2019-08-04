@@ -4,11 +4,11 @@
     {% load static %}
     {% load i18n %}
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static "conf/css/sarabun.css" %}">
     <link rel="stylesheet"
-          href="//cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+          href="{% static "conf/css/materialize.css" %}">
     <link rel="stylesheet"
           href="//fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="{% static "conf/css/base.css" %}">
@@ -25,19 +25,40 @@
                 <li><a href="#">Ranking</a></li>
                 <li><a href="#">Job</a></li>
                 <li><a href="#">Blog</a></li>
-                <li><a class="dropdown-trigger" href="#" data-target="dropdown1">
-                    Dropdown<i class="material-icons right">arrow_drop_down</i>
-                </a></li>
-                <li><a class="dropdown-trigger" href="#" data-target="dropdown2">
-                    Dropdown<i class="material-icons right">arrow_drop_down</i>
-                </a></li>
+                <li>
+                    <a class="dropdown-trigger" href="#" data-target="dropdown1">
+                        Dropdown<i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                    <ul id="dropdown1" class="dropdown-content">
+                        <li><a href="#">one</a></li>
+                        <li><a href="#">two</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">three</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="dropdown-trigger" href="#" data-target="dropdown2">
+                        Dropdown<i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                    <ul id="dropdown2" class="dropdown-content">
+                        <li><a href="#">onex</a></li>
+                        <li><a href="#">twox</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">threex</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>
 </header>
 <main>
     <div class="container">
-        <h1 class="my-4">Welcome to Modern Business</h1>
+        <h1>Welcome to Modern Business</h1>
+        <h2>Hello world</h2>
+        <h3>H3 Hello world</h3>
+        <h4>h4 hello world</h4>
+        <h5>h5 hello world</h5>
+        <h6>h6 hello world</h6>
     </div>
 </main>
 <footer class="page-footer">
@@ -51,10 +72,10 @@
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Links</h5>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#">Link 4</a></li>
                 </ul>
             </div>
         </div>
