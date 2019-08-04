@@ -4,26 +4,43 @@
     {% load static %}
     {% load i18n %}
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "conf/css/sarabun.css" %}">
     <link rel="stylesheet"
           href="//cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet"
+          href="//fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="{% static "conf/css/base.css" %}">
 </head>
 <body>
-<header>
+<header class="navbar-fixed">
     <nav>
-        <div class="nav-wrapper blue">
-            <a href="#" class="brand-logo">Online Judge</a>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">PINCOIN online judge</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">JavaScript</a></li>
+                <li><a href="#">Archives</a></li>
+                <li><a href="#">Contest</a></li>
+                <li><a href="#">Stat</a></li>
+                <li><a href="#">Ranking</a></li>
+                <li><a href="#">Job</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a class="dropdown-trigger" href="#" data-target="dropdown1">
+                    Dropdown<i class="material-icons right">arrow_drop_down</i>
+                </a></li>
+                <li><a class="dropdown-trigger" href="#" data-target="dropdown2">
+                    Dropdown<i class="material-icons right">arrow_drop_down</i>
+                </a></li>
             </ul>
         </div>
     </nav>
 </header>
-<main></main>
-<footer class="page-footer green">
+<main>
+    <div class="container">
+        <h1 class="my-4">Welcome to Modern Business</h1>
+    </div>
+</main>
+<footer class="page-footer">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
@@ -54,4 +71,6 @@
         src="//code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="text/javascript"
         src="//cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script type="text/javascript"
+        src="{% static "conf/js/base.js" %}"></script>
 </html>
