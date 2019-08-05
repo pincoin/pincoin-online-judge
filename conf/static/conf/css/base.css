@@ -9,3 +9,7 @@ body {
 main {
     flex: 1 0 auto;
 }
+
+.top-left-menu {
+    margin-left: 160px;
+}

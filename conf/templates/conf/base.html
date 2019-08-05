@@ -14,39 +14,50 @@
     <link rel="stylesheet" href="{% static "conf/css/base.css" %}">
 </head>
 <body>
-<header class="navbar-fixed">
-    <nav>
-        <div class="nav-wrapper white">
-            <div class="container">
-                <a href="#" class="brand-logo grey-text text-darken-4">P.O.J</a>
-                <ul class="hide-on-med-and-down" style="margin-left: 90px">
-                    <li>
-                        <a class="dropdown-trigger grey-text text-darken-4" href="#" data-target="dropdown1">
-                            Archives<i class="material-icons right">arrow_drop_down</i>
-                        </a>
-                        <ul id="dropdown1" class="dropdown-content grey lighten-5">
-                            <li><a class="grey-text text-darken-4" href="#">one</a></li>
-                            <li><a class="grey-text text-darken-4" href="#">two</a></li>
-                            <li class="divider"></li>
-                            <li><a class="grey-text text-darken-4" href="#">three</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="grey-text text-darken-4" href="#">Contest</a></li>
-                    <li><a class="grey-text text-darken-4" href="#">Stat</a></li>
-                    <li><a class="grey-text text-darken-4" href="#">Ranking</a></li>
-                    <li><a class="grey-text text-darken-4" href="#">Job</a></li>
-                    <li><a class="grey-text text-darken-4" href="#">Blog</a></li>
-                </ul>
-                <ul class="right hide-on-med-and-down">
-                    <li><a class="grey-text text-darken-4" href="#">Login</a></li>
-                    <li><a class="grey-text text-darken-4" href="#">Sign Up</a></li>
-                    <li><a class="grey-text text-darken-4" href="#">Help</a></li>
-                    <li><a class="grey-text text-darken-4" href="#">My Page</a></li>
-                    <li><a class="grey-text text-darken-4" href="#">Logout</a></li>
-                </ul>
+<header class="">
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="#">Sass</a></li>
+        <li><a href="#">Components</a></li>
+        <li><a href="#">Javascript</a></li>
+        <li><a href="#">Mobile</a></li>
+    </ul>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper white">
+                <div class="container">
+                    <a href="#" class="brand-logo grey-text text-darken-4">Guru Jump</a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger black-text">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="top-left-menu hide-on-med-and-down">
+                        <li>
+                            <a class="dropdown-trigger grey-text text-darken-4" href="#" data-target="dropdown1">
+                                Archives<i class="material-icons right">arrow_drop_down</i>
+                            </a>
+                            <ul id="dropdown1" class="dropdown-content grey lighten-5">
+                                <li><a class="grey-text text-darken-4" href="#">one</a></li>
+                                <li><a class="grey-text text-darken-4" href="#">two</a></li>
+                                <li class="divider"></li>
+                                <li><a class="grey-text text-darken-4" href="#">three</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="grey-text text-darken-4" href="#">Contest</a></li>
+                        <li><a class="grey-text text-darken-4" href="#">Stat</a></li>
+                        <li><a class="grey-text text-darken-4" href="#">Ranking</a></li>
+                        <li><a class="grey-text text-darken-4" href="#">Job</a></li>
+                        <li><a class="grey-text text-darken-4" href="#">Blog</a></li>
+                    </ul>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a class="grey-text text-darken-4" href="#">Login</a></li>
+                        <li><a class="grey-text text-darken-4" href="#">Sign Up</a></li>
+                        <li><a class="grey-text text-darken-4" href="#">Help</a></li>
+                        <li><a class="grey-text text-darken-4" href="#">My Page</a></li>
+                        <li><a class="grey-text text-darken-4" href="#">Logout</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
 </header>
 <main>
     <div class="container">
