@@ -46,6 +46,7 @@ INSTALLED_APPS += [
     'sandbox',
     'quest',
     'job',
+    'member',
 ]
 
 MIDDLEWARE = [
