@@ -1,26 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     {% load static %}
     {% load i18n %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>GURU JUMP : {% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static "conf/css/sarabun.css" %}">
+    <link rel="stylesheet"
+          href="{% static "conf/css/sarabun.css" %}">
     <link rel="stylesheet"
           href="{% static "conf/css/materialize.css" %}">
     <link rel="stylesheet"
-          href="//fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="{% static "conf/css/base.css" %}">
+          href="{% static "conf/css/base.css" %}">
+    <link rel="stylesheet"
+          href="//use.fontawesome.com/releases/v5.10.1/css/all.css"
+          integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe"
+          crossorigin="anonymous">
 </head>
 <body>
 <header class="">
     <ul class="sidenav" id="mobile-demo">
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Signup</a></li>
-        <li><a href="#">Help</a></li>
-        <li><a href="#">My Page</a></li>
-        <li><a href="#">Logout</a></li>
+        <li>
+            <a class="grey-text text-darken-4" href="#">
+                <i class="fas fa-sign-in-alt fa-sm fa-fw"></i>
+                {% trans 'Sign In' %}
+            </a>
+        </li>
+        <li>
+            <a class="grey-text text-darken-4" href="#">
+                <i class="fas fa-user-plus fa-sm fa-fw"></i>
+                {% trans 'Sign Up' %}
+            </a>
+        </li>
+        <li>
+            <a class="grey-text text-darken-4" href="#">
+                <i class="fas fa-info-circle fa-sm fa-fw"></i>
+                {% trans 'Help' %}
+            </a>
+        </li>
+        <li>
+            <a class="grey-text text-darken-4" href="#">
+                <i class="fas fa-user-cog fa-sm fa-fw"></i>
+                {% trans 'My Page' %}
+            </a>
+        </li>
+        <li>
+            <a class="grey-text text-darken-4" href="#">
+                <i class="fas fa-sign-out-alt fa-sm fa-fw"></i>
+                {% trans 'Sign Out' %}
+            </a>
+        </li>
         <li class="divider" tabindex="-1"></li>
         <li><a href="#">Archives</a></li>
         <li><a href="#">Contest</a></li>
@@ -35,7 +64,7 @@
                 <div class="container">
                     <a href="#" class="brand-logo grey-text text-darken-4">GURU JUMP</a>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger black-text">
-                        <i class="material-icons">menu</i>
+                        <i class="fas fa-bars"></i>
                     </a>
                     <ul class="top-left-menu hide-on-med-and-down">
                         <li><a class="grey-text text-darken-4" href="#">Archives</a></li>
@@ -46,11 +75,36 @@
                         <li><a class="grey-text text-darken-4" href="#">Blog</a></li>
                     </ul>
                     <ul class="right hide-on-med-and-down">
-                        <li><a class="grey-text text-darken-4" href="#">Login</a></li>
-                        <li><a class="grey-text text-darken-4" href="#">Sign Up</a></li>
-                        <li><a class="grey-text text-darken-4" href="#">Help</a></li>
-                        <li><a class="grey-text text-darken-4" href="#">My Page</a></li>
-                        <li><a class="grey-text text-darken-4" href="#">Logout</a></li>
+                        <li>
+                            <a class="grey-text text-darken-4" href="#">
+                                <i class="fas fa-sign-in-alt fa-sm fa-fw"></i>
+                                {% trans 'Sign In' %}
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-darken-4" href="#">
+                                <i class="fas fa-user-plus fa-sm fa-fw"></i>
+                                {% trans 'Sign Up' %}
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-darken-4" href="#">
+                                <i class="fas fa-info-circle fa-sm fa-fw"></i>
+                                {% trans 'Help' %}
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-darken-4" href="#">
+                                <i class="fas fa-user-cog fa-sm fa-fw"></i>
+                                {% trans 'My Page' %}
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-darken-4" href="#">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw"></i>
+                                {% trans 'Sign Out' %}
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
