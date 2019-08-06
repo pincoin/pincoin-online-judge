@@ -11,7 +11,7 @@ urlpatterns = [
     path('',
          HomeView.as_view(), name='home'),
 
-    path('admin/',
+    path('{}'.format(settings.ADMIN_URL),
          admin.site.urls),
 
     path('quest/',

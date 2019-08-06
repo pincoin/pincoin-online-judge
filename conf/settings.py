@@ -12,6 +12,7 @@ SECRET_KEY = secret['SECRET_KEY']
 ALLOWED_HOSTS = secret['ALLOWED_HOSTS']
 DEBUG = secret['DEBUG']
 DATABASES = secret['DATABASES']
+ADMIN_URL = secret['ADMIN_URL']
 
 # Application definition
 

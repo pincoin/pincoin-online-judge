@@ -83,13 +83,13 @@
                     <ul class="right hide-on-med-and-down">
                         {% if not user.is_authenticated %}
                             <li>
-                                <a class="grey-text text-darken-4" href="#">
+                                <a class="grey-text text-darken-4" href="{% url 'account_login' %}">
                                     <i class="fas fa-sign-in-alt fa-sm fa-fw"></i>
                                     {% trans 'Sign In' %}
                                 </a>
                             </li>
                             <li>
-                                <a class="grey-text text-darken-4" href="#">
+                                <a class="grey-text text-darken-4" href="{% url 'account_signup' %}">
                                     <i class="fas fa-user-plus fa-sm fa-fw"></i>
                                     {% trans 'Sign Up' %}
                                 </a>
@@ -109,7 +109,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="grey-text text-darken-4" href="#">
+                                <a class="grey-text text-darken-4" href="{% url 'account_logout' %}">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw"></i>
                                     {% trans 'Sign Out' %}
                                 </a>
