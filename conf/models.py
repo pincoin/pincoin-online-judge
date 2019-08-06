@@ -8,7 +8,7 @@ from mptt.models import MPTTModel
 class AbstractCategory(TimeStampedModel, MPTTModel):
     parent = TreeForeignKey(
         'self',
-        verbose_name=_('parent'),
+        verbose_name=_('Parent'),
         blank=True,
         null=True,
         related_name='children',
@@ -17,12 +17,12 @@ class AbstractCategory(TimeStampedModel, MPTTModel):
     )
 
     title = models.CharField(
-        verbose_name=_('title'),
+        verbose_name=_('Title'),
         max_length=128,
     )
 
     slug = models.SlugField(
-        verbose_name=_('slug'),
+        verbose_name=_('Slug'),
         help_text=_('A short label containing only letters, numbers, underscores or hyphens for URL'),
         max_length=255,
         unique=True,

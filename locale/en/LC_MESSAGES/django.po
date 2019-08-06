@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-06 05:20+0000\n"
+"POT-Creation-Date: 2019-08-06 12:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,15 +19,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: conf/models.py:11
-msgid "parent"
+msgid "Parent"
 msgstr ""
 
 #: conf/models.py:20
-msgid "title"
+msgid "Title"
 msgstr ""
 
 #: conf/models.py:25
-msgid "slug"
+msgid "Slug"
 msgstr ""
 
 #: conf/models.py:26
@@ -36,31 +36,31 @@ msgid ""
 "URL"
 msgstr ""
 
-#: conf/settings.py:75
+#: conf/settings.py:96
 msgid "Thai"
 msgstr ""
 
-#: conf/settings.py:76
+#: conf/settings.py:97
 msgid "English"
 msgstr ""
 
-#: conf/templates/conf/base.html:26 conf/templates/conf/base.html:81
+#: conf/templates/conf/base.html:29 conf/templates/conf/base.html:88
 msgid "Sign In"
 msgstr ""
 
-#: conf/templates/conf/base.html:32 conf/templates/conf/base.html:87
-msgid "Sign Up"
+#: conf/templates/conf/base.html:35 conf/templates/conf/base.html:94
+msgid "Register"
 msgstr ""
 
-#: conf/templates/conf/base.html:38 conf/templates/conf/base.html:93
+#: conf/templates/conf/base.html:42 conf/templates/conf/base.html:101
 msgid "Help"
 msgstr ""
 
-#: conf/templates/conf/base.html:44 conf/templates/conf/base.html:99
+#: conf/templates/conf/base.html:49 conf/templates/conf/base.html:108
 msgid "My Page"
 msgstr ""
 
-#: conf/templates/conf/base.html:50 conf/templates/conf/base.html:105
+#: conf/templates/conf/base.html:55 conf/templates/conf/base.html:114
 msgid "Sign Out"
 msgstr ""
 
@@ -70,6 +70,58 @@ msgstr ""
 
 #: member/apps.py:7
 msgid "Member App"
+msgstr ""
+
+#: member/models.py:16
+msgid "Organization"
+msgstr ""
+
+#: member/models.py:22
+msgid "User status memo"
+msgstr ""
+
+#: member/models.py:28
+msgid "Profile"
+msgstr ""
+
+#: member/models.py:29
+msgid "Profiles"
+msgstr ""
+
+#: member/models.py:38
+msgid "Full name"
+msgstr ""
+
+#: member/models.py:44
+msgid "E-mail"
+msgstr ""
+
+#: member/models.py:50
+msgid "user"
+msgstr ""
+
+#: member/models.py:59
+msgid "IP address"
+msgstr ""
+
+#: member/models.py:63
+msgid "Login log"
+msgstr ""
+
+#: member/models.py:64
+msgid "Login logs"
+msgstr ""
+
+#: member/models.py:72
+msgid "Email address"
+msgstr ""
+
+#: member/models.py:76
+msgid "Banned Email Address"
+msgstr ""
+
+#: member/models.py:77
+msgid "Banned Email Addresses"
 msgstr ""
 
 #: quest/apps.py:7
@@ -141,7 +193,7 @@ msgid "Level"
 msgstr ""
 
 #: quest/models.py:92
-msgid "status"
+msgid "Status"
 msgstr ""
 
 #: quest/models.py:99 quest/models.py:109

@@ -89,7 +89,7 @@ class Problem(SoftDeletableModel, TimeStampedModel):
     )
 
     status = models.IntegerField(
-        verbose_name=_('status'),
+        verbose_name=_('Status'),
         choices=STATUS_CHOICES,
         default=STATUS_CHOICES.draft,
         db_index=True,

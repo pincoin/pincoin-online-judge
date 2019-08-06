@@ -19,14 +19,14 @@ class Profile(TimeStampedModel):
     )
 
     status_memo = models.CharField(
-        verbose_name=_('user status memo'),
+        verbose_name=_('User status memo'),
         max_length=255,
         blank=True,
     )
 
     class Meta:
-        verbose_name = _('profile')
-        verbose_name_plural = _('profiles')
+        verbose_name = _('Profile')
+        verbose_name_plural = _('Profiles')
 
     def __str__(self):
         return '{} profile - user {}/{}'.format(self.id, self.user.id, self.user.username)
@@ -60,8 +60,8 @@ class LoginLog(TimeStampedModel):
     )
 
     class Meta:
-        verbose_name = _('login log')
-        verbose_name_plural = _('login logs')
+        verbose_name = _('Login log')
+        verbose_name_plural = _('Login logs')
 
     def __str__(self):
         return '{} {} {}'.format(self.user.email, self.ip_address, self.created)
@@ -69,7 +69,7 @@ class LoginLog(TimeStampedModel):
 
 class EmailBanned(SoftDeletableModel, TimeStampedModel):
     email = models.EmailField(
-        verbose_name=_('email address'),
+        verbose_name=_('Email address'),
     )
 
     class Meta:
@@ -78,18 +78,3 @@ class EmailBanned(SoftDeletableModel, TimeStampedModel):
 
     def __str__(self):
         return '{} {}'.format(self.email, self.created)
-
-
-class PhoneBanned(SoftDeletableModel, TimeStampedModel):
-    phone = models.CharField(
-        verbose_name=_('phone number'),
-        max_length=16,
-        default='01012341234',
-    )
-
-    class Meta:
-        verbose_name = _('Banned Phone Number')
-        verbose_name_plural = _('Banned Phone Numbers')
-
-    def __str__(self):
-        return '{} {}'.format(self.phone, self.created)
