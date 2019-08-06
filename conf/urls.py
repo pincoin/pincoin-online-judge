@@ -16,6 +16,9 @@ urlpatterns = [
 
     path('quest/',
          include('quest.urls', namespace='quest')),
+
+    path('accounts/',
+         include('allauth.urls')),
 ]
 
 if settings.DEBUG:
