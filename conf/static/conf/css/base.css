@@ -13,3 +13,7 @@ main {
 .top-left-menu {
     margin-left: 160px;
 }
+
+.row:last-child {
+    margin-bottom: 0;
+}

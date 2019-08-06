@@ -5,7 +5,7 @@
     {% load i18n %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>{% block title %}{% endblock %}</title>
+    <title>GURU JUMP : {% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static "conf/css/sarabun.css" %}">
     <link rel="stylesheet"
           href="{% static "conf/css/materialize.css" %}">
@@ -16,10 +16,18 @@
 <body>
 <header class="">
     <ul class="sidenav" id="mobile-demo">
-        <li><a href="#">Sass</a></li>
-        <li><a href="#">Components</a></li>
-        <li><a href="#">Javascript</a></li>
-        <li><a href="#">Mobile</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Signup</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">My Page</a></li>
+        <li><a href="#">Logout</a></li>
+        <li class="divider" tabindex="-1"></li>
+        <li><a href="#">Archives</a></li>
+        <li><a href="#">Contest</a></li>
+        <li><a href="#">Stat</a></li>
+        <li><a href="#">Ranking</a></li>
+        <li><a href="#">Job</a></li>
+        <li><a href="#">Blog</a></li>
     </ul>
     <div class="navbar-fixed">
         <nav>
@@ -30,17 +38,7 @@
                         <i class="material-icons">menu</i>
                     </a>
                     <ul class="top-left-menu hide-on-med-and-down">
-                        <li>
-                            <a class="dropdown-trigger grey-text text-darken-4" href="#" data-target="dropdown1">
-                                Archives<i class="material-icons right">arrow_drop_down</i>
-                            </a>
-                            <ul id="dropdown1" class="dropdown-content grey lighten-5">
-                                <li><a class="grey-text text-darken-4" href="#">one</a></li>
-                                <li><a class="grey-text text-darken-4" href="#">two</a></li>
-                                <li class="divider"></li>
-                                <li><a class="grey-text text-darken-4" href="#">three</a></li>
-                            </ul>
-                        </li>
+                        <li><a class="grey-text text-darken-4" href="#">Archives</a></li>
                         <li><a class="grey-text text-darken-4" href="#">Contest</a></li>
                         <li><a class="grey-text text-darken-4" href="#">Stat</a></li>
                         <li><a class="grey-text text-darken-4" href="#">Ranking</a></li>
@@ -59,72 +57,7 @@
         </nav>
     </div>
 </header>
-<main>
-    <div class="carousel carousel-slider">
-        <a class="carousel-item" href="#">
-            <img src="https://via.placeholder.com/3150x500.png?text=First+Slide" alt="">
-        </a>
-        <a class="carousel-item" href="#">
-            <img src="https://via.placeholder.com/3150x500.png?text=Second+Slide" alt="">
-        </a>
-        <a class="carousel-item" href="#">
-            <img src="https://via.placeholder.com/3150x500.png?text=Third+Slide" alt="">
-        </a>
-    </div>
-    <div class="section no-pad-bot" id="index-banner">
-        <div class="container">
-            <h1 class="header center orange-text">GURU JUMP</h1>
-            <div class="row center">
-                <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-            </div>
-            <div class="row center">
-                <a href="http://materializecss.com/getting-started.html" id="download-button"
-                   class="btn-large waves-effect waves-light orange">Get Started</a>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="section">
-
-            <!--   Icon Section   -->
-            <div class="row">
-                <div class="col s12 m4">
-                    <div class="icon-block">
-                        <h1 class="center light-blue-text"><i class="material-icons">flash_on</i></h1>
-                        <h2 class="center">Speeds up development</h2>
-
-                        <p class="light">We did most of the heavy lifting for you to provide a default stylings that
-                            incorporate our custom components. Additionally, we refined animations and transitions to
-                            provide a smoother experience for developers.</p>
-                    </div>
-                </div>
-
-                <div class="col s12 m4">
-                    <div class="icon-block">
-                        <h1 class="center light-blue-text"><i class="material-icons">group</i></h1>
-                        <h2 class="center">User Experience Focused</h2>
-
-                        <p class="light">By utilizing elements and principles of Material Design, we were able to create
-                            a framework that incorporates components and animations that provide more feedback to users.
-                            Additionally, a single underlying responsive system across all platforms allow for a more
-                            unified user experience.</p>
-                    </div>
-                </div>
-
-                <div class="col s12 m4">
-                    <div class="icon-block">
-                        <h1 class="center light-blue-text"><i class="material-icons">settings</i></h1>
-                        <h2 class="center">Easy to work with</h2>
-
-                        <p class="light">We have provided detailed documentation as well as specific code examples to
-                            help new users get started. We are also always open to feedback and can answer any questions
-                            a user may have about Materialize.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</main>
+<main>{% block content %}{% endblock %}</main>
 <footer class="page-footer red lighten-5">
     <div class="container">
         <div class="row">
@@ -155,8 +88,14 @@
     </div>
     <div class="footer-copyright">
         <div class="container">
-            <span class="grey-text text-darken-4">Copyright &copy; 2020 GURU JUMP</span>
-            <a class="grey-text text-darken-4 right" href="//www.pincoin.co.kr">GURU JUMP</a>
+            <div class="row grey-text text-darken-4">
+                <div class="col s12 m9 l10">
+                    Copyright &copy; 2020 GURU JUMP
+                </div>
+                <div class="col s12 m3 l2">
+                    Developed by <a class="grey-text text-darken-4" href="//www.pincoin.co.kr">PINCOIN</a>
+                </div>
+            </div>
         </div>
     </div>
 </footer>
