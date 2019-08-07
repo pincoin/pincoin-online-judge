@@ -6,6 +6,7 @@ from django.utils.translation import ugettext_lazy as _
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Secret settings
 secret = json.loads(open(os.path.join(BASE_DIR, 'secret.json')).read())
 
 SECRET_KEY = secret['SECRET_KEY']
@@ -23,6 +24,8 @@ EMAIL_PORT = secret['EMAIL_PORT']
 EMAIL_USE_TLS = secret['EMAIL_USE_TLS']
 EMAIL_NO_REPLY = secret['EMAIL_NO_REPLY']
 EMAIL_CUSTOMER_SERVICE = secret['EMAIL_CUSTOMER_SERVICE']
+
+CELERY_BROKER_URL = secret['CELERY_BROKER_URL']
 
 # Application definition
 
