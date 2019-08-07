@@ -53,7 +53,7 @@ msgstr "สมัครสมาชิก"
 
 #: conf/templates/conf/base.html:42 conf/templates/conf/base.html:101
 msgid "Help"
-msgstr ""
+msgstr "สอบถาม"
 
 #: conf/templates/conf/base.html:49 conf/templates/conf/base.html:108
 msgid "My Page"
@@ -61,7 +61,7 @@ msgstr ""
 
 #: conf/templates/conf/base.html:55 conf/templates/conf/base.html:114
 msgid "Sign Out"
-msgstr ""
+msgstr "ออกจากระบบ"
 
 #: job/apps.py:7
 msgid "Job App"
@@ -89,7 +89,7 @@ msgstr ""
 
 #: member/models.py:38
 msgid "Full name"
-msgstr ""
+msgstr "ชื่อ-นำสกุล"
 
 #: member/models.py:44
 msgid "E-mail"
