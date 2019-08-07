@@ -2241,8 +2241,8 @@ ul.staggered-list li {
 
 .page-footer {
   padding-top: 20px;
-  color: #fff;
-  background-color: #ee6e73; }
+  color: #212121;
+  background-color: #FFEBEE; }
   .page-footer .footer-copyright {
     overflow: hidden;
     min-height: 50px;
@@ -2250,7 +2250,7 @@ ul.staggered-list li {
     align-items: center;
     justify-content: space-between;
     padding: 10px 0px;
-    color: rgba(255, 255, 255, 0.8);
+    color: #212121;
     background-color: rgba(51, 51, 51, 0.08); }
 
 table, th, td {
