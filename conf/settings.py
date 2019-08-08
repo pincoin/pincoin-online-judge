@@ -137,7 +137,7 @@ LOGIN_REDIRECT_URL = '/quest'  # default=/accounts/profile/
 # LOGOUT_REDIRECT_URL = '/'
 
 # django-allauth
-DEFAULT_FROM_EMAIL = 'noreply@gurujump.com'
+DEFAULT_FROM_EMAIL = 'noreply@codingjump.com'
 ACCOUNT_ADAPTER = 'member.adapters.MyAccountAdapter'
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True

@@ -17,7 +17,13 @@ urlpatterns = [
 
     # Password Reset
     path('password/reset/',
-         views.MemberLoginView.as_view(), name="account_reset_password"),
+         views.MemberPasswordReset.as_view(), name="account_reset_password"),
+    path('password/reset/done/',
+         views.MemberPasswordResetDoneView.as_view(), name="account_reset_password_done"),
+    re_path(r'^password/reset/key/(?P<uidb36>[0-9A-Za-z]+)-(?P<key>.+)/$',
+            views.MemberPasswordResetFromKeyView.as_view(), name="account_reset_password_from_key"),
+    path('password/reset/key/done/',
+         views.MemberPasswordResetFromKeyDoneView.as_view(), name="account_reset_password_from_key_done"),
 
     # Email Confirmation
     path('confirm-email/',
