@@ -10,12 +10,12 @@ from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import FormView
 
-from . import forms2
+from . import forms
 
 
 class MemberLoginView(allauth_views.LoginView):
     template_name = 'member/account/login.html'
-    form_class = forms2.MemberLoginForm
+    form_class = forms.MemberLoginForm
 
     def get_context_data(self, **kwargs):
         context = super(MemberLoginView, self).get_context_data(**kwargs)
@@ -32,6 +32,15 @@ class MemberLogoutView(allauth_views.LogoutView):
         return context
 
 
+class MemberSignupView(allauth_views.SignupView):
+    template_name = 'member/account/signup.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(MemberSignupView, self).get_context_data(**kwargs)
+        context['page_title'] = _('Sign up')
+        return context
+
+
 class MemberAccountInactiveView(allauth_views.AccountInactiveView):
     template_name = 'member/account/account_inactive.html'
 
@@ -43,7 +52,7 @@ class MemberAccountInactiveView(allauth_views.AccountInactiveView):
 
 class MemberUnregisterView(auth_mixins.AccessMixin, FormView):
     template_name = 'member/account/unregister.html'
-    form_class = forms2.MemberUnregisterForm
+    form_class = forms.MemberUnregisterForm
 
     def dispatch(self, request, *args, **kwargs):
         # LoginRequiredMixin is not used because of inheritance order
@@ -84,7 +93,7 @@ class MemberUnregisterView(auth_mixins.AccessMixin, FormView):
 
 class MemberPasswordChangeView(auth_mixins.LoginRequiredMixin, allauth_views.PasswordChangeView):
     template_name = 'member/account/password_change.html'
-    form_class = forms2.MemberChangePasswordForm
+    form_class = forms.MemberChangePasswordForm
 
     def get_context_data(self, **kwargs):
         context = super(MemberPasswordChangeView, self).get_context_data(**kwargs)
@@ -94,7 +103,7 @@ class MemberPasswordChangeView(auth_mixins.LoginRequiredMixin, allauth_views.Pas
 
 class MemberPasswordSetView(auth_mixins.LoginRequiredMixin, allauth_views.PasswordSetView):
     template_name = 'member/account/password_set.html'
-    form_class = forms2.MemberSetPasswordForm
+    form_class = forms.MemberSetPasswordForm
 
     def get_context_data(self, **kwargs):
         context = super(MemberPasswordSetView, self).get_context_data(**kwargs)
@@ -104,7 +113,7 @@ class MemberPasswordSetView(auth_mixins.LoginRequiredMixin, allauth_views.Passwo
 
 class MemberPasswordReset(allauth_views.PasswordResetView):
     template_name = 'member/account/password_reset.html'
-    form_class = forms2.MemberResetPasswordForm
+    form_class = forms.MemberResetPasswordForm
 
     def get_context_data(self, **kwargs):
         context = super(MemberPasswordReset, self).get_context_data(**kwargs)
@@ -123,7 +132,7 @@ class MemberPasswordResetDoneView(allauth_views.PasswordResetDoneView):
 
 class MemberPasswordResetFromKeyView(allauth_views.PasswordResetFromKeyView):
     template_name = 'member/account/password_reset_from_key.html'
-    form_class = forms2.MemberResetPasswordKeyForm
+    form_class = forms.MemberResetPasswordKeyForm
 
     def get_context_data(self, **kwargs):
         context = super(MemberPasswordResetFromKeyView, self).get_context_data(**kwargs)

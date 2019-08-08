@@ -1,0 +1,142 @@
+{% extends 'conf/base.html' %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="center page-heading">{{ page_title }}</h1>
+        <div class="row">
+            <div class="col s12 m6 offset-m3 l6 offset-l3">
+                {% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>
+                    .{% endblocktrans %}
+            </div>
+        </div>
+        <div class="row">
+            <form id="signup_form" method="post" action="{% url 'account_signup' %}"
+                  class="col s12 m6 offset-m3 l6 offset-l3">
+                {% csrf_token %}
+                {% if form.non_field_errors %}
+                    <div class="deep-orange-text mb-4">
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        {{ form.email.errors }}
+                        <input id="{{ form.email.id_for_label }}"
+                               name="{{ form.email.name }}"
+                               type="email"
+                               {% if form.email.value != None %}value="{{ form.email.value|stringformat:'s' }}"{% endif %}
+                               autofocus="autofocus"
+                               {% if form.email.field.required %}required{% endif %}>
+                        <label for="{{ form.email.id_for_label }}">
+                            {{ form.email.label }} <span class="red-text">*</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        {{ form.first_name.errors }}
+                        <input id="{{ form.first_name.id_for_label }}"
+                               name="{{ form.first_name.name }}"
+                               type="text"
+                               {% if form.first_name.value != None %}value="{{ form.first_name.value|stringformat:'s' }}"{% endif %}
+                               {% if form.first_name.field.required %}required{% endif %}>
+                        <label for="{{ form.first_name.id_for_label }}">
+                            {{ form.first_name.label }} <span class="red-text">*</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        {{ form.last_name.errors }}
+                        <input id="{{ form.last_name.id_for_label }}"
+                               name="{{ form.last_name.name }}"
+                               type="text"
+                               {% if form.last_name.value != None %}value="{{ form.last_name.value|stringformat:'s' }}"{% endif %}
+                               {% if form.last_name.field.required %}required{% endif %}>
+                        <label for="{{ form.last_name.id_for_label }}">
+                            {{ form.last_name.label }} <span class="red-text">*</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        {{ form.password1.errors }}
+                        <input id="{{ form.password1.id_for_label }}"
+                               name="{{ form.password1.name }}"
+                               type="password"
+                               {% if form.password1.value != None %}value="{{ form.password1.value|stringformat:'s' }}"{% endif %}
+                               {% if form.password1.field.required %}required{% endif %}>
+                        <label for="{{ form.password1.id_for_label }}">
+                            {{ form.password1.label }} <span class="red-text">*</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        {{ form.password2.errors }}
+                        <input id="{{ form.password2.id_for_label }}"
+                               name="{{ form.password2.name }}"
+                               type="password"
+                               {% if form.password2.value != None %}value="{{ form.password2.value|stringformat:'s' }}"{% endif %}
+                               {% if form.password2.field.required %}required{% endif %}>
+                        <label for="{{ form.password2.id_for_label }}">
+                            {{ form.password2.label }} <span class="red-text">*</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        {{ form.username.errors }}
+                        <input id="{{ form.username.id_for_label }}"
+                               name="{{ form.username.name }}"
+                               type="text"
+                               {% if form.username.value != None %}value="{{ form.username.value|stringformat:'s' }}"{% endif %}
+                               {% if form.username.field.required %}required{% endif %}>
+                        <label for="{{ form.username.id_for_label }}">
+                            {{ form.username.label }} <span class="red-text">*</span>
+                        </label>
+                    </div>
+                </div>
+
+                <p>
+                    {{ form.terms.errors }}
+                    <label>
+                        <input type="checkbox" class="filled-in" name="{{ form.terms.name }}"/>
+                        <span>{{ form.terms.label }}</span>
+                    </label>
+                </p>
+
+                <p>
+                    {{ form.privacy.errors }}
+                    <label>
+                        <input type="checkbox" class="filled-in" name="{{ form.privacy.name }}"/>
+                        <span>{{ form.privacy.label }}</span>
+                    </label>
+                </p>
+
+                {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                {% endif %}
+
+                <div class="row center-align">
+                    <div class="input-field col s12">
+                        <button class="btn cyan waves-effect waves-light" type="submit">
+                            {% trans "Sign Up" %}
+                            <i class="fas fa-user-friends fa-sm fa-fw"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

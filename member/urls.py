@@ -11,7 +11,7 @@ urlpatterns = [
     path('logout/',
          views.MemberLogoutView.as_view(), name="account_logout"),
     path('signup/',
-         views.MemberLoginView.as_view(), name="account_signup"),
+         views.MemberSignupView.as_view(), name="account_signup"),
     path('inactive/',
          views.MemberAccountInactiveView.as_view(), name="account_inactive"),
     path('unregister/',
@@ -44,7 +44,10 @@ urlpatterns = [
     # Site Terms and Conditions / Privacy Policy
 
     # Profile
+    path('profile/',
+         views.MemberLoginView.as_view(), name="account_profile"),
+    path('change-name/',
+         views.MemberLoginView.as_view(), name="account_change_name"),
 
     # Social Providers
-
 ]
