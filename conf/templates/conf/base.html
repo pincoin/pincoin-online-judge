@@ -33,13 +33,13 @@
     <ul class="sidenav" id="mobile-demo">
         {% if not user.is_authenticated %}
             <li>
-                <a href="#">
+                <a href="{% url 'account_login' %}">
                     <i class="fas fa-sign-in-alt fa-sm fa-fw"></i>
                     {% trans 'Sign In' %}
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{% url 'account_signup' %}">
                     <i class="fas fa-user-plus fa-sm fa-fw"></i>
                     {% trans 'Register' %}
                 </a>
@@ -59,7 +59,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{% url 'account_logout' %}">
                     <i class="fas fa-sign-out-alt fa-sm fa-fw"></i>
                     {% trans 'Sign Out' %}
                 </a>
