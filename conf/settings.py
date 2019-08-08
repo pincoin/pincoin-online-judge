@@ -16,6 +16,7 @@ DEBUG = secret['DEBUG']
 DATABASES = secret['DATABASES']
 
 ADMIN_URL = secret['ADMIN_URL']
+ADMINS = [('devops', 'dev@pincoin.co.kr'), ]
 
 EMAIL_HOST = secret['EMAIL_HOST']
 EMAIL_HOST_USER = secret['EMAIL_HOST_USER']
