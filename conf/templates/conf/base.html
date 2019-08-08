@@ -172,6 +172,13 @@
         </div>
     </div>
 </footer>
+{% if messages %}
+    <div style="display:none">
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
 </body>
 {% block javascript %}
     <script type="text/javascript"

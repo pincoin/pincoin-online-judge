@@ -41,12 +41,6 @@
             <form class="col s12 m6 offset-m3 l6 offset-l3" method="POST" action="{% url 'account_login' %}">
                 {% csrf_token %}
 
-                {% if form.non_field_errors %}
-                    <div class="deep-orange-text mb-4">
-                        {{ form.non_field_errors }}
-                    </div>
-                {% endif %}
-
                 <div class="row">
                     <div class="input-field col s12">
                         {{ form.login.errors }}

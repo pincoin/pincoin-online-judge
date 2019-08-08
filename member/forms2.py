@@ -1,5 +1,8 @@
 from allauth.account import forms as allauth_forms
 
+from django import forms
+from django.utils.translation import ugettext_lazy as _
+
 
 class MemberLoginForm(allauth_forms.LoginForm):
     class Media:
@@ -21,3 +24,9 @@ class MemberChangePasswordForm(allauth_forms.ChangePasswordForm):
 
 class MemberSetPasswordForm(allauth_forms.SetPasswordForm):
     pass
+
+
+class MemberUnregisterForm(forms.Form):
+    agree = forms.BooleanField(
+        label=_('I really would like to unregister.'),
+    )
