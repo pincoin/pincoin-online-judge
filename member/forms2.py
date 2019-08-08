@@ -13,3 +13,11 @@ class MemberResetPasswordForm(allauth_forms.ResetPasswordForm):
 
 class MemberResetPasswordKeyForm(allauth_forms.ResetPasswordKeyForm):
     pass
+
+
+class MemberChangePasswordForm(allauth_forms.ChangePasswordForm):
+    pass
+
+
+class MemberSetPasswordForm(allauth_forms.SetPasswordForm):
+    pass

@@ -1,4 +1,5 @@
 from allauth.account import views as allauth_views
+from django.contrib.auth import mixins as auth_mixins
 from django.utils.translation import ugettext_lazy as _
 
 from . import forms2
@@ -20,6 +21,26 @@ class MemberLogoutView(allauth_views.LogoutView):
     def get_context_data(self, **kwargs):
         context = super(MemberLogoutView, self).get_context_data(**kwargs)
         context['page_title'] = _('Logout')
+        return context
+
+
+class MemberPasswordChangeView(auth_mixins.LoginRequiredMixin, allauth_views.PasswordChangeView):
+    template_name = 'member/account/password_change.html'
+    form_class = forms2.MemberChangePasswordForm
+
+    def get_context_data(self, **kwargs):
+        context = super(MemberPasswordChangeView, self).get_context_data(**kwargs)
+        context['page_title'] = _('Password Change')
+        return context
+
+
+class MemberPasswordSetView(auth_mixins.LoginRequiredMixin, allauth_views.PasswordSetView):
+    template_name = 'member/account/password_set.html'
+    form_class = forms2.MemberSetPasswordForm
+
+    def get_context_data(self, **kwargs):
+        context = super(MemberPasswordSetView, self).get_context_data(**kwargs)
+        context['page_title'] = _('Password Set')
         return context
 
 
