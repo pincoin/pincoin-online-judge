@@ -47,7 +47,7 @@
                     </div>
                 {% endif %}
 
-                <div class="row mb-10">
+                <div class="row">
                     <div class="input-field col s12">
                         {{ form.login.errors }}
                         <input id="{{ form.login.id_for_label }}"
@@ -60,6 +60,8 @@
                             {{ form.login.label }} <span class="red-text">*</span>
                         </label>
                     </div>
+                </div>
+                <div class="row">
                     <div class="input-field col s12">
                         {{ form.password.errors }}
                         <input id="{{ form.password.id_for_label }}"
@@ -71,26 +73,32 @@
                             {{ form.password.label }} <span class="red-text">*</span>
                         </label>
                     </div>
-                    <div class="input-field col s12">
+                </div>
+                <div class="row">
+                    <p class="col">
                         <label>
                             <input type="checkbox" class="filled-in"/>
                             <span>{{ form.remember.label }}</span>
                         </label>
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <a class="btn waves-effect waves-light blue lighten-2"
+                           href="{% url 'account_reset_password' %}">
+                            {% trans 'Forgot Password?' %}
+                        </a>
+                        <button class="btn cyan waves-effect waves-light right" type="submit">
+                            {% trans 'Sign In' %}
+                            <i class="fas fa-sign-in-alt fa-sm fa-fw"></i>
+                        </button>
                     </div>
                 </div>
+
 
                 {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
                 {% endif %}
-
-                <a class="btn waves-effect waves-light blue lighten-2"
-                   href="{% url 'account_reset_password' %}">
-                    {% trans 'Forgot Password?' %}
-                </a>
-                <button class="btn cyan waves-effect waves-light right" type="submit">
-                    {% trans 'Sign In' %}
-                    <i class="fas fa-paper-plane fa-fw"></i>
-                </button>
             </form>
         </div>
     </div>

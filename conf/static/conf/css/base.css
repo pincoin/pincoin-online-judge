@@ -24,6 +24,10 @@ footer a:link, footer a:visited {
     margin-bottom: 4% !important;
 }
 
+form .row {
+    margin-bottom: 1% !important;
+}
+
 .m-0 {
     margin: 0 !important;
 }
