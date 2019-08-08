@@ -17,8 +17,14 @@
               href="//use.fontawesome.com/releases/v5.10.1/css/all.css"
               integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe"
               crossorigin="anonymous">
-        <link rel="shortcut icon"
-              href="{% static 'conf/images/favicon-16x16.png' %}">
+        <link rel="apple-touch-icon" sizes="180x180"
+              href="{% static 'conf/favicon/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32"
+              href="{% static 'conf/favicon/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16"
+              href="{% static 'conf/favicon/favicon-16x16.png' %}">
+        <link rel="manifest"
+              href="{% static 'conf/favicon/site.webmanifest' %}">
         {{ form.media.css }}
     {% endblock %}
 </head>
