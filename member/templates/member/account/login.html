@@ -14,7 +14,7 @@
 
         {% if socialaccount_providers %}
             <div class="row">
-                <div class="col col12 m6 offset-m3 l6 offset-l3">
+                <div class="col s12 m6 offset-m3 l6 offset-l3">
                     <p>{% blocktrans with site.name as site_name %}Please sign in with one
                         of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
                         for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
@@ -30,7 +30,7 @@
             </div>
         {% else %}
             <div class="row">
-                <div class="col col12 m6 offset-m3 l6 offset-l3 blue-text text-darken-4">
+                <div class="col s12 m6 offset-m3 l6 offset-l3 blue-text text-darken-4">
                     {% blocktrans %}If you have not created an account yet, then please
                         <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
                 </div>
@@ -38,7 +38,7 @@
         {% endif %}
 
         <div class="row">
-            <form class="col col12 m6 offset-m3 l6 offset-l3" method="POST" action="{% url 'account_login' %}">
+            <form class="col s12 m6 offset-m3 l6 offset-l3" method="POST" action="{% url 'account_login' %}">
                 {% csrf_token %}
 
                 {% if form.non_field_errors %}
@@ -94,7 +94,6 @@
                         </button>
                     </div>
                 </div>
-
 
                 {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
