@@ -209,7 +209,7 @@ class MemberSocialSignupView(socialaccount_views.SignupView):
         return context
 
 
-class MemberSocialConnectionsView(socialaccount_views.ConnectionsView):
+class MemberSocialConnectionsView(auth_mixins.LoginRequiredMixin, socialaccount_views.ConnectionsView):
     template_name = 'member/socialaccount/connections.html'
 
     def get_context_data(self, **kwargs):
