@@ -3,6 +3,7 @@ import uuid
 from allauth.account import views as allauth_views
 from allauth.account.models import EmailAddress
 from allauth.socialaccount.models import SocialAccount
+from django.conf import settings
 from django.contrib.auth import (
     get_user_model, logout)
 from django.contrib.auth import mixins as auth_mixins
@@ -118,6 +119,7 @@ class MemberPasswordReset(allauth_views.PasswordResetView):
     def get_context_data(self, **kwargs):
         context = super(MemberPasswordReset, self).get_context_data(**kwargs)
         context['page_title'] = _('Password Reset')
+        context['google_recaptcha_site_key'] = settings.GOOGLE_RECAPTCHA['site_key']
         return context
 
 
