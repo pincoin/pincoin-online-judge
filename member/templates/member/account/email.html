@@ -19,7 +19,7 @@
                     {% csrf_token %}
 
                     {% for emailaddress in user.emailaddress_set.all %}
-                        <div class="row pb-5">
+                        <div class="row pb-3">
                             <div class="col s12 m8 l8">
                                 <label for="email_radio_{{ forloop.counter }}"
                                        class="{% if emailaddress.primary %}primary_email{% endif %}">
@@ -55,6 +55,12 @@
                     {% endfor %}
 
                     <div class="row">
+                        <div class="col s12 pb-3">
+                            <div class="divider"></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
                         <div class="col s12 m12 l4">
                             <button class="btn waves-effect waves-light btn-small blue accent-3 btn-block"
                                     type="submit"
@@ -80,7 +86,6 @@
                             </button>
                         </div>
                     </div>
-
                 </form>
             </div>
         {% else %}

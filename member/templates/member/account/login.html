@@ -38,6 +38,12 @@
         {% endif %}
 
         <div class="row">
+            <div class="col s12 m6 offset-m3 l6 offset-l3">
+                <div class="divider"></div>
+            </div>
+        </div>
+
+        <div class="row">
             <form class="col s12 m6 offset-m3 l6 offset-l3" method="POST" action="{% url 'account_login' %}">
                 {% csrf_token %}
 
@@ -93,6 +99,45 @@
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
                 {% endif %}
             </form>
+        </div>
+        <div class="row">
+            <div class="col s12 m6 offset-m3 l6 offset-l3">
+                <div class="divider"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m6 offset-m3 l6 offset-l3">
+                <div class="row">
+                    <div class="col s12 m3 l3">
+                        <a href=""
+                           class="btn btn-block btn-large waves-effect waves-light"
+                           style="background-color:#1ec800">
+                            <i class="fab fa-line fa-4x"></i>
+                        </a>
+                    </div>
+                    <div class="col s12 m3 l3">
+                        <a href=""
+                           class="btn btn-block btn-large waves-effect waves-light"
+                           style="background-color:#3b5998">
+                            <i class="fab fa-facebook-square fa-4x"></i>
+                        </a>
+                    </div>
+                    <div class="col s12 m3 l3">
+                        <a href=""
+                           class="btn btn-block btn-large waves-effect waves-light"
+                           style="background-color:#db4a39">
+                            <i class="fab fa-google-plus-square fa-4x"></i>
+                        </a>
+                    </div>
+                    <div class="col s12 m3 l3">
+                        <a href=""
+                           class="btn btn-block btn-large waves-effect waves-light"
+                           style="background-color:#171515">
+                            <i class="fab fa-github-square fa-4x"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}
