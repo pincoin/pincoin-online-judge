@@ -98,6 +98,7 @@ class MemberPasswordChangeView(auth_mixins.LoginRequiredMixin, allauth_views.Pas
 
     def get_context_data(self, **kwargs):
         context = super(MemberPasswordChangeView, self).get_context_data(**kwargs)
+        context['google_recaptcha_site_key'] = settings.GOOGLE_RECAPTCHA['site_key']
         context['page_title'] = _('Password Change')
         return context
 
