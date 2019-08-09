@@ -109,6 +109,7 @@ class MemberPasswordSetView(auth_mixins.LoginRequiredMixin, allauth_views.Passwo
     def get_context_data(self, **kwargs):
         context = super(MemberPasswordSetView, self).get_context_data(**kwargs)
         context['page_title'] = _('Password Set')
+        context['google_recaptcha_site_key'] = settings.GOOGLE_RECAPTCHA['site_key']
         return context
 
 
