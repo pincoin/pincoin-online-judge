@@ -1,0 +1,143 @@
+{% extends 'conf/base.html' %}
+
+{% load i18n %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="center page-heading">{{ page_title }}</h1>
+        {% if user.emailaddress_set.all %}
+            <div class="row">
+                <div class="col s12 m6 offset-m3 l6 offset-l3">
+                    {% trans 'The following e-mail addresses are associated with your account:' %}
+                </div>
+            </div>
+
+            <div class="row">
+                <form action="{% url 'account_email' %}" class="col s12 m6 offset-m3 l6 offset-l3" method="post">
+                    {% csrf_token %}
+
+                    <fieldset>
+                        {% for emailaddress in user.emailaddress_set.all %}
+                            <div class="row">
+                                <div class="col s12">
+                                    <label for="email_radio_{{ forloop.counter }}"
+                                           class="{% if emailaddress.primary %}primary_email{% endif %}">
+
+                                        <input id="email_radio_{{ forloop.counter }}"
+                                               type="radio"
+                                               name="email"
+                                               class="with-gap"
+                                               {% if emailaddress.primary or user.emailaddress_set.count == 1 %}checked="checked"{% endif %}
+                                               value="{{ emailaddress.email }}"/>
+
+                                        <span>{{ emailaddress.email }}</span>
+
+                                        {% if emailaddress.verified %}
+                                            <span class="badge btn-small green lighten-2 white-text">
+                                                {% trans "Verified" %}
+                                            </span>
+                                        {% else %}
+                                            <span class="badge btn-small red lighten-1 white-text">
+                                                {% trans "Unverified" %}
+                                            </span>
+                                        {% endif %}
+
+                                        {% if emailaddress.primary %}
+                                            <span class="badge btn-small blue accent-3 white-text">
+                                                {% trans "Primary" %}
+                                            </span>
+                                        {% endif %}
+                                    </label>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                        <br><br>
+
+                        <div class="row">
+                            <div class="col s12">
+                                <button class="btn waves-effect waves-light btn-small blue accent-3"
+                                        type="submit"
+                                        name="action_primary">
+                                    <i class="fas fa-check fa-fw"></i>
+                                    {% trans 'Make Primary' %}
+                                </button>
+                                <button class="btn waves-effect waves-light btn-small red lighten-1"
+                                        type="submit"
+                                        name="action_send">
+                                    <i class="fas fa-inbox fa-fw"></i>
+                                    {% trans 'Re-send Verification' %}
+                                </button>
+                                <button class="btn waves-effect waves-light btn-small deep-orange darken-4"
+                                        type="submit"
+                                        name="action_remove">
+                                    <i class="fas fa-times"></i>
+                                    {% trans 'Remove' %}
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        {% else %}
+            <div class="row">
+                <div class="col s12 m6 offset-m3 l6 offset-l3">
+                    <strong class="red-text">
+                        {% trans 'Warning:' %}
+                    </strong>
+                    {% trans "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc." %}
+                </div>
+            </div>
+        {% endif %}
+
+        <h2 class="center page-heading">{% trans "Add E-mail Address" %}</h2>
+
+        <div class="row">
+            <form method="post" action="{% url 'account_email' %}" class="col s12 m6 offset-m3 l6 offset-l3">
+                {% csrf_token %}
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        {{ form.email.errors }}
+                        <input id="{{ form.email.id_for_label }}"
+                               name="{{ form.email.name }}"
+                               type="email"
+                               {% if form.email.value != None %}value="{{ form.email.value|stringformat:'s' }}"{% endif %}
+                               autofocus="autofocus"
+                               {% if form.email.field.required %}required{% endif %}>
+                        <label for="{{ form.email.id_for_label }}">
+                            {{ form.email.label }} <span class="red-text">*</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="row center-align">
+                    <div class="input-field col s12">
+                        <button name="action_add" type="submit" class="btn waves-effect waves-light btn-small cyan">
+                            <i class="far fa-envelope fa-fw"></i>
+                            {% trans "Add E-mail" %}
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    {{ block.super }}
+    <script type="text/javascript">
+        (function () {
+            var message = "{% trans 'Do you really want to remove the selected e-mail address?' %}";
+            var actions = document.getElementsByName('action_remove');
+            if (actions.length) {
+                actions[0].addEventListener("click", function (e) {
+                    if (!confirm(message)) {
+                        e.preventDefault();
+                    }
+                });
+            }
+        })();
+    </script>
+{% endblock %}

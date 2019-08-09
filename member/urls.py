@@ -35,11 +35,11 @@ urlpatterns = [
 
     # Email Confirmation
     path('confirm-email/',
-         views.MemberLoginView.as_view(), name="account_email_verification_sent"),
+         views.MemberEmailVerificationSentView.as_view(), name="account_email_verification_sent"),
     re_path(r'^confirm-email/(?P<key>[-:\w]+)/$',
-            views.MemberLoginView.as_view(), name="account_confirm_email"),
+            views.MemberConfirmEmailView.as_view(), name="account_confirm_email"),
     path('email/',
-         views.MemberLoginView.as_view(), name="account_email"),
+         views.MemberEmailView.as_view(), name="account_email"),
 
     # Site Terms and Conditions / Privacy Policy
 
