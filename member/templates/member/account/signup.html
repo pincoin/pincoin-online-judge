@@ -9,8 +9,8 @@
         <h1 class="center page-heading">{{ page_title }}</h1>
         <div class="row">
             <div class="col s12 m6 offset-m3 l6 offset-l3">
-                {% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>
-                    .{% endblocktrans %}
+                {% trans 'Already have an account?' %}
+                {% blocktrans %}Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
             </div>
         </div>
         <div class="row">

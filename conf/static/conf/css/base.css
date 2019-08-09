@@ -28,6 +28,11 @@ form .row {
     margin-bottom: 1% !important;
 }
 
+.col.s12 > .btn-block {
+    width: 100%;
+    margin-bottom: 2% !important;
+}
+
 .m-0 {
     margin: 0 !important;
 }

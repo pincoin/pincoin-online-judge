@@ -17,9 +17,11 @@
         <div class="row center-align">
             <form class="col s12" method="post" action="{% url 'account_logout' %}">
                 {% csrf_token %}
+
                 {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
                 {% endif %}
+
                 <button type="submit" class="btn waves-effect waves-light pink lighten-2">
                     {% trans 'Sign Out' %}
                     <i class="fas fa-sign-out-alt fa-sm fa-fw"></i>
