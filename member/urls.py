@@ -1,3 +1,6 @@
+from importlib import import_module
+
+from allauth.socialaccount import providers
 from django.urls import (
     path, re_path
 )
@@ -59,3 +62,13 @@ urlpatterns = [
     path('social/connections/',
          views.MemberSocialConnectionsView.as_view(), name='socialaccount_connections'),
 ]
+
+# URL patterns for social providers
+for provider in providers.registry.get_list():
+    try:
+        prov_mod = import_module(provider.get_package() + '.urls')
+    except ImportError:
+        continue
+    prov_urlpatterns = getattr(prov_mod, 'urlpatterns', None)
+    if prov_urlpatterns:
+        urlpatterns += prov_urlpatterns
