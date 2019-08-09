@@ -50,4 +50,12 @@ urlpatterns = [
          views.MemberLoginView.as_view(), name="account_change_name"),
 
     # Social Providers
+    path('social/login/cancelled/',
+         views.MemberSocialLoginCancelledView.as_view(), name='socialaccount_login_cancelled'),
+    path('social/login/error/',
+         views.MemberSocialLoginErrorView.as_view(), name='socialaccount_login_error'),
+    path('social/signup/',
+         views.MemberSocialSignupView.as_view(), name='socialaccount_signup'),
+    path('social/connections/',
+         views.MemberSocialConnectionsView.as_view(), name='socialaccount_connections'),
 ]

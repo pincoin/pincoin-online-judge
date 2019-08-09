@@ -47,11 +47,11 @@ INSTALLED_APPS += [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
 ]
 
 '''
 INSTALLED_APPS += [
-    'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.line',
@@ -150,3 +150,9 @@ ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 300
 ACCOUNT_SIGNUP_FORM_CLASS = 'member.forms2.MemberSignupForm'
 ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = True  # default=False
 SOCIALACCOUNT_AUTO_SIGNUP = False
+
+# Social providers for django-allauth
+# Each key has an empty dictionary value that will eventually contain provider specific configuration options by admin
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {},
+}
