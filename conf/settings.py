@@ -157,5 +157,10 @@ SOCIALACCOUNT_PROVIDERS = {
     'facebook': {},
     'github': {},
     'google': {},
-    'line': {},
+    'line': {
+        'scope': [
+            'profile',
+            'email',
+        ],
+    },
 }
