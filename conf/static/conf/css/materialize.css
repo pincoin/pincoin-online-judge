@@ -5468,7 +5468,7 @@ input[type=range]::-ms-thumb {
     font-weight: 500;
     height: 24px;
     line-height: 24px;
-    padding: 16px 16px; }
+    padding: 24px 16px; }
     .sidenav li > a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-flat):not(.btn-floating):hover {
       background-color: rgba(0, 0, 0, 0.05); }
     .sidenav li > a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-flat):not(.btn-floating) > i, .sidenav li > a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-flat):not(.btn-floating) > [class^="mdi-"], .sidenav li > a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-flat):not(.btn-floating) li > a > [class*="mdi-"], .sidenav li > a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-flat):not(.btn-floating) > i.material-icons {
