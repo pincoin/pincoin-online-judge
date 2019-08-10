@@ -160,6 +160,7 @@ SOCIALACCOUNT_PROVIDERS = {
     'line': {
         'SCOPE': [
             'profile',
+            'openid',
             'email',
         ],
     },
