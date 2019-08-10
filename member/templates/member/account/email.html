@@ -36,17 +36,17 @@
                             </div>
                             <div class="col s12 m4 l4">
                                 {% if emailaddress.verified %}
-                                    <span class="badge btn-small green lighten-2 white-text left">
+                                    <span class="badge green lighten-2 white-text left">
                                         {% trans "Verified" %}
                                     </span>
                                 {% else %}
-                                    <span class="badge btn-small red lighten-1 white-text left">
+                                    <span class="badge red lighten-1 white-text left">
                                         {% trans "Unverified" %}
                                     </span>
                                 {% endif %}
 
                                 {% if emailaddress.primary %}
-                                    <span class="badge btn-small blue accent-3 white-text left">
+                                    <span class="badge blue accent-3 white-text left">
                                         {% trans "Primary" %}
                                     </span>
                                 {% endif %}
