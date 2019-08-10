@@ -27,7 +27,7 @@
                     {% for base_account in form.accounts %}
                         {% with base_account.get_provider_account as account %}
                             <div class="row">
-                                <div class="input-field col s12">
+                                <p class="input-field col s12">
                                     <label for="id_account_{{ base_account.id }}">
                                         <input id="id_account_{{ base_account.id }}"
                                                type="radio"
@@ -39,7 +39,7 @@
                                 </span>
                                         {{ account }}
                                     </label>
-                                </div>
+                                </p>
                             </div>
                         {% endwith %}
                     {% endfor %}
