@@ -20,11 +20,13 @@ class LineOAuth2Adapter(OAuth2Adapter):
     def parse_token(self, data):
         token = super(LineOAuth2Adapter, self).parse_token(data)
 
+        app = self.get_provider().get_app(request=None)
+
         id_token = data.get('id_token', '')
 
         decoded_id_token = jwt.decode(id_token,
-                                      'df126489de181c230ba80f4b446e727c',
-                                      audience='1607852693',
+                                      app.secret,
+                                      audience=app.client_id,
                                       issuer='https://access.line.me',
                                       algorithms=['HS256'])
 
