@@ -16,6 +16,7 @@ DEBUG = secret['DEBUG']
 DATABASES = secret['DATABASES']
 
 ADMIN_URL = secret['ADMIN_URL']
+ADMINS = secret['ADMINS']
 
 EMAIL_HOST = secret['EMAIL_HOST']
 EMAIL_HOST_USER = secret['EMAIL_HOST_USER']
@@ -26,6 +27,8 @@ EMAIL_NO_REPLY = secret['EMAIL_NO_REPLY']
 EMAIL_CUSTOMER_SERVICE = secret['EMAIL_CUSTOMER_SERVICE']
 
 CELERY_BROKER_URL = secret['CELERY_BROKER_URL']
+
+GOOGLE_RECAPTCHA = secret['GOOGLE_RECAPTCHA']
 
 # Application definition
 
@@ -44,14 +47,14 @@ INSTALLED_APPS += [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.google',
+    'member.socialaccount.providers.line',
 ]
 
 '''
 INSTALLED_APPS += [
-    'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.github',
-    'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.line',
     'allauth.socialaccount.providers.linkedin',
 ]
 '''
@@ -141,9 +144,24 @@ DEFAULT_FROM_EMAIL = 'noreply@codingjump.com'
 ACCOUNT_ADAPTER = 'member.adapters.MyAccountAdapter'
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
-# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
 ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 300
 ACCOUNT_SIGNUP_FORM_CLASS = 'member.forms2.MemberSignupForm'
 ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = True  # default=False
 SOCIALACCOUNT_AUTO_SIGNUP = False
+
+# Social providers for django-allauth
+# Each key has an empty dictionary value that will eventually contain provider specific configuration options by admin
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {},
+    'github': {},
+    'google': {},
+    'line': {
+        'SCOPE': [
+            'profile',
+            'openid',
+            'email',
+        ],
+    },
+}

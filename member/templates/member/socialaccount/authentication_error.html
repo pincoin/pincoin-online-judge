@@ -1,0 +1,17 @@
+{% extends 'conf/base.html' %}
+
+{% load i18n %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="center page-heading">{{ page_title }}</h1>
+
+        <div class="row center-align">
+            <div class="col s12 m6 offset-m3 l6 offset-l3 deep-orange-text">
+                {% trans "An error occurred while attempting to login via your social network account." %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

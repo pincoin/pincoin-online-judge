@@ -1,0 +1,26 @@
+{% extends 'conf/base.html' %}
+
+{% load i18n %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="center page-heading">{{ page_title }}</h1>
+
+        <div class="row center-align">
+            <div class="col s12 m6 offset-m3 l6 offset-l3">
+                {% url 'account_login' as login_url %}
+                <p>
+                    {% trans 'You decided to cancel logging in to our site using one of your existing accounts.' %}
+                </p>
+                <p>
+                    {% blocktrans %}
+                        If this was a mistake, please proceed to <a href="{{ login_url }}">sign in</a>.
+                    {% endblocktrans %}
+                </p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

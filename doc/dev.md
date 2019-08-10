@@ -326,4 +326,17 @@ $ sudo systemctl status gunicorn
 
 ### RabbitMQ
 
+```
+$ sudo apt-get install rabbitmq-server
+$ sudo systemctl enable rabbitmq-server
+$ sudo systemctl start rabbitmq-server
+```
+
+```
+$ sudo rabbitmqctl add_user was t9g@-}JxpU2q+
+$ sudo rabbitmqctl set_user_tags was administrator
+$ sudo rabbitmqctl set_permissions was ".*" ".*" ".*"
+$ sudo rabbitmqctl delete_user guest
+```
+
 ## UFW

@@ -22,10 +22,16 @@
                 <p>
                     {{ form.agree.errors }}
                     <label>
-                        <input type="checkbox" class="filled-in" name="{{ form.agree.name }}"/>
+                        <input type="checkbox" name="{{ form.agree.name }}"/>
                         <span>{{ form.agree.label }}</span>
                     </label>
                 </p>
+
+                <div class="row pb-2">
+                    <div class="col s12 m6 offset-m3 l6 offset-l3">
+                        <div class="divider"></div>
+                    </div>
+                </div>
 
                 <button type="submit" class="btn waves-effect waves-light red darken-2">
                     {% trans 'Unregister' %}

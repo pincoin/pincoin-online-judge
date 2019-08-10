@@ -10,32 +10,18 @@
     <div class="container">
         <h1 class="center page-heading">{{ page_title }}</h1>
 
-        {% get_providers as socialaccount_providers %}
-
-        {% if socialaccount_providers %}
-            <div class="row">
-                <div class="col s12 m6 offset-m3 l6 offset-l3">
-                    <p>{% blocktrans with site.name as site_name %}Please sign in with one
-                        of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-                        for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
-
-                    <div class="socialaccount_ballot">
-                        <ul class="socialaccount_providers">
-                            {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-                        </ul>
-                        <div class="login-or">{% trans 'or' %}</div>
-                    </div>
-                    {% include "socialaccount/snippets/login_extra.html" %}
-                </div>
+        <div class="row">
+            <div class="col s12 m6 offset-m3 l6 offset-l3 blue-text text-darken-4">
+                {% blocktrans %}If you have not created an account yet, then please
+                    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
             </div>
-        {% else %}
-            <div class="row">
-                <div class="col s12 m6 offset-m3 l6 offset-l3 blue-text text-darken-4">
-                    {% blocktrans %}If you have not created an account yet, then please
-                        <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
-                </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m6 offset-m3 l6 offset-l3">
+                <div class="divider"></div>
             </div>
-        {% endif %}
+        </div>
 
         <div class="row">
             <form class="col s12 m6 offset-m3 l6 offset-l3" method="POST" action="{% url 'account_login' %}">
@@ -71,7 +57,7 @@
                 <div class="row">
                     <p class="col">
                         <label>
-                            <input type="checkbox" class="filled-in" name="{{ form.remember.name }}"/>
+                            <input type="checkbox" name="{{ form.remember.name }}"/>
                             <span>{{ form.remember.label }}</span>
                         </label>
                     </p>
@@ -93,6 +79,46 @@
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
                 {% endif %}
             </form>
+        </div>
+        <div class="row">
+            <div class="col s12 m6 offset-m3 l6 offset-l3">
+                <div class="divider"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m6 offset-m3 l6 offset-l3">
+                <div class="row">
+                    <div class="col s12 m3 l3">
+                        <a href="{% provider_login_url 'line' process='login' scope=scope auth_params=auth_params %}"
+                           class="btn btn-block btn-large z-depth-2 waves-effect waves-light"
+                           style="background-color:#1ec800">
+                            <i class="fab fa-line fa-4x"></i>
+                        </a>
+                    </div>
+                    <div class="col s12 m3 l3">
+                        <a href="{% provider_login_url 'facebook' process='login' scope=scope auth_params=auth_params %}"
+                           class="btn btn-block btn-large z-depth-2 waves-effect waves-light"
+                           style="background-color:#3b5998">
+                            <i class="fab fa-facebook-square fa-4x"></i>
+                        </a>
+                    </div>
+                    <div class="col s12 m3 l3">
+                        <a href="{% provider_login_url 'google' process='login' scope=scope auth_params=auth_params %}"
+                           class="btn btn-block btn-large z-depth-2 waves-effect waves-light"
+                           style="background-color:#db4a39">
+                            <i class="fab fa-google-plus-square fa-4x"></i>
+                        </a>
+                    </div>
+                    <div class="col s12 m3 l3">
+                        <a href="{% provider_login_url 'github' process='login' scope=scope auth_params=auth_params %}"
+                           class="btn btn-block btn-large z-depth-2 waves-effect waves-light"
+                           style="background-color:#171515">
+                            <i class="fab fa-github-square fa-4x"></i>
+                        </a>
+                    </div>
+                    {% providers_media_js %}
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

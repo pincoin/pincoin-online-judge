@@ -1,3 +1,6 @@
+from importlib import import_module
+
+from allauth.socialaccount import providers
 from django.urls import (
     path, re_path
 )
@@ -35,11 +38,11 @@ urlpatterns = [
 
     # Email Confirmation
     path('confirm-email/',
-         views.MemberLoginView.as_view(), name="account_email_verification_sent"),
+         views.MemberEmailVerificationSentView.as_view(), name="account_email_verification_sent"),
     re_path(r'^confirm-email/(?P<key>[-:\w]+)/$',
-            views.MemberLoginView.as_view(), name="account_confirm_email"),
+            views.MemberConfirmEmailView.as_view(), name="account_confirm_email"),
     path('email/',
-         views.MemberLoginView.as_view(), name="account_email"),
+         views.MemberEmailView.as_view(), name="account_email"),
 
     # Site Terms and Conditions / Privacy Policy
 
@@ -50,4 +53,22 @@ urlpatterns = [
          views.MemberLoginView.as_view(), name="account_change_name"),
 
     # Social Providers
+    path('social/login/cancelled/',
+         views.MemberSocialLoginCancelledView.as_view(), name='socialaccount_login_cancelled'),
+    path('social/login/error/',
+         views.MemberSocialLoginErrorView.as_view(), name='socialaccount_login_error'),
+    path('social/signup/',
+         views.MemberSocialSignupView.as_view(), name='socialaccount_signup'),
+    path('social/connections/',
+         views.MemberSocialConnectionsView.as_view(), name='socialaccount_connections'),
 ]
+
+# URL patterns for social providers
+for provider in providers.registry.get_list():
+    try:
+        prov_mod = import_module(provider.get_package() + '.urls')
+    except ImportError:
+        continue
+    prov_urlpatterns = getattr(prov_mod, 'urlpatterns', None)
+    if prov_urlpatterns:
+        urlpatterns += prov_urlpatterns

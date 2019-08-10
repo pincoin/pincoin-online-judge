@@ -10,13 +10,15 @@
 
         <div class="row">
             <div class="col s12 m6 offset-m3 l6 offset-l3">
-                {% trans 'Already have an account?' %}
-                {% blocktrans %}Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
+                {% blocktrans with provider_name=account.get_provider.name site_name=site.name %}
+                    You are about to use your {{ provider_name }} account to login to {{ site_name }}.
+                {% endblocktrans %}
+                {% trans 'As a final step, please complete the following form:' %}
             </div>
         </div>
 
         <div class="row">
-            <form id="signup_form" method="post" action="{% url 'account_signup' %}"
+            <form id="signup_form" method="post" action="{% url 'socialaccount_signup' %}"
                   class="col s12 m6 offset-m3 l6 offset-l3">
                 {% csrf_token %}
                 {% if form.non_field_errors %}
@@ -64,34 +66,6 @@
                                {% if form.last_name.field.required %}required{% endif %}>
                         <label for="{{ form.last_name.id_for_label }}">
                             {{ form.last_name.label }} <span class="red-text">*</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s12">
-                        {{ form.password1.errors }}
-                        <input id="{{ form.password1.id_for_label }}"
-                               name="{{ form.password1.name }}"
-                               type="password"
-                               {% if form.password1.value != None %}value="{{ form.password1.value|stringformat:'s' }}"{% endif %}
-                               {% if form.password1.field.required %}required{% endif %}>
-                        <label for="{{ form.password1.id_for_label }}">
-                            {{ form.password1.label }} <span class="red-text">*</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s12">
-                        {{ form.password2.errors }}
-                        <input id="{{ form.password2.id_for_label }}"
-                               name="{{ form.password2.name }}"
-                               type="password"
-                               {% if form.password2.value != None %}value="{{ form.password2.value|stringformat:'s' }}"{% endif %}
-                               {% if form.password2.field.required %}required{% endif %}>
-                        <label for="{{ form.password2.id_for_label }}">
-                            {{ form.password2.label }} <span class="red-text">*</span>
                         </label>
                     </div>
                 </div>
