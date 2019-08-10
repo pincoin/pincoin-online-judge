@@ -89,29 +89,29 @@
             <div class="col s12 m6 offset-m3 l6 offset-l3">
                 <div class="row">
                     <div class="col s12 m3 l3">
-                        <a href=""
-                           class="btn btn-block btn-large waves-effect waves-light"
+                        <a href="{% provider_login_url 'line' process='login' scope=scope auth_params=auth_params %}"
+                           class="btn btn-block btn-large z-depth-2 waves-effect waves-light"
                            style="background-color:#1ec800">
                             <i class="fab fa-line fa-4x"></i>
                         </a>
                     </div>
                     <div class="col s12 m3 l3">
                         <a href="{% provider_login_url 'facebook' process='login' scope=scope auth_params=auth_params %}"
-                           class="btn btn-block btn-large waves-effect waves-light"
+                           class="btn btn-block btn-large z-depth-2 waves-effect waves-light"
                            style="background-color:#3b5998">
                             <i class="fab fa-facebook-square fa-4x"></i>
                         </a>
                     </div>
                     <div class="col s12 m3 l3">
-                        <a href=""
-                           class="btn btn-block btn-large waves-effect waves-light"
+                        <a href="{% provider_login_url 'google' process='login' scope=scope auth_params=auth_params %}"
+                           class="btn btn-block btn-large z-depth-2 waves-effect waves-light"
                            style="background-color:#db4a39">
                             <i class="fab fa-google-plus-square fa-4x"></i>
                         </a>
                     </div>
                     <div class="col s12 m3 l3">
-                        <a href=""
-                           class="btn btn-block btn-large waves-effect waves-light"
+                        <a href="{% provider_login_url 'github' process='login' scope=scope auth_params=auth_params %}"
+                           class="btn btn-block btn-large z-depth-2 waves-effect waves-light"
                            style="background-color:#171515">
                             <i class="fab fa-github-square fa-4x"></i>
                         </a>

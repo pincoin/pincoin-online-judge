@@ -48,13 +48,13 @@ INSTALLED_APPS += [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.line',
 ]
 
 '''
 INSTALLED_APPS += [
-    'allauth.socialaccount.providers.github',
-    'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.line',
     'allauth.socialaccount.providers.linkedin',
 ]
 '''
@@ -144,7 +144,7 @@ DEFAULT_FROM_EMAIL = 'noreply@codingjump.com'
 ACCOUNT_ADAPTER = 'member.adapters.MyAccountAdapter'
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
-# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
 ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 300
 ACCOUNT_SIGNUP_FORM_CLASS = 'member.forms2.MemberSignupForm'
@@ -155,4 +155,7 @@ SOCIALACCOUNT_AUTO_SIGNUP = False
 # Each key has an empty dictionary value that will eventually contain provider specific configuration options by admin
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {},
+    'github': {},
+    'google': {},
+    'line': {},
 }

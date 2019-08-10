@@ -1,21 +1,23 @@
-{% extends "socialaccount/base.html" %}
+{% extends 'conf/base.html' %}
 
-{% load i18n %}
+{% load i18n socialaccount %}
 
-{% block head_title %}{% trans "Account Connections" %}{% endblock %}
+{% block title %}{{ page_title }}{% endblock %}
 
 {% block content %}
-    <h1>{% trans "Account Connections" %}</h1>
+    <div class="container">
+        <h1 class="center page-heading">{{ page_title }}</h1>
 
-    {% if form.accounts %}
-        <p>{% blocktrans %}You can sign in to your account using any of the following third party
-            accounts:{% endblocktrans %}</p>
+        {% if form.accounts %}
+            <div class="row">
+                <div class="col s12 m6 offset-m3 l6 offset-l3">
+                    {% trans 'You can sign in to your account using any of the following third party accounts:' %}
+                </div>
+            </div>
 
+            <form method="post" action="{% url 'socialaccount_connections' %}">
+                {% csrf_token %}
 
-        <form method="post" action="{% url 'socialaccount_connections' %}">
-            {% csrf_token %}
-
-            <fieldset>
                 {% if form.non_field_errors %}
                     <div id="errorMsg">{{ form.non_field_errors }}</div>
                 {% endif %}
@@ -36,21 +38,57 @@
                 <div>
                     <button type="submit">{% trans 'Remove' %}</button>
                 </div>
+            </form>
 
-            </fieldset>
+        {% else %}
+            <div class="row">
+                <div class="col s12 m6 offset-m3 l6 offset-l3">
+                    {% trans 'You currently have no social network accounts connected to this account.' %}
+                </div>
+            </div>
+        {% endif %}
 
-        </form>
+        <h2 class="center page-heading">{% trans 'Add a 3rd Party Account' %}</h2>
 
-    {% else %}
-        <p>{% trans 'You currently have no social network accounts connected to this account.' %}</p>
-    {% endif %}
-
-    <h2>{% trans 'Add a 3rd Party Account' %}</h2>
-
-    <ul class="socialaccount_providers">
-        {% include "socialaccount/snippets/provider_list.html" with process="connect" %}
-    </ul>
-
-    {% include "socialaccount/snippets/login_extra.html" %}
-
+        <div class="row">
+            <div class="col s12 m6 offset-m3 l6 offset-l3">
+                <div class="divider"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m6 offset-m3 l6 offset-l3">
+                <div class="row">
+                    <div class="col s12 m3 l3">
+                        <a href="{% provider_login_url 'line' process='connect' scope=scope auth_params=auth_params %}"
+                           class="btn btn-block btn-large z-depth-2 waves-effect waves-light"
+                           style="background-color:#1ec800">
+                            <i class="fab fa-line fa-4x"></i>
+                        </a>
+                    </div>
+                    <div class="col s12 m3 l3">
+                        <a href="{% provider_login_url 'facebook' process='connect' scope=scope auth_params=auth_params %}"
+                           class="btn btn-block btn-large z-depth-2 waves-effect waves-light"
+                           style="background-color:#3b5998">
+                            <i class="fab fa-facebook-square fa-4x"></i>
+                        </a>
+                    </div>
+                    <div class="col s12 m3 l3">
+                        <a href="{% provider_login_url 'google' process='connect' scope=scope auth_params=auth_params %}"
+                           class="btn btn-block btn-large z-depth-2 waves-effect waves-light"
+                           style="background-color:#db4a39">
+                            <i class="fab fa-google-plus-square fa-4x"></i>
+                        </a>
+                    </div>
+                    <div class="col s12 m3 l3">
+                        <a href="{% provider_login_url 'github' process='connect' scope=scope auth_params=auth_params %}"
+                           class="btn btn-block btn-large z-depth-2 waves-effect waves-light"
+                           style="background-color:#171515">
+                            <i class="fab fa-github-square fa-4x"></i>
+                        </a>
+                    </div>
+                    {% providers_media_js %}
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
