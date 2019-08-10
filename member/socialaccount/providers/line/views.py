@@ -1,4 +1,5 @@
 import requests
+import jwt
 
 from allauth.socialaccount.providers.oauth2.views import (
     OAuth2Adapter,
@@ -14,6 +15,11 @@ class LineOAuth2Adapter(OAuth2Adapter):
     access_token_url = 'https://api.line.me/oauth2/v2.1/token'
     authorize_url = 'https://access.line.me/oauth2/v2.1/authorize'
     profile_url = 'https://api.line.me/v2/profile'
+
+    def parse_token(self, data):
+        token = super(LineOAuth2Adapter, self).parse_token(data)
+
+        return token
 
     def complete_login(self, request, app, token, **kwargs):
         headers = {'Authorization': 'Bearer {0}'.format(token.token)}
