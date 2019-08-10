@@ -5481,7 +5481,7 @@ input[type=range]::-ms-thumb {
   .sidenav li > .btn, .sidenav li > .btn-large, .sidenav li > .btn-small, .sidenav li > .btn-large, .sidenav li > .btn-flat, .sidenav li > .btn-floating {
     margin: 10px 16px; }
   .sidenav .divider {
-    margin: 4px 0 0 0; }
+    margin: 24px 0 0 0; }
   .sidenav .subheader {
     cursor: initial;
     pointer-events: none;
