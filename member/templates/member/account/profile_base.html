@@ -6,13 +6,19 @@
             <div class="col s12 m4 l3 mt-4">
                 <ul class="collection">
                     <li class="collection-item{% if sidemenu == 'profile' %} active lime lighten-4{% endif %}">
-                        Profile
+                        <a href="{% url 'account_profile' %}">
+                            Profile
+                        </a>
                     </li>
                     <li class="collection-item{% if sidemenu == 'resume' %} active lime lighten-4{% endif %}">
-                        Resume
+                        <a href="#">
+                            Resume
+                        </a>
                     </li>
                     <li class="collection-item{% if sidemenu == 'organizations' %} active lime lighten-4{% endif %}">
-                        Organizations
+                        <a href="#">
+                            Organizations
+                        </a>
                     </li>
                     <li class="collection-item{% if sidemenu == 'emails' %} active lime lighten-4{% endif %}">
                         <a href="{% url 'account_email' %}">
@@ -20,7 +26,14 @@
                         </a>
                     </li>
                     <li class="collection-item{% if sidemenu == 'notifications' %} active lime lighten-4{% endif %}">
-                        Notifications
+                        <a href="#">
+                            Notifications
+                        </a>
+                    </li>
+                    <li class="collection-item{% if sidemenu == 'billing' %} active lime lighten-4{% endif %}">
+                        <a href="#">
+                            Billing
+                        </a>
                     </li>
                 </ul>
             </div>
