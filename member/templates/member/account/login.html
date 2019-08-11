@@ -62,6 +62,14 @@
                         </label>
                     </p>
                 </div>
+
+                {% if form.non_field_errors or form.recaptcha %}
+                    <div class="row">
+                        <div class="g-recaptcha input-field col s12" data-sitekey="{{ google_recaptcha_site_key }}">
+                        </div>
+                    </div>
+                {% endif %}
+
                 <div class="row">
                     <div class="input-field col s12">
                         <a class="btn waves-effect waves-light blue lighten-2"

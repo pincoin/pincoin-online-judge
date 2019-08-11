@@ -7,9 +7,7 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class GoogleRecaptchaMixin:
-    def clean(self):
-        cleaned_data = super(GoogleRecaptchaMixin, self).clean()
-
+    def validate_google_recaptcha(self):
         captcha_response = self.data.get('g-recaptcha-response')
         url = 'https://www.google.com/recaptcha/api/siteverify'
         values = {
@@ -23,8 +21,6 @@ class GoogleRecaptchaMixin:
 
         if not result['success']:
             raise forms.ValidationError(_('Invalid reCAPTCHA. Please try again.'))
-
-        return cleaned_data
 
     class Media:
         js = ('https://www.google.com/recaptcha/api.js',)
