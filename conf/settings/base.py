@@ -1,8 +1,6 @@
 import json
 import os
 
-from django.utils.translation import ugettext_lazy as _
-
 from . import BASE_DIR
 
 # Secret settings
@@ -10,12 +8,10 @@ secret = json.loads(open(os.path.join(BASE_DIR, 'secret.json')).read())
 
 SECRET_KEY = secret['SECRET_KEY']
 ALLOWED_HOSTS = secret['ALLOWED_HOSTS']
-DEBUG = secret['DEBUG']
 
 DATABASES = secret['DATABASES']
 
 ADMIN_URL = secret['ADMIN_URL']
-ADMINS = secret['ADMINS']
 
 EMAIL_HOST = secret['EMAIL_HOST']
 EMAIL_HOST_USER = secret['EMAIL_HOST_USER']
@@ -99,28 +95,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator', },
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator', },
 ]
-
-LANGUAGE_CODE = 'th-TH'
-LANGUAGES = [
-    ('th', _('Thai')),
-    ('en', _('English')),
-]
-LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'locale'),
-)
-USE_I18N = True
-USE_L10N = True
-USE_TZ = True
-TIME_ZONE = 'UTC'
-
-STATIC_URL = '/assets/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets/')
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'conf', 'static'),
-]
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # django.contrib.sites settings for allauth
 SITE_ID = 1
