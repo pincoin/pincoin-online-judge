@@ -52,12 +52,6 @@ INSTALLED_APPS += [
     'member.socialaccount.providers.line',
 ]
 
-'''
-INSTALLED_APPS += [
-    'allauth.socialaccount.providers.linkedin',
-]
-'''
-
 INSTALLED_APPS += [
     'sandbox',
     'quest',
