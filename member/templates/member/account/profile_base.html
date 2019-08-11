@@ -5,21 +5,21 @@
         <div class="row">
             <div class="col s12 m4 l3 mt-4">
                 <ul class="collection">
-                    <li class="collection-item">
+                    <li class="collection-item{% if sidemenu == 'profile' %} active lime lighten-4{% endif %}">
                         Profile
                     </li>
-                    <li class="collection-item">
+                    <li class="collection-item{% if sidemenu == 'resume' %} active lime lighten-4{% endif %}">
                         Resume
                     </li>
-                    <li class="collection-item">
+                    <li class="collection-item{% if sidemenu == 'organizations' %} active lime lighten-4{% endif %}">
                         Organizations
                     </li>
-                    <li class="collection-item active white-text yellow">
+                    <li class="collection-item{% if sidemenu == 'emails' %} active lime lighten-4{% endif %}">
                         <a href="{% url 'account_email' %}">
                             Emails / SNS
                         </a>
                     </li>
-                    <li class="collection-item">
+                    <li class="collection-item{% if sidemenu == 'notifications' %} active lime lighten-4{% endif %}">
                         Notifications
                     </li>
                 </ul>

@@ -4,6 +4,12 @@
 
 {% block title %}{{ page_title }}{% endblock %}
 
+{% block content %}
+    {% with sidemenu='emails' %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock content %}
+
 {% block main_content %}
     <h1 class="page-sub-heading">{{ page_title }}</h1>
 
