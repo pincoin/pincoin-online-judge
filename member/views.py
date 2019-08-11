@@ -1,4 +1,3 @@
-import logging
 import uuid
 
 from allauth.account import views as allauth_views
@@ -9,7 +8,6 @@ from django.conf import settings
 from django.contrib.auth import (
     get_user_model, logout)
 from django.contrib.auth import mixins as auth_mixins
-from django.contrib.sites.models import Site
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import FormView
@@ -18,18 +16,12 @@ from . import forms
 
 
 class MemberLoginView(allauth_views.LoginView):
-    logger = logging.getLogger(__name__)
-
     template_name = 'member/account/login.html'
     form_class = forms.MemberLoginForm
 
     def get_context_data(self, **kwargs):
         context = super(MemberLoginView, self).get_context_data(**kwargs)
         context['page_title'] = _('Login')
-
-        self.logger.error('login page error test')
-        Site.objects.get(pk=2)
-
         return context
 
 
