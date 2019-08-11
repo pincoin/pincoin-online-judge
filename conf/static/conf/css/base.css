@@ -28,7 +28,26 @@ form .row {
     margin-bottom: 1% !important;
 }
 
-.col.s12 > .btn-block {
+.col.s12 > .sns-button {
     width: 100%;
-    margin-bottom: 8% !important;
+    height: 48px;
+    padding-top: 5px;
+    margin-bottom: 8%;
+    font-size: 2.8rem;
+}
+
+.sns-button-line {
+    background: #1ec800;
+}
+
+.sns-button-facebook {
+    background: #3b5998;
+}
+
+.sns-button-google {
+    background: #db4a39;
+}
+
+.sns-button-github {
+    background: #171515;
 }
