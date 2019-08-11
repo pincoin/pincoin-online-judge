@@ -1,10 +1,9 @@
 import json
 import os
 
-from django.core.exceptions import ImproperlyConfigured
 from django.utils.translation import ugettext_lazy as _
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+from . import BASE_DIR
 
 # Secret settings
 secret = json.loads(open(os.path.join(BASE_DIR, 'secret.json')).read())
