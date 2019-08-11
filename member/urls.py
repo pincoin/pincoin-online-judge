@@ -44,14 +44,6 @@ urlpatterns = [
     path('email/',
          views.MemberEmailView.as_view(), name="account_email"),
 
-    # Site Terms and Conditions / Privacy Policy
-
-    # Profile
-    path('profile/',
-         views.MemberLoginView.as_view(), name="account_profile"),
-    path('change-name/',
-         views.MemberLoginView.as_view(), name="account_change_name"),
-
     # Social Providers
     path('social/login/cancelled/',
          views.MemberSocialLoginCancelledView.as_view(), name='socialaccount_login_cancelled'),
@@ -61,6 +53,14 @@ urlpatterns = [
          views.MemberSocialSignupView.as_view(), name='socialaccount_signup'),
     path('social/connections/',
          views.MemberSocialConnectionsView.as_view(), name='socialaccount_connections'),
+
+    # Site Terms and Conditions / Privacy Policy
+
+    # Profile
+    path('profile/',
+         views.MemberProfileView.as_view(), name="account_profile"),
+    path('change-name/',
+         views.MemberLoginView.as_view(), name="account_change_name"),
 ]
 
 # URL patterns for social providers
