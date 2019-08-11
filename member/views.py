@@ -25,7 +25,7 @@ class MemberLoginView(allauth_views.LoginView):
     def get_context_data(self, **kwargs):
         context = super(MemberLoginView, self).get_context_data(**kwargs)
         context['page_title'] = _('Login')
-        self.logger.warning('login page warning test')
+        self.logger.error('login page error test')
         return context
 
 
