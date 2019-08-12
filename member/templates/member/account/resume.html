@@ -17,12 +17,13 @@
         <ul class="row mb-2">
             <li class="col s12 m9 l9">
                 <div class="row mb-0">
-                    <div class="col s12 m6 l5">
+                    <div class="col s12 m7 l7">
                         <a href="#" class="resume-list-title">
                             {{ resume.title|truncatechars:30 }}
                         </a>
+                        <small class="grey-text">{{ resume.modified|date:"Y-m-d" }}</small>
                     </div>
-                    <div class="col s12 m4 l5">
+                    <div class="col s12 m5 l5">
                         {% if resume.primary %}
                             <span class="btn btn-small blue white-text">
                                 {% trans 'Primary' %}
@@ -34,9 +35,6 @@
                         <span class="btn btn-small green white-text">
                             {{ resume.get_language_display }}
                         </span>
-                    </div>
-                    <div class="col s12 m2 l2">
-                        {{ resume.modified|date:"Y-m-d" }}
                     </div>
                 </div>
             </li>
