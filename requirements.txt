@@ -5,6 +5,7 @@ django-taggit==1.1.0
 djangorestframework==3.10.2
 django-allauth==0.39.1
 PyJWT==1.7.1
+django-ipware==2.1.0
 celery==4.3.0
 channels==2.2.0
 Cython==0.29.13

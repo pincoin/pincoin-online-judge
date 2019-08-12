@@ -6,9 +6,6 @@ from model_utils.models import (
     TimeStampedModel, SoftDeletableModel
 )
 from mptt.fields import TreeForeignKey
-from taggit.models import (
-    TagBase, TaggedItemBase
-)
 
 from conf.models import AbstractCategory
 

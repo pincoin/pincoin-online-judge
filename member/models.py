@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from model_utils import Choices
 from model_utils.models import (
     TimeStampedModel, SoftDeletableModel
 )
@@ -78,3 +79,59 @@ class EmailBanned(SoftDeletableModel, TimeStampedModel):
 
     def __str__(self):
         return '{} {}'.format(self.email, self.created)
+
+
+class Resume(TimeStampedModel):
+    STATUS_CHOICES = Choices(
+        (0, 'draft', _('Draft')),
+        (1, 'published', _('Published')),
+    )
+
+    LANGUAGE_CHOICES = Choices(
+        (0, 'thai', _('Thai')),
+        (1, 'english', _('English')),
+        (2, 'chinese', _('Chinese')),
+        (3, 'japanese', _('Japanese')),
+        (4, 'korean', _('Korean')),
+    )
+
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
+    )
+
+    title = models.CharField(
+        verbose_name=_('Resume title'),
+        max_length=255,
+    )
+
+    description = models.TextField(
+        verbose_name=_('Resume description'),
+    )
+
+    primary = models.BooleanField(
+        verbose_name=_('Primary resume'),
+        default=False,
+        db_index=True,
+    )
+
+    status = models.IntegerField(
+        verbose_name=_('Status'),
+        choices=STATUS_CHOICES,
+        default=STATUS_CHOICES.draft,
+        db_index=True,
+    )
+
+    language = models.IntegerField(
+        verbose_name=_('Language'),
+        choices=LANGUAGE_CHOICES,
+        default=LANGUAGE_CHOICES.thai,
+        db_index=True,
+    )
+
+    class Meta:
+        verbose_name = _('Resume')
+        verbose_name_plural = _('Resume')
+
+    def __str__(self):
+        return self.title
