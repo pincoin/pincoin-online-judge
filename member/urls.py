@@ -64,7 +64,9 @@ urlpatterns = [
 
     # Resume
     path('resume/',
-         views.MemberResumeView.as_view(), name="account_resume"),
+         views.MemberResumeListView.as_view(), name="account_resume_list"),
+    path('resume/<uuid:uuid>',
+         views.MemberResumeDetailView.as_view(), name="account_resume_detail"),
 ]
 
 # URL patterns for social providers

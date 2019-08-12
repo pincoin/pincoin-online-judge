@@ -1,3 +1,5 @@
+import uuid
+
 from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -93,6 +95,13 @@ class Resume(TimeStampedModel):
         (2, 'chinese', _('Chinese')),
         (3, 'japanese', _('Japanese')),
         (4, 'korean', _('Korean')),
+    )
+
+    resume_no = models.UUIDField(
+        verbose_name=_('UUID'),
+        unique=True,
+        default=uuid.uuid4,
+        editable=False
     )
 
     user = models.ForeignKey(

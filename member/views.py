@@ -257,8 +257,8 @@ class MemberProfileView(auth_mixins.LoginRequiredMixin, generic.DetailView):
         return context
 
 
-class MemberResumeView(auth_mixins.LoginRequiredMixin, generic.ListView):
-    template_name = 'member/account/resume.html'
+class MemberResumeListView(auth_mixins.LoginRequiredMixin, generic.ListView):
+    template_name = 'member/account/resume_list.html'
     context_object_name = 'resumes'
 
     def get_queryset(self):
@@ -268,6 +268,22 @@ class MemberResumeView(auth_mixins.LoginRequiredMixin, generic.ListView):
         return queryset
 
     def get_context_data(self, **kwargs):
-        context = super(MemberResumeView, self).get_context_data(**kwargs)
+        context = super(MemberResumeListView, self).get_context_data(**kwargs)
+        context['page_title'] = _('My Resume List')
+        return context
+
+
+class MemberResumeDetailView(auth_mixins.LoginRequiredMixin, generic.DetailView):
+    template_name = 'member/account/resume_detail.html'
+    context_object_name = 'resume'
+
+    def get_object(self, queryset=None):
+        queryset = models.Resume.objects.select_related('user')
+        return get_object_or_404(queryset,
+                                 user__pk=self.request.user.id,
+                                 resume_no=self.kwargs['uuid'])
+
+    def get_context_data(self, **kwargs):
+        context = super(MemberResumeDetailView, self).get_context_data(**kwargs)
         context['page_title'] = _('Resume')
         return context

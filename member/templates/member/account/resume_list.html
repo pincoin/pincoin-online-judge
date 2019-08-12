@@ -18,7 +18,7 @@
             <li class="col s12 m9 l9">
                 <div class="row mb-0">
                     <div class="col s12 m7 l7">
-                        <a href="#" class="resume-list-title">
+                        <a href="{% url 'account_resume_detail' resume.resume_no %}" class="resume-list-title">
                             {{ resume.title|truncatechars:30 }}
                         </a>
                         <small class="grey-text">{{ resume.modified|date:"Y-m-d" }}</small>
