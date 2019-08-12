@@ -95,9 +95,12 @@ class Resume(TimeStampedModel):
         (4, 'korean', _('Korean')),
     )
 
-    user = models.OneToOneField(
+    user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE
+        verbose_name=_('user'),
+        related_name='resumes',
+        db_index=True,
+        on_delete=models.CASCADE,
     )
 
     title = models.CharField(

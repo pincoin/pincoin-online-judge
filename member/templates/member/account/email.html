@@ -1,6 +1,6 @@
 {% extends 'member/account/profile_base.html' %}
 
-{% load i18n %}
+{% load i18n static %}
 
 {% block title %}{{ page_title }}{% endblock %}
 
@@ -152,4 +152,9 @@
             }
         })();
     </script>
+{% endblock %}
+
+{% block stylesheet %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static "member/css/member.css" %}">
 {% endblock %}

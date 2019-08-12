@@ -1,6 +1,7 @@
 {% extends 'conf/base.html' %}
 
-{% load i18n socialaccount %}
+{% load i18n static %}
+{% load socialaccount %}
 
 {% block title %}{{ page_title }}{% endblock %}
 
@@ -102,4 +103,9 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block stylesheet %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static "member/css/member.css" %}">
 {% endblock %}

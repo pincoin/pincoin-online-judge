@@ -9,7 +9,7 @@ class ProfileAdmin(admin.ModelAdmin):
     search_fields = ('user__email',)
     readonly_fields = ('user', 'full_name', 'email', 'status_memo')
     raw_id_fields = ('user',)
-    ordering = ['-created']
+    ordering = ('-created',)
 
     fieldsets = (
         (_('Account'), {
@@ -27,7 +27,8 @@ class ProfileAdmin(admin.ModelAdmin):
 
 
 class ResumeAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('user', 'primary', 'status', 'language', 'created')
+    ordering = ('-created',)
 
 
 class LoginLogAdmin(admin.ModelAdmin):
@@ -37,7 +38,7 @@ class LoginLogAdmin(admin.ModelAdmin):
     list_select_related = ('user', 'user__profile')
     readonly_fields = ('user', 'ip_address')
     search_fields = ('user__email', 'ip_address')
-    ordering = ['-created']
+    ordering = ('-created',)
 
     def get_queryset(self, request):
         return super(LoginLogAdmin, self).get_queryset(request) \
@@ -56,7 +57,7 @@ class EmailBannedAdmin(admin.ModelAdmin):
     )
     search_fields = ('email',)
     readonly_fields = ('is_removed', 'created')
-    ordering = ['-created']
+    ordering = ('-created',)
 
 
 admin.site.register(models.Profile, ProfileAdmin)

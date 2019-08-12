@@ -61,6 +61,10 @@ urlpatterns = [
          views.MemberProfileView.as_view(), name="account_profile"),
     path('change-name/',
          views.MemberLoginView.as_view(), name="account_change_name"),
+
+    # Resume
+    path('resume/',
+         views.MemberResumeView.as_view(), name="account_resume"),
 ]
 
 # URL patterns for social providers

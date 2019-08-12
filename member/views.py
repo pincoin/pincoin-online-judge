@@ -255,3 +255,19 @@ class MemberProfileView(auth_mixins.LoginRequiredMixin, generic.DetailView):
         context = super(MemberProfileView, self).get_context_data(**kwargs)
         context['page_title'] = _('Profile')
         return context
+
+
+class MemberResumeView(auth_mixins.LoginRequiredMixin, generic.ListView):
+    template_name = 'member/account/resume.html'
+    context_object_name = 'resumes'
+
+    def get_queryset(self):
+        queryset = models.Resume.objects \
+            .filter(user__pk=self.request.user.id) \
+            .order_by('-primary', '-status', '-modified')
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super(MemberResumeView, self).get_context_data(**kwargs)
+        context['page_title'] = _('Resume')
+        return context
