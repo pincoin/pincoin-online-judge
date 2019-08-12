@@ -11,7 +11,11 @@ main {
 }
 
 .top-left-menu {
-    margin-left: 160px;
+    margin-left: 280px;
+}
+
+.logo-icon {
+    padding-top: 10px;
 }
 
 footer a:link, footer a:visited {
@@ -68,6 +72,10 @@ form .row {
 
 /* medium tablet or large desktop */
 @media only screen and (min-width: 993px) {
+    .logo-icon {
+        padding-top: 1px;
+    }
+
     .page-heading {
         margin-top: 4% !important;
         margin-bottom: 2% !important;
