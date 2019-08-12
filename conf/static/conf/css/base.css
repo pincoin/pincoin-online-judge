@@ -68,6 +68,21 @@ form .row {
 
 /* medium tablet or large desktop */
 @media only screen and (min-width: 993px) {
+    .page-heading {
+        margin-top: 4% !important;
+        margin-bottom: 2% !important;
+        padding-bottom: 1%;
+        border-bottom: 1px solid #e0e0e0;;
+    }
+
+    .page-sub-heading {
+        margin-top: 6%;
+        margin-bottom: 4%;
+        padding-bottom: 1%;
+        border-bottom: 1px solid #e0e0e0;
+        width: 49%;
+    }
+
     .col.s12 > .sns-button {
         padding-top: 0;
         font-size: 2rem;
