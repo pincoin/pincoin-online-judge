@@ -9,13 +9,6 @@
         <h1 class="center page-heading">{{ page_title }}</h1>
 
         <div class="row">
-            <div class="col s12 m6 offset-m3 l6 offset-l3">
-                {% trans 'Already have an account?' %}
-                {% blocktrans %}Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
-            </div>
-        </div>
-
-        <div class="row">
             <form id="signup_form" method="post" action="{% url 'account_signup' %}"
                   class="col s12 m6 offset-m3 l6 offset-l3">
                 {% csrf_token %}
@@ -138,7 +131,7 @@
 
                 <div class="row center-align">
                     <div class="input-field col s12">
-                        <button class="btn cyan waves-effect waves-light" type="submit">
+                        <button class="btn btn-block teal waves-effect waves-light mb-0" type="submit">
                             {% trans "Sign Up" %}
                             <i class="fas fa-user-friends fa-sm fa-fw"></i>
                         </button>

@@ -11,19 +11,6 @@
         <h1 class="center page-heading">{{ page_title }}</h1>
 
         <div class="row">
-            <div class="col s12 m6 offset-m3 l6 offset-l3 blue-text text-darken-4">
-                {% blocktrans %}If you have not created an account yet, then please
-                    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col s12 m6 offset-m3 l6 offset-l3">
-                <div class="divider"></div>
-            </div>
-        </div>
-
-        <div class="row">
             <form class="col s12 m6 offset-m3 l6 offset-l3" method="POST" action="{% url 'account_login' %}">
                 {% csrf_token %}
 
@@ -72,11 +59,7 @@
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <a class="btn waves-effect waves-light blue lighten-2"
-                           href="{% url 'account_reset_password' %}">
-                            {% trans 'Forgot Password?' %}
-                        </a>
-                        <button class="btn cyan waves-effect waves-light right" type="submit">
+                        <button class="btn btn-block cyan waves-effect waves-light mb-0" type="submit">
                             {% trans 'Sign In' %}
                             <i class="fas fa-sign-in-alt fa-sm fa-fw"></i>
                         </button>
@@ -121,6 +104,24 @@
                         </a>
                     </div>
                     {% providers_media_js %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m6 offset-m3 l6 offset-l3">
+                    <div class="row">
+                        <div class="col s12 m6 l6">
+                            <a class="btn btn-block waves-effect waves-light blue lighten-2"
+                               href="{% url 'account_reset_password' %}">
+                                {% trans 'Forgot Password?' %}
+                            </a>
+                        </div>
+                        <div class="col s12 m6 l6">
+                            <a class="btn btn-block waves-effect waves-light teal lighten-2"
+                               href="{{ signup_url }}">
+                                {% trans "Sign Up" %}
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

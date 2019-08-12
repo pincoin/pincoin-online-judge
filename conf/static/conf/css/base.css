@@ -66,22 +66,12 @@ form .row {
     background: #171515;
 }
 
-/* medium tablet */
+/* medium tablet or large desktop */
 @media only screen and (min-width: 993px) {
     .col.s12 > .sns-button {
-        font-size: 2.8rem;
-    }
-
-    .col.s12 > .btn-block {
         padding-top: 0;
+        font-size: 2rem;
         height: 36px;
-    }
-}
-
-/* large desktop */
-@media only screen and (min-width: 1201px) {
-    .col.s12 > .sns-button {
-        font-size: 2.8rem;
     }
 
     .col.s12 > .btn-block {
