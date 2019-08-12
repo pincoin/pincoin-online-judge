@@ -9,6 +9,44 @@
     <div class="container">
         <h1 class="center page-heading">{{ page_title }}</h1>
 
+        <div class="row mb-2">
+            <div class="col s12 m6 offset-m3 l6 offset-l3">
+                <div class="row mb-0">
+                    <div class="col s12 m3 l3">
+                        <a href="{% provider_login_url 'line' process='login' scope=scope auth_params=auth_params %}"
+                           class="btn sns-button sns-button-line z-depth-2 waves-effect waves-light">
+                            <i class="fab fa-line fa-4x"></i>
+                        </a>
+                    </div>
+                    <div class="col s12 m3 l3">
+                        <a href="{% provider_login_url 'facebook' process='login' scope=scope auth_params=auth_params %}"
+                           class="btn sns-button sns-button-facebook z-depth-2 waves-effect waves-light">
+                            <i class="fab fa-facebook-square fa-4x"></i>
+                        </a>
+                    </div>
+                    <div class="col s12 m3 l3">
+                        <a href="{% provider_login_url 'google' process='login' scope=scope auth_params=auth_params %}"
+                           class="btn sns-button sns-button-google z-depth-2 waves-effect waves-light">
+                            <i class="fab fa-google-plus-square fa-4x"></i>
+                        </a>
+                    </div>
+                    <div class="col s12 m3 l3">
+                        <a href="{% provider_login_url 'github' process='login' scope=scope auth_params=auth_params %}"
+                           class="btn sns-button sns-button-github z-depth-2 waves-effect waves-light">
+                            <i class="fab fa-github-square fa-4x"></i>
+                        </a>
+                    </div>
+                    {% providers_media_js %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m6 offset-m3 l6 offset-l3">
+                <div class="divider"></div>
+            </div>
+        </div>
+
         <div class="row">
             <form class="col s12 m6 offset-m3 l6 offset-l3" method="POST" action="{% url 'account_login' %}">
                 {% csrf_token %}
@@ -70,56 +108,21 @@
                 {% endif %}
             </form>
         </div>
-        <div class="row">
-            <div class="col s12 m6 offset-m3 l6 offset-l3">
-                <div class="divider"></div>
-            </div>
-        </div>
+
         <div class="row">
             <div class="col s12 m6 offset-m3 l6 offset-l3">
                 <div class="row">
-                    <div class="col s12 m3 l3">
-                        <a href="{% provider_login_url 'line' process='login' scope=scope auth_params=auth_params %}"
-                           class="btn sns-button sns-button-line z-depth-2 waves-effect waves-light">
-                            <i class="fab fa-line fa-4x"></i>
+                    <div class="col s12 m6 l6">
+                        <a class="btn btn-block waves-effect waves-light blue lighten-2"
+                           href="{% url 'account_reset_password' %}">
+                            {% trans 'Forgot Password?' %}
                         </a>
                     </div>
-                    <div class="col s12 m3 l3">
-                        <a href="{% provider_login_url 'facebook' process='login' scope=scope auth_params=auth_params %}"
-                           class="btn sns-button sns-button-facebook z-depth-2 waves-effect waves-light">
-                            <i class="fab fa-facebook-square fa-4x"></i>
+                    <div class="col s12 m6 l6">
+                        <a class="btn btn-block waves-effect waves-light teal lighten-2"
+                           href="{{ signup_url }}">
+                            {% trans "Sign Up" %}
                         </a>
-                    </div>
-                    <div class="col s12 m3 l3">
-                        <a href="{% provider_login_url 'google' process='login' scope=scope auth_params=auth_params %}"
-                           class="btn sns-button sns-button-google z-depth-2 waves-effect waves-light">
-                            <i class="fab fa-google-plus-square fa-4x"></i>
-                        </a>
-                    </div>
-                    <div class="col s12 m3 l3">
-                        <a href="{% provider_login_url 'github' process='login' scope=scope auth_params=auth_params %}"
-                           class="btn sns-button sns-button-github z-depth-2 waves-effect waves-light">
-                            <i class="fab fa-github-square fa-4x"></i>
-                        </a>
-                    </div>
-                    {% providers_media_js %}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12 m6 offset-m3 l6 offset-l3">
-                    <div class="row">
-                        <div class="col s12 m6 l6">
-                            <a class="btn btn-block waves-effect waves-light blue lighten-2"
-                               href="{% url 'account_reset_password' %}">
-                                {% trans 'Forgot Password?' %}
-                            </a>
-                        </div>
-                        <div class="col s12 m6 l6">
-                            <a class="btn btn-block waves-effect waves-light teal lighten-2"
-                               href="{{ signup_url }}">
-                                {% trans "Sign Up" %}
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
