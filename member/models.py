@@ -147,3 +147,115 @@ class Resume(TimeStampedModel):
 
     def __str__(self):
         return self.title
+
+
+class ResumeRecord(models.Model):
+    resume = models.ForeignKey(
+        'member.Resume',
+        verbose_name=_('Resume'),
+        db_index=True,
+        on_delete=models.CASCADE,
+    )
+
+    position = models.IntegerField(
+        verbose_name=_('Position'),
+    )
+
+    class Meta:
+        abstract = True
+
+
+class WorkExperience(ResumeRecord):
+    present = models.BooleanField(
+        verbose_name=_('Present'),
+        default=False,
+        db_index=True,
+    )
+
+    start_date = models.DateField(
+        verbose_name=_('Start date'),
+    )
+
+    end_date = models.DateField(
+        verbose_name=_('End date'),
+        null=True,
+        blank=True,
+    )
+
+    company = models.CharField(
+        verbose_name=_('Company'),
+        max_length=255,
+    )
+
+    title = models.CharField(
+        verbose_name=_('Job title'),
+        max_length=255,
+    )
+
+
+class Education(ResumeRecord):
+    present = models.BooleanField(
+        verbose_name=_('Present'),
+        default=False,
+        db_index=True,
+    )
+
+    start_date = models.DateField(
+        verbose_name=_('Start date'),
+    )
+
+    end_date = models.DateField(
+        verbose_name=_('End date'),
+        null=True,
+        blank=True,
+    )
+
+    school = models.CharField(
+        verbose_name=_('School'),
+        max_length=255,
+    )
+
+    degree = models.CharField(
+        verbose_name=_('Degree'),
+        max_length=255,
+    )
+
+    major = models.CharField(
+        verbose_name=_('Major'),
+        max_length=255,
+    )
+
+    topic = models.TextField(
+        verbose_name=_('Research topics'),
+    )
+
+
+'''
+class License(ResumeRecord):
+    pass
+
+
+class VolunteerExperience(ResumeRecord):
+    pass
+
+
+class Skill(ResumeRecord):
+    pass
+
+
+class Accomplishment(ResumeRecord):
+    pass
+
+
+class AdditionalInformation(ResumeRecord):
+    pass
+
+
+class SupportedLanguage(ResumeRecord):
+    LEVEL_CHOICES = Choices(
+        (0, 'beginner', _('Beginner')),
+        (1, 'intermediate', _('Intermediate')),
+        (2, 'advanced', _('Advanced')),
+        (3, 'fluent', _('Fluent')),
+    )
+'''
