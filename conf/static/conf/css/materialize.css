@@ -2240,7 +2240,7 @@ ul.staggered-list li {
     text-align: center; } }
 
 .page-footer {
-  padding-top: 20px;
+  padding-top: 0;
   color: #212121;
   background-color: #FFEBEE; }
   .page-footer .footer-copyright {
