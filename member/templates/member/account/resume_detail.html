@@ -25,15 +25,15 @@
                 <div class="col s12 m5 l5">
                     {% if resume.primary %}
                         <span class="btn btn-small blue white-text z-depth-3">
-                                {% trans 'Primary' %}
-                            </span>
+                            {% trans 'Primary' %}
+                        </span>
                     {% endif %}
                     <span class="btn btn-small teal white-text z-depth-0">
-                            {{ resume.get_status_display }}
-                        </span>
+                        {{ resume.get_status_display }}
+                    </span>
                     <span class="btn btn-small green white-text z-depth-0">
-                            {{ resume.get_language_display }}
-                        </span>
+                        {{ resume.get_language_display }}
+                    </span>
                 </div>
             </div>
         </li>
