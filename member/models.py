@@ -230,6 +230,18 @@ class Education(ResumeRecord):
     )
 
 
+class Link(ResumeRecord):
+    title = models.CharField(
+        verbose_name=_('Title'),
+        max_length=255,
+    )
+
+    url = models.URLField(
+        verbose_name=_('URL'),
+        max_length=255,
+    )
+
+
 '''
 class License(ResumeRecord):
     pass

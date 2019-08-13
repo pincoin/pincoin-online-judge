@@ -77,4 +77,10 @@
 
 .resume-list-title {
     font-size: 1.2rem;
+    color: #e65100;
+}
+
+.resume-list-title-primary {
+    color: #01579b;
+    font-weight: bold;
 }

@@ -269,7 +269,7 @@ class MemberResumeListView(auth_mixins.LoginRequiredMixin, generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super(MemberResumeListView, self).get_context_data(**kwargs)
-        context['page_title'] = _('My Resume List')
+        context['page_title'] = _('Resume')
         return context
 
 
@@ -285,5 +285,5 @@ class MemberResumeDetailView(auth_mixins.LoginRequiredMixin, generic.DetailView)
 
     def get_context_data(self, **kwargs):
         context = super(MemberResumeDetailView, self).get_context_data(**kwargs)
-        context['page_title'] = _('Resume')
+        context['page_title'] = _('Resume - {}'.format(self.object.title))
         return context

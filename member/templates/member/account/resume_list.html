@@ -14,21 +14,22 @@
     <h1 class="page-sub-heading">{{ page_title }}</h1>
 
     {% for resume in resumes %}
-        <ul class="row mb-2">
+        <ul class="row">
             <li class="col s12 m9 l9">
                 <div class="row mb-0">
-                    <div class="col s12 m7 l7">
-                        <a href="{% url 'account_resume_detail' resume.resume_no %}" class="resume-list-title">
+                    <h4 class="col s12 mt-0">
+                        {% if resume.primary %}
+                            <i class="fas fa-check fa-fw"></i>
+                        {% endif %}
+                        <a href="{% url 'account_resume_detail' resume.resume_no %}"
+                           class="resume-list-title{% if resume.primary %} resume-list-title-primary{% endif %}">
                             {{ resume.title|truncatechars:30 }}
                         </a>
-                        <small class="grey-text">{{ resume.modified|date:"Y-m-d" }}</small>
-                    </div>
-                    <div class="col s12 m5 l5">
-                        {% if resume.primary %}
-                            <span class="btn btn-small blue white-text z-depth-3">
-                                {% trans 'Primary' %}
-                            </span>
-                        {% endif %}
+                    </h4>
+                    <div class="col s12">
+                        <span class="btn btn-small grey lighten-2 grey-text text-darken-4 z-depth-0">
+                            {{ resume.modified|date:'Y-m-d' }}
+                        </span>
                         <span class="btn btn-small teal white-text z-depth-0">
                             {{ resume.get_status_display }}
                         </span>
@@ -40,6 +41,15 @@
             </li>
         </ul>
     {% endfor %}
+
+    <div class="row">
+        <div class="col s12 m9 l9">
+            <a href="#" class="btn btn-block waves-effect waves-light cyan">
+                <i class="fas fa-file-invoice fa-fw"></i>
+                {% trans 'New resume' %}
+            </a>
+        </div>
+    </div>
 {% endblock %}
 
 {% block stylesheet %}

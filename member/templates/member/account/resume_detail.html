@@ -13,31 +13,55 @@
 {% block main_content %}
     <h1 class="page-sub-heading">{{ page_title }}</h1>
 
-    <ul class="row mb-2">
-        <li class="col s12 m9 l9">
-            <div class="row mb-0">
-                <div class="col s12 m7 l7">
-                    <span class="resume-list-title">
-                        {{ resume.title|truncatechars:30 }}
-                    </span>
-                    <small class="grey-text">{{ resume.modified|date:"Y-m-d" }}</small>
+    <div class="row mb-0">
+        <div class="col s12 m9 l9">
+            <h4 class="mt-0">
+                {% if resume.primary %}
+                    <i class="fas fa-check fa-fw"></i>
+                {% endif %}
+                <a href="{% url 'account_resume_detail' resume.resume_no %}"
+                   class="resume-list-title{% if resume.primary %} resume-list-title-primary{% endif %}">
+                    {{ resume.title|truncatechars:30 }}
+                </a>
+            </h4>
+            <div>
+                <span class="btn btn-small grey lighten-2 grey-text text-darken-4 z-depth-0">
+                    {{ resume.modified|date:'Y-m-d' }}
+                </span>
+                <span class="btn btn-small teal white-text z-depth-0">
+                    {{ resume.get_status_display }}
+                </span>
+                <span class="btn btn-small green white-text z-depth-0">
+                    {{ resume.get_language_display }}
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="page-sub-heading">{% trans 'Work experience' %}</h2>
+
+    <h2 class="page-sub-heading">{% trans 'Education' %}</h2>
+
+    <h2 class="page-sub-heading">{% trans 'Links' %}</h2>
+
+    <div class="row">
+        <div class="col s12 m9 l9">
+            <div class="row">
+                <div class="col s12 m6 l6">
+                    <a href="{% url 'account_resume_list' %}" class="btn btn-block waves-effect waves-light teal">
+                        <i class="fas fa-book fa-fw"></i>
+                        {% trans 'Resume' %}
+                    </a>
                 </div>
-                <div class="col s12 m5 l5">
-                    {% if resume.primary %}
-                        <span class="btn btn-small blue white-text z-depth-3">
-                            {% trans 'Primary' %}
-                        </span>
-                    {% endif %}
-                    <span class="btn btn-small teal white-text z-depth-0">
-                        {{ resume.get_status_display }}
-                    </span>
-                    <span class="btn btn-small green white-text z-depth-0">
-                        {{ resume.get_language_display }}
-                    </span>
+                <div class="col s12 m6 l6">
+                    <a href="{% url 'account_resume_list' %}" class="btn btn-block waves-effect waves-light deep-orange darken-4">
+                        <i class="fas fa-times fa-fw"></i>
+                        {% trans 'Delete resume' %}
+                    </a>
                 </div>
             </div>
-        </li>
-    </ul>
+        </div>
+    </div>
 {% endblock %}
 
 {% block stylesheet %}
