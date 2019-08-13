@@ -1,3 +1,4 @@
+import logging
 import uuid
 
 from allauth.account import views as allauth_views
@@ -8,6 +9,7 @@ from django.conf import settings
 from django.contrib.auth import (
     get_user_model, logout)
 from django.contrib.auth import mixins as auth_mixins
+from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
@@ -289,3 +291,40 @@ class MemberResumeDetailView(auth_mixins.LoginRequiredMixin, generic.DetailView)
         context = super(MemberResumeDetailView, self).get_context_data(**kwargs)
         context['page_title'] = _('Resume - {}'.format(self.object.title))
         return context
+
+
+class MemberResumeCreateView(generic.FormView):
+    logger = logging.getLogger(__name__)
+
+    form_class = forms.ResumeForm
+
+    def get_form_kwargs(self):
+        kwargs = super(MemberResumeCreateView, self).get_form_kwargs()
+        kwargs['request'] = self.request
+        return kwargs
+
+    def form_valid(self, form):
+        data = {}
+
+        resume = models.Resume()
+        resume.user_id = self.request.user.id
+        resume.title = form.cleaned_data['title']
+        resume.description = form.cleaned_data['description']
+        resume.save()
+
+        data['title'] = form.cleaned_data['title']
+        data['description'] = form.cleaned_data['description']
+        data['primary'] = False
+        data['status'] = models.Resume.STATUS_CHOICES.draft
+        data['language'] = models.Resume.LANGUAGE_CHOICES.thai
+        data['uuid'] = resume.resume_no
+
+        return JsonResponse(data)
+
+    def form_invalid(self, form):
+        self.logger.debug(form.errors)
+
+        return JsonResponse({
+            'status': 'false',
+            'message': 'Bad Request'
+        }, status=400)

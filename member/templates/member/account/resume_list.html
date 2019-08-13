@@ -14,7 +14,7 @@
     <h1 class="page-sub-heading">{{ page_title }}</h1>
 
     {% for resume in resumes %}
-        <ul class="row">
+        <ul class="row" id="resume-list">
             <li class="col s12 m9 l9">
                 <div class="row mb-0">
                     <h4 class="col s12 mt-0">
@@ -42,9 +42,19 @@
         </ul>
     {% endfor %}
 
+    <div class="row mb-1" id="warning" style="display: none;">
+        <div class="col s12 m9 l9">
+            <div class="card orange">
+                <div class="card-content white-text pt-2 pb-2">
+                    <p id="warning-message"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col s12 m9 l9">
-            <a href="#" class="btn btn-block waves-effect waves-light cyan">
+            <a id="new-resume" href="#" class="btn btn-block waves-effect waves-light cyan">
                 <i class="fas fa-file-invoice fa-fw"></i>
                 {% trans 'New resume' %}
             </a>

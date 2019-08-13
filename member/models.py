@@ -92,9 +92,9 @@ class Resume(TimeStampedModel):
     LANGUAGE_CHOICES = Choices(
         (0, 'thai', _('Thai')),
         (1, 'english', _('English')),
-        (2, 'chinese', _('Chinese')),
-        (3, 'japanese', _('Japanese')),
-        (4, 'korean', _('Korean')),
+        (2, 'korean', _('Korean')),
+        (3, 'chinese', _('Chinese')),
+        (4, 'japanese', _('Japanese')),
     )
 
     resume_no = models.UUIDField(

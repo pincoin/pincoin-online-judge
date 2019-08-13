@@ -68,6 +68,21 @@ class MemberAddEmailForm(allauth_forms.AddEmailForm):
 
 
 class ResumeForm(forms.Form):
-    class Meta:
-        model = models.Resume
-        fields = ('title', 'description', 'language')
+    title = forms.CharField(
+        label=_('Resume title'),
+        max_length=255,
+    )
+
+    description = forms.CharField(
+        label=_('Resume description'),
+        widget=forms.Textarea(attrs={"rows": 5, "cols": 20}),
+    )
+
+    def __init__(self, *args, **kwargs):
+        self.request = kwargs.pop('request', None)
+
+        super(ResumeForm, self).__init__(*args, **kwargs)
+
+    def clean(self):
+        if models.Resume.objects.filter(user__pk=self.request.user.id).count() > 10:
+            raise forms.ValidationError(_('You cannot have more than 3 resumes.'))
