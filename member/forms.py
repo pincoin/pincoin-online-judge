@@ -6,6 +6,7 @@ from django.utils.timezone import (
 from django.utils.translation import ugettext_lazy as _
 
 from conf.formmixins import GoogleRecaptchaMixin
+from . import models
 from . import settings as member_settings
 
 
@@ -64,3 +65,9 @@ class MemberUnregisterForm(forms.Form):
 
 class MemberAddEmailForm(allauth_forms.AddEmailForm):
     pass
+
+
+class ResumeForm(forms.Form):
+    class Meta:
+        model = models.Resume
+        fields = ('title', 'description', 'language')

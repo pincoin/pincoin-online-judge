@@ -260,6 +260,7 @@ class MemberProfileView(auth_mixins.LoginRequiredMixin, generic.DetailView):
 class MemberResumeListView(auth_mixins.LoginRequiredMixin, generic.ListView):
     template_name = 'member/account/resume_list.html'
     context_object_name = 'resumes'
+    form_class = forms.ResumeForm
 
     def get_queryset(self):
         queryset = models.Resume.objects \
@@ -270,6 +271,7 @@ class MemberResumeListView(auth_mixins.LoginRequiredMixin, generic.ListView):
     def get_context_data(self, **kwargs):
         context = super(MemberResumeListView, self).get_context_data(**kwargs)
         context['page_title'] = _('Resume')
+        context['form'] = forms.ResumeForm()
         return context
 
 
