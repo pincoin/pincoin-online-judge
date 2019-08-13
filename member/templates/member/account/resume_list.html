@@ -60,5 +60,7 @@
 {% block javascript %}
     {{ block.super }}
     <script type="text/javascript"
+            src="{% static "conf/js/csrf-cookie.js" %}"></script>
+    <script type="text/javascript"
             src="{% static "member/js/resume.js" %}"></script>
 {% endblock %}
