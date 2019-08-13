@@ -22,7 +22,12 @@
                     </li>
                     <li class="collection-item{% if sidemenu == 'emails' %} active{% endif %}">
                         <a href="{% url 'account_email' %}">
-                            Emails / SNS
+                            Emails
+                        </a>
+                    </li>
+                    <li class="collection-item{% if sidemenu == 'sns' %} active{% endif %}">
+                        <a href="{% url 'socialaccount_connections' %}">
+                            SNS accounts
                         </a>
                     </li>
                     <li class="collection-item{% if sidemenu == 'notifications' %} active{% endif %}">
