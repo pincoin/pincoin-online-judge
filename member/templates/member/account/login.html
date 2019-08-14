@@ -6,128 +6,147 @@
 {% block title %}{{ page_title }}{% endblock %}
 
 {% block content %}
-    <div class="container">
-        <h1 class="center page-heading">{{ page_title }}</h1>
-
-        <div class="row mb-2">
-            <div class="col s12 m6 offset-m3 l6 offset-l3">
-                <div class="row mb-0">
-                    <div class="col s12 m3 l3">
-                        <a href="{% provider_login_url 'line' process='login' scope=scope auth_params=auth_params %}"
-                           class="btn sns-button sns-button-line z-depth-2 waves-effect waves-light">
-                            <i class="fab fa-line fa-4x"></i>
-                        </a>
-                    </div>
-                    <div class="col s12 m3 l3">
-                        <a href="{% provider_login_url 'facebook' process='login' scope=scope auth_params=auth_params %}"
-                           class="btn sns-button sns-button-facebook z-depth-2 waves-effect waves-light">
-                            <i class="fab fa-facebook-square fa-4x"></i>
-                        </a>
-                    </div>
-                    <div class="col s12 m3 l3">
-                        <a href="{% provider_login_url 'google' process='login' scope=scope auth_params=auth_params %}"
-                           class="btn sns-button sns-button-google z-depth-2 waves-effect waves-light">
-                            <i class="fab fa-google-plus-square fa-4x"></i>
-                        </a>
-                    </div>
-                    <div class="col s12 m3 l3">
-                        <a href="{% provider_login_url 'github' process='login' scope=scope auth_params=auth_params %}"
-                           class="btn sns-button sns-button-github z-depth-2 waves-effect waves-light">
-                            <i class="fab fa-github-square fa-4x"></i>
-                        </a>
-                    </div>
-                    {% providers_media_js %}
-                </div>
-            </div>
+    <section class="section">
+        <div class="container has-text-centered">
+            <h1 class="title">{{ page_title }}</h1>
         </div>
+    </section>
 
-        <div class="row">
-            <div class="col s12 m6 offset-m3 l6 offset-l3">
-                <div class="divider"></div>
-            </div>
-        </div>
-
-        <div class="row">
-            <form class="col s12 m6 offset-m3 l6 offset-l3" method="POST" action="{% url 'account_login' %}">
-                {% csrf_token %}
-
-                <div class="row">
-                    <div class="input-field col s12">
-                        {{ form.login.errors }}
-                        <input id="{{ form.login.id_for_label }}"
-                               name="{{ form.login.name }}"
-                               type="email"
-                               {% if form.login.value != None %}value="{{ form.login.value|stringformat:'s' }}"{% endif %}
-                               autofocus="autofocus"
-                               {% if form.login.field.required %}required{% endif %}>
-                        <label for="{{ form.login.id_for_label }}">
-                            {{ form.login.label }} <span class="red-text">*</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        {{ form.password.errors }}
-                        <input id="{{ form.password.id_for_label }}"
-                               name="{{ form.password.name }}"
-                               type="password"
-                               {% if form.password.value != None %}value="{{ form.password.value|stringformat:'s' }}"{% endif %}
-                               {% if form.password.field.required %}required{% endif %}>
-                        <label for="{{ form.password.id_for_label }}">
-                            {{ form.password.label }} <span class="red-text">*</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="row">
-                    <p class="col">
-                        <label>
-                            <input type="checkbox" name="{{ form.remember.name }}"/>
-                            <span>{{ form.remember.label }}</span>
-                        </label>
-                    </p>
-                </div>
-
-                {% if form.non_field_errors or form.recaptcha %}
-                    <div class="row">
-                        <div class="g-recaptcha input-field col s12" data-sitekey="{{ google_recaptcha_site_key }}">
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-two-fifths-desktop">
+                    <div class="columns">
+                        <div class="column">
+                            <a href="{% provider_login_url 'line' process='login' scope=scope auth_params=auth_params %}"
+                               class="button is-large is-fullwidth sns-button-line">
+                                <i class="fab fa-line fa-2x"></i>
+                            </a>
+                        </div>
+                        <div class="column">
+                            <a href="{% provider_login_url 'facebook' process='login' scope=scope auth_params=auth_params %}"
+                               class="button is-large is-fullwidth sns-button-facebook">
+                                <i class="fab fa-facebook-square fa-2x"></i>
+                            </a>
+                        </div>
+                        <div class="column">
+                            <a href="{% provider_login_url 'google' process='login' scope=scope auth_params=auth_params %}"
+                               class="button is-large is-fullwidth sns-button-google">
+                                <i class="fab fa-google-plus-square fa-2x"></i>
+                            </a>
+                        </div>
+                        <div class="column">
+                            <a href="{% provider_login_url 'github' process='login' scope=scope auth_params=auth_params %}"
+                               class="button is-large is-fullwidth sns-button-github">
+                                <i class="fab fa-github-square fa-2x"></i>
+                            </a>
                         </div>
                     </div>
-                {% endif %}
-
-                <div class="row">
-                    <div class="input-field col s12">
-                        <button class="btn btn-block cyan waves-effect waves-light mb-0" type="submit">
-                            {% trans 'Sign In' %}
-                            <i class="fas fa-sign-in-alt fa-sm fa-fw"></i>
-                        </button>
-                    </div>
                 </div>
-
-                {% if redirect_field_value %}
-                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-                {% endif %}
-            </form>
+            </div>
         </div>
+    </section>
 
-        <div class="row">
-            <div class="col s12 m6 offset-m3 l6 offset-l3">
-                <div class="row">
-                    <div class="col s12 m6 l6">
-                        <a class="btn btn-block waves-effect waves-light blue lighten-2"
-                           href="{% url 'account_reset_password' %}">
-                            {% trans 'Forgot Password?' %}
-                        </a>
-                    </div>
-                    <div class="col s12 m6 l6">
-                        <a class="btn btn-block waves-effect waves-light teal lighten-2"
-                           href="{{ signup_url }}">
-                            {% trans "Sign Up" %}
-                        </a>
+    {% providers_media_js %}
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-two-fifths-desktop">
+                    <div class="columns">
+                        <div class="column">
+                            <form method="POST" action="{% url 'account_login' %}">
+                                {% csrf_token %}
+
+                                <div class="field">
+                                    {{ form.login.errors }}
+                                    <label class="label" for="{{ form.login.id_for_label }}">
+                                        {{ form.login.label }}
+                                        <span class="has-text-danger">*</span>
+                                    </label>
+                                    <div class="control has-icons-left">
+                                        <input id="{{ form.login.id_for_label }}"
+                                               name="{{ form.login.name }}"
+                                               type="email"
+                                               class="input"
+                                               {% if form.login.value != None %}value="{{ form.login.value|stringformat:'s' }}"{% endif %}
+                                               {% if form.login.field.required %}required{% endif %}>
+                                        <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    {{ form.password.errors }}
+                                    <label class="label" for="{{ form.password.id_for_label }}">
+                                        {{ form.password.label }}
+                                        <span class="has-text-danger">*</span>
+                                    </label>
+                                    <div class="control has-icons-left">
+                                        <input id="{{ form.password.id_for_label }}"
+                                               name="{{ form.password.name }}"
+                                               type="password"
+                                               class="input"
+                                               {% if form.password.value != None %}value="{{ form.password.value|stringformat:'s' }}"{% endif %}
+                                               {% if form.password.field.required %}required{% endif %}>
+                                        <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="{{ form.remember.name }}"/>
+                                        <span class="control-label">{{ form.remember.label }}</span>
+                                    </label>
+                                </div>
+
+                                {% if form.non_field_errors or form.recaptcha %}
+                                    <div class="field">
+                                        <div class="g-recaptcha input-field col s12"
+                                             data-sitekey="{{ google_recaptcha_site_key }}">
+                                        </div>
+                                    </div>
+                                {% endif %}
+
+                                <div class="control">
+                                    <button class="button is-primary is-fullwidth" type="submit">
+                                        {% trans 'Sign In' %}
+                                        <i class="fas fa-sign-in-alt fa-sm fa-fw"></i>
+                                    </button>
+                                </div>
+
+                                {% if redirect_field_value %}
+                                    <input type="hidden" name="{{ redirect_field_name }}"
+                                           value="{{ redirect_field_value }}"/>
+                                {% endif %}
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-two-fifths-desktop">
+                    <div class="columns">
+                        <div class="column">
+                            <a class="button is-black is-fullwidth"
+                               href="{% url 'account_reset_password' %}">
+                                {% trans 'Forgot Password?' %}
+                            </a>
+                        </div>
+                        <div class="column">
+                            <a class="button is-success is-fullwidth"
+                               href="{{ signup_url }}">
+                                {% trans "Sign Up" %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
 
 {% block stylesheet %}

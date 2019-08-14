@@ -73,13 +73,13 @@
                 {% if not user.is_authenticated %}
                     <div class="navbar-item">
                         <div class="buttons">
-                            <a href="{% url 'account_login' %}" class="button is-success">
+                            <a href="{% url 'account_login' %}" class="button is-primary">
                                 <span class="icon"><i class="fas fa-sign-in-alt fa-fw"></i></span>
-                                {% trans 'Sign In' %}
+                                <span>{% trans 'Sign In' %}</span>
                             </a>
                             <a href="{% url 'account_signup' %}" class="button is-light">
                                 <span class="icon"><i class="fas fa-user-plus fa-fw"></i></span>
-                                {% trans 'Register' %}
+                                <span>{% trans 'Register' %}</span>
                             </a>
                         </div>
                     </div>
@@ -91,12 +91,12 @@
                         <div class="navbar-dropdown">
                             <a href="{% url 'account_profile' %}" class="navbar-item">
                                 <span class="icon"><i class="fas fa-user-cog fa-fw"></i></span>
-                                {% trans "Profile" %}
+                                <span>{% trans "Profile" %}</span>
                             </a>
                             <hr class="navbar-divider">
                             <a href="{% url 'account_logout' %}" class="navbar-item">
                                 <span class="icon"><i class="fas fa-sign-out-alt fa-fw"></i></span>
-                                {% trans 'Sign Out' %}
+                                <span>{% trans 'Sign Out' %}</span>
                             </a>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
                 Copyright &copy; {% now "Y" %} <strong>CODING JUMP</strong>
                 All Rights Reserved.
             </div>
-            <div class="column has-text-right">
+            <div class="column has-text-right-tablet">
                 Developed by <strong><a href="//www.pincoin.co.kr">PINCOIN</a></strong>
             </div>
         </div>
