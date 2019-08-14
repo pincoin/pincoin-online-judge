@@ -1,29 +1,27 @@
 .sns-button-line {
     color: #ffffff;
     background: #1ec800;
+    border: 0;
 }
 
 .sns-button-facebook {
     color: #ffffff;
     background: #3b5998;
+    border: 0;
 }
 
 .sns-button-google {
     color: #ffffff;
     background: #db4a39;
+    border: 0;
 }
 
 .sns-button-github {
     color: #ffffff;
     background: #171515;
+    border: 0;
 }
 
-.resume-list-title {
-    font-size: 1.2rem;
-    color: #e65100;
-}
-
-.resume-list-title-primary {
-    color: #01579b;
-    font-weight: bold;
+a.sns-button-line:hover, a.sns-button-facebook:hover, a.sns-button-google:hover, a.sns-button-github:hover {
+    color: #dddddd;
 }
