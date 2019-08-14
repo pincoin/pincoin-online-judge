@@ -1,6 +1,5 @@
+/* sticky footer */
 body {
-    font-family: Sarabun, Times, serif;
-
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -10,26 +9,9 @@ main {
     flex: 1 0 auto;
 }
 
-.top-left-menu {
-    margin-left: 230px;
-}
+/* icons */
 
-.logo-icon {
-    padding-top: 10px;
-}
-
-footer a:link, footer a:visited {
-    text-decoration: none;
-    color: #616161;
-}
-
-form .row {
-    margin-bottom: 1% !important;
-}
-
-/* medium tablet or large desktop */
-@media only screen and (min-width: 993px) {
-    .logo-icon {
-        padding-top: 1px;
-    }
+a > span[class="icon"] {
+    padding-left: 15px;
+    padding-right: 20px;
 }

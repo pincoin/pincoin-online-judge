@@ -4,17 +4,15 @@
     {% load static %}
     {% load i18n %}
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CODING JUMP : {% block title %}{% endblock %}</title>
     {% block stylesheet %}
         <link rel="stylesheet"
               href="{% static "conf/css/sarabun.css" %}">
         <link rel="stylesheet"
-              href="{% static "conf/css/materialize.css" %}">
+              href="{% static "conf/css/pincoin.css" %}">
         <link rel="stylesheet"
               href="{% static "conf/css/base.css" %}">
-        <link rel="stylesheet"
-              href="{% static "conf/css/spacer.css" %}">
         <link rel="stylesheet"
               href="//use.fontawesome.com/releases/v5.10.1/css/all.css"
               integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe"
@@ -29,148 +27,101 @@
     {% endblock %}
 </head>
 <body>
-<header>
-    <ul class="sidenav" id="mobile-demo">
-        {% if not user.is_authenticated %}
-            <li>
-                <a href="{% url 'account_login' %}">
-                    <i class="fas fa-sign-in-alt fa-sm fa-fw"></i>
-                    {% trans 'Sign In' %}
-                </a>
-            </li>
-            <li>
-                <a href="{% url 'account_signup' %}">
-                    <i class="fas fa-user-plus fa-sm fa-fw"></i>
-                    {% trans 'Register' %}
-                </a>
-            </li>
-        {% endif %}
-        <li>
-            <a href="#">
-                <i class="fas fa-info-circle fa-sm fa-fw"></i>
-                {% trans 'Help' %}
-            </a>
-        </li>
-        {% if user.is_authenticated %}
-            <li>
-                <a href="#">
-                    <i class="fas fa-user-cog fa-sm fa-fw"></i>
-                    {% trans 'Me' %}
-                </a>
-            </li>
-            <li>
-                <a href="{% url 'account_logout' %}">
-                    <i class="fas fa-sign-out-alt fa-sm fa-fw"></i>
-                    {% trans 'Sign Out' %}
-                </a>
-            </li>
-        {% endif %}
-        <li class="divider" tabindex="-1"></li>
-        <li><a href="#">Archives</a></li>
-        <li><a href="#">Contest</a></li>
-        <li><a href="#">Stat</a></li>
-        <li><a href="#">Ranking</a></li>
-        <li><a href="#">Job</a></li>
-        <li><a href="#">Blog</a></li>
-    </ul>
-    <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper white">
-                <div class="container">
-                    <a href="{% url 'home' %}" class="brand-logo grey-text text-darken-4">
-                        <i class="fas fa-laptop-code logo-icon"></i>
-                        CODING JUMP
-                    </a>
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger black-text">
-                        <i class="fas fa-bars"></i>
-                    </a>
-                    <ul class="top-left-menu hide-on-med-and-down">
-                        <li><a href="#">Archives</a></li>
-                        <li><a href="#">Contest</a></li>
-                        <li><a href="#">Stat</a></li>
-                        <li><a href="#">Ranking</a></li>
-                        <li><a href="#">Job</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                    <ul class="right hide-on-med-and-down">
-                        {% if not user.is_authenticated %}
-                            <li>
-                                <a href="{% url 'account_login' %}">
-                                    <i class="fas fa-sign-in-alt fa-sm fa-fw"></i>
-                                    {% trans 'Sign In' %}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{% url 'account_signup' %}">
-                                    <i class="fas fa-user-plus fa-sm fa-fw"></i>
-                                    {% trans 'Register' %}
-                                </a>
-                            </li>
-                        {% endif %}
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-info-circle fa-sm fa-fw"></i>
-                                {% trans 'Help' %}
-                            </a>
-                        </li>
-                        {% if user.is_authenticated %}
-                            <li>
-                                <a href="{% url 'account_profile' %}">
-                                    <i class="fas fa-user-cog fa-sm fa-fw"></i>
-                                    {% trans 'Profile' %}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{% url 'account_logout' %}">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw"></i>
-                                    {% trans 'Sign Out' %}
-                                </a>
-                            </li>
-                        {% endif %}
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-</header>
-<main>{% block content %}{% endblock %}</main>
-<footer class="page-footer">
+
+<!-- sidenav -->
+<nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="container">
-        <div class="row mb-0">
-            <div class="col l6 s12">
-                <h3>Footer Content</h3>
-                <p>You can use rows and columns here to organize your footer
-                    content.</p>
+        <div class="navbar-brand">
+            <a class="navbar-item" href="{% url 'home' %}">
+                <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo4.png"
+                     width="180" height="24.28" alt="CODING JUMP">
+            </a>
+            <a class="navbar-burger burger"
+               role="button" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item">
+                    Archive
+                </a>
+                <a class="navbar-item">
+                    Contest
+                </a>
+                <a class="navbar-item">
+                    Stat
+                </a>
+                <a class="navbar-item">
+                    Ranking
+                </a>
+                <a class="navbar-item">
+                    Job
+                </a>
+                <a class="navbar-item">
+                    Blog
+                </a>
+                <a class="navbar-item">
+                    Help
+                </a>
             </div>
-            <div class="col l3 s12">
-                <h3>Links</h3>
-                <ul>
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                </ul>
-            </div>
-            <div class="col l3 s12">
-                <h3>Links</h3>
-                <ul>
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                </ul>
+
+            <div class="navbar-end">
+                {% if not user.is_authenticated %}
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a href="{% url 'account_login' %}" class="button is-success">
+                                <span class="icon"><i class="fas fa-sign-in-alt fa-fw"></i></span>
+                                {% trans 'Sign In' %}
+                            </a>
+                            <a href="{% url 'account_signup' %}" class="button is-light">
+                                <span class="icon"><i class="fas fa-user-plus fa-fw"></i></span>
+                                {% trans 'Register' %}
+                            </a>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            {% trans 'Me' %}
+                        </a>
+                        <div class="navbar-dropdown">
+                            <a href="{% url 'account_profile' %}" class="navbar-item">
+                                <span class="icon"><i class="fas fa-user-cog fa-fw"></i></span>
+                                {% trans "Profile" %}
+                            </a>
+                            <hr class="navbar-divider">
+                            <a href="{% url 'account_logout' %}" class="navbar-item">
+                                <span class="icon"><i class="fas fa-sign-out-alt fa-fw"></i></span>
+                                {% trans 'Sign Out' %}
+                            </a>
+                        </div>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>
-    <div class="footer-copyright">
-        <div class="container">
-            <div class="row mb-0">
-                <div class="col s12 m9 l9">
-                    Copyright &copy; 2020 <a href="{% url 'home' %}">CODING JUMP</a>
-                </div>
-                <div class="col s12 m3 l3">
-                    Developed by <a href="//www.pincoin.co.kr">PINCOIN</a>
-                </div>
+</nav>
+
+<main>{% block content %}{% endblock %}</main>
+
+<footer class="footer has-background-grey-lighter">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                Copyright &copy; {% now "Y" %} <strong>CODING JUMP</strong>
+                All Rights Reserved.
+            </div>
+            <div class="column has-text-right">
+                Developed by <strong><a href="//www.pincoin.co.kr">PINCOIN</a></strong>
             </div>
         </div>
     </div>
 </footer>
+
 {% if messages %}
     <div style="display:none">
         {% for message in messages %}
@@ -179,11 +130,10 @@
     </div>
 {% endif %}
 </body>
+
 {% block javascript %}
     <script type="text/javascript"
             src="//code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript"
-            src="//cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript"
             src="{% static "conf/js/base.js" %}"></script>
     {{ form.media.js }}
