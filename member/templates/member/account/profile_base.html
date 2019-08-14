@@ -1,57 +1,50 @@
 {% extends 'conf/base.html' %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m4 l3 mt-4">
-                <ul class="collection">
-                    <li class="collection-item{% if sidemenu == 'profile' %} active{% endif %}">
-                        <a href="{% url 'account_profile' %}">
+    <div class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-4-desktop is-12-tablet">
+                    <nav class="panel">
+                        <p class="panel-heading has-text-centered">
+                            {{ request.user.username }}
+                        </p>
+                        <a href="{% url 'account_profile' %}"
+                           class="panel-block{% if sidemenu == 'profile' %} is-active{% endif %}">
                             Profile
                         </a>
-                    </li>
-                    <li class="collection-item{% if sidemenu == 'resume' %} active{% endif %}">
-                        <a href="{% url 'account_resume_list' %}">
+                        <a href="{% url 'account_resume_list' %}"
+                           class="panel-block{% if sidemenu == 'resume' %} is-active{% endif %}">
                             Resume
                         </a>
-                    </li>
-                    <li class="collection-item{% if sidemenu == 'organizations' %} active{% endif %}">
-                        <a href="#">
+                        <a href="#"
+                           class="panel-block{% if sidemenu == 'organizations' %} is-active{% endif %}">
                             Organizations
                         </a>
-                    </li>
-                    <li class="collection-item{% if sidemenu == 'emails' %} active{% endif %}">
-                        <a href="{% url 'account_email' %}">
+                        <a href="{% url 'account_email' %}"
+                           class="panel-block{% if sidemenu == 'emails' %} is-active{% endif %}">
                             Emails
                         </a>
-                    </li>
-                    <li class="collection-item{% if sidemenu == 'sns' %} active{% endif %}">
-                        <a href="{% url 'socialaccount_connections' %}">
+                        <a href="{% url 'socialaccount_connections' %}"
+                           class="panel-block{% if sidemenu == 'sns' %} is-active{% endif %}">
                             SNS accounts
                         </a>
-                    </li>
-                    <li class="collection-item{% if sidemenu == 'notifications' %} active{% endif %}">
-                        <a href="#">
+                        <a href="#"
+                           class="panel-block{% if sidemenu == 'notifications' %} is-active{% endif %}">
                             Notifications
                         </a>
-                    </li>
-                    <li class="collection-item{% if sidemenu == 'password' %} active{% endif %}">
-                        <a href="{% url 'account_change_password' %}">
+                        <a href="{% url 'account_change_password' %}"
+                           class="panel-block{% if sidemenu == 'password' %} is-active{% endif %}">
                             Change password
                         </a>
-                    </li>
-                    <li class="collection-item{% if sidemenu == 'billing' %} active{% endif %}">
-                        <a href="#">
+                        <a href="#"
+                           class="panel-block{% if sidemenu == 'billing' %} is-active{% endif %}">
                             Billing
                         </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col s12 m8 l9">
-                <div class="row">
-                    <div class="col s12">
-                        {% block main_content %}{% endblock %}
-                    </div>
+                    </nav>
+                </div>
+                <div class="column is-8">
+                    {% block main_content %}{% endblock %}
                 </div>
             </div>
         </div>
