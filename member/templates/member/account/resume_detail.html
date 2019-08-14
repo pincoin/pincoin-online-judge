@@ -11,86 +11,68 @@
 {% endblock content %}
 
 {% block main_content %}
-    <h1 class="page-sub-heading">{{ page_title }}</h1>
-
-    <div class="row mb-0">
-        <div class="col s12 m9 l9">
-            <h4 class="mt-0">
-                {% if resume.primary %}
-                    <i class="fas fa-check fa-fw"></i>
-                {% endif %}
-                <a href="{% url 'account_resume_detail' resume.resume_no %}"
-                   class="resume-list-title{% if resume.primary %} resume-list-title-primary{% endif %}">
-                    {{ resume.title|truncatechars:30 }}
-                </a>
-            </h4>
-            <div>
-                <span class="btn btn-small grey lighten-2 grey-text text-darken-4 z-depth-0">
-                    {{ resume.modified|date:'Y-m-d' }}
-                </span>
-                <span class="btn btn-small teal white-text z-depth-0">
-                    {{ resume.get_status_display }}
-                </span>
-                <span class="btn btn-small green white-text z-depth-0">
-                    {{ resume.get_language_display }}
-                </span>
-            </div>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">{{ page_title }}</h1>
         </div>
-    </div>
+    </section>
 
-    <h2 class="page-sub-heading">{% trans 'Work experience' %}</h2>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-four-fifths">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                                {% if resume.primary %}
+                                    <i class="fas fa-check fa-fw"></i>
+                                {% endif %}
+                                {{ resume.title|truncatechars:30 }}
+                            </p>
 
-    <h2 class="page-sub-heading">{% trans 'Education' %}</h2>
-
-    <h2 class="page-sub-heading">{% trans 'Links' %}</h2>
-
-    <div class="row">
-        <div class="col s12 m9 l9">
-            <div class="row">
-                <div class="col s12 m4 l4">
-                    <a href="#"
-                       class="btn btn-block waves-effect waves-light blue">
-                        <i class="fas fa-check fa-fw"></i>
-                        {% trans 'Make Primary Resume' %}
-                    </a>
-                </div>
-                <div class="col s12 m4 l4">
-                    <a href="{% url 'account_resume_list' %}"
-                       class="btn btn-block waves-effect waves-light teal">
-                        <i class="fas fa-book fa-fw"></i>
-                        {% trans 'Resume List' %}
-                    </a>
-                </div>
-                <div class="col s12 m4 l4">
-                    <a href="#delete-resume-modal" id="delete-resume"
-                       class="btn btn-block waves-effect waves-light deep-orange darken-4">
-                        <i class="fas fa-times fa-fw"></i>
-                        {% trans 'Delete resume' %}
-                    </a>
+                            <a href="#" class="card-header-icon">
+                                <span class="tag is-success">
+                                    {{ resume.get_status_display }}
+                                </span>
+                            </a>
+                            <a href="#" class="card-header-icon">
+                                <span class="tag is-primary">
+                                    {{ resume.get_language_display }}
+                                </span>
+                            </a>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                {{ resume.description }}
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="#" class="card-footer-item">Make Primary</a>
+                            <a href="#" class="card-footer-item">Delete</a>
+                        </footer>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+    <section class="section">
+        <div class="container">
+            <h2 class="title">{% trans 'Work experience' %}</h2>
+        </div>
+    </section>
 
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                laborum</p>
+    <section class="section">
+        <div class="container">
+            <h2 class="title">{% trans 'Education' %}</h2>
         </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-red">Disagree</a>
-            <a href="#!" class="modal-close waves-effect waves-green">Agree</a>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="title">{% trans 'Links' %}</h2>
         </div>
-    </div>
+    </section>
 {% endblock %}
 
 {% block javascript %}

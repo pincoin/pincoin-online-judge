@@ -11,55 +11,62 @@
 {% endblock content %}
 
 {% block main_content %}
-    <h1 class="page-sub-heading">{{ page_title }}</h1>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">{{ page_title }}</h1>
+        </div>
+    </section>
 
-    {% for resume in resumes %}
-        <ul class="row" id="resume-list">
-            <li class="col s12 m9 l9">
-                <div class="row mb-0">
-                    <h4 class="col s12 mt-0">
-                        {% if resume.primary %}
-                            <i class="fas fa-check fa-fw"></i>
-                        {% endif %}
-                        <a href="{% url 'account_resume_detail' resume.resume_no %}"
-                           class="resume-list-title{% if resume.primary %} resume-list-title-primary{% endif %}">
-                            {{ resume.title|truncatechars:30 }}
-                        </a>
-                    </h4>
-                    <div class="col s12">
-                        <span class="btn btn-small grey lighten-2 grey-text text-darken-4 z-depth-0">
-                            {{ resume.modified|date:'Y-m-d' }}
-                        </span>
-                        <span class="btn btn-small teal white-text z-depth-0">
-                            {{ resume.get_status_display }}
-                        </span>
-                        <span class="btn btn-small green white-text z-depth-0">
-                            {{ resume.get_language_display }}
-                        </span>
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                {% for resume in resumes %}
+                    <div class="column is-four-fifths">
+                        <div class="card">
+                            <header class="card-header">
+                                <p class="card-header-title">
+                                    {% if resume.primary %}
+                                        <i class="fas fa-check fa-fw"></i>
+                                    {% endif %}
+                                    <a href="{% url 'account_resume_detail' resume.resume_no %}"
+                                       class="resume-list-title{% if resume.primary %} resume-list-title-primary{% endif %}">
+                                        {{ resume.title|truncatechars:30 }}
+                                    </a>
+                                </p>
+
+                                <a href="#" class="card-header-icon">
+                                    <span class="tag is-success">
+                                        {{ resume.get_status_display }}
+                                    </span>
+                                </a>
+                                <a href="#" class="card-header-icon">
+                                    <span class="tag is-primary">
+                                        {{ resume.get_language_display }}
+                                    </span>
+                                </a>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">
+                                    {{ resume.description }}
+                                </div>
+                            </div>
+                            <footer class="card-footer">
+                                <a href="#" class="card-footer-item">Make Primary</a>
+                                <a href="#" class="card-footer-item">Delete</a>
+                            </footer>
+                        </div>
                     </div>
-                </div>
-            </li>
-        </ul>
-    {% endfor %}
+                {% endfor %}
 
-    <div class="row mb-1" id="warning" style="display: none;">
-        <div class="col s12 m9 l9">
-            <div class="card orange">
-                <div class="card-content white-text pt-2 pb-2">
-                    <p id="warning-message"></p>
+                <div class="column is-four-fifths">
+                    <a id="new-resume" href="#" class="button is-link is-fullwidth">
+                        <i class="fas fa-file-invoice fa-fw"></i>
+                        {% trans 'New resume' %}
+                    </a>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col s12 m9 l9">
-            <a id="new-resume" href="#" class="btn btn-block waves-effect waves-light cyan">
-                <i class="fas fa-file-invoice fa-fw"></i>
-                {% trans 'New resume' %}
-            </a>
-        </div>
-    </div>
+    </section>
 {% endblock %}
 
 {% block javascript %}
