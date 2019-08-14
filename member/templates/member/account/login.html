@@ -55,11 +55,17 @@
                 <div class="column is-two-fifths-desktop">
                     <div class="columns">
                         <div class="column">
+                            {% if form.non_field_errors %}
+                                <ul class="notification is-warning">
+                                    {% for error in form.non_field_errors %}
+                                        <li class="my-1">{{ error }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
                             <form method="POST" action="{% url 'account_login' %}">
                                 {% csrf_token %}
 
                                 <div class="field">
-                                    {{ form.login.errors }}
                                     <label class="label" for="{{ form.login.id_for_label }}">
                                         {{ form.login.label }}
                                         <span class="has-text-danger">*</span>
@@ -72,10 +78,16 @@
                                                {% if form.login.value != None %}value="{{ form.login.value|stringformat:'s' }}"{% endif %}
                                                {% if form.login.field.required %}required{% endif %}>
                                         <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
+                                        {% if form.login.errors %}
+                                            <ol class="help is-danger">
+                                                {% for error in form.login.errors %}
+                                                    <li><strong>{{ error|escape }}</strong></li>
+                                                {% endfor %}
+                                            </ol>
+                                        {% endif %}
                                     </div>
                                 </div>
                                 <div class="field">
-                                    {{ form.password.errors }}
                                     <label class="label" for="{{ form.password.id_for_label }}">
                                         {{ form.password.label }}
                                         <span class="has-text-danger">*</span>
@@ -88,6 +100,13 @@
                                                {% if form.password.value != None %}value="{{ form.password.value|stringformat:'s' }}"{% endif %}
                                                {% if form.password.field.required %}required{% endif %}>
                                         <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
+                                        {% if form.login.errors %}
+                                            <ol class="help is-danger">
+                                                {% for error in form.password.errors %}
+                                                    <li><strong>{{ error|escape }}</strong></li>
+                                                {% endfor %}
+                                            </ol>
+                                        {% endif %}
                                     </div>
                                 </div>
 
