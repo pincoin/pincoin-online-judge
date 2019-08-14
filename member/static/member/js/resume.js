@@ -22,4 +22,10 @@ $(document).ready(function () {
             $('#warning-message').html('You can write 3 resumes.');
         });
     });
+
+    $('#delete-resume').on('click', function (e) {
+        console.log('delete resume');
+
+        $('#delete-resume-modal').modal();
+    });
 });
