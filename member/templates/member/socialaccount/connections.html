@@ -12,14 +12,28 @@
 {% endblock content %}
 
 {% block main_content %}
-    <h1 class="page-sub-heading">{{ page_title }}</h1>
+    <section class="section">
+        <div class="container has-text-centered">
+            <h1 class="title">{{ page_title }}</h1>
+        </div>
+    </section>
 
     {% if form.accounts %}
-        <div class="row">
-            <div class="col s12 m9 l9">
-                {% trans 'You can sign in to your account using any of the following third party accounts:' %}
+        <section class="section">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-two-fifths-desktop">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="notification is-warning">
+                                    {% trans 'You can sign in to your account using any of the following third party accounts:' %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
         <div class="row">
             <form method="post" action="{% url 'socialaccount_connections' %}"
@@ -62,46 +76,65 @@
             </form>
         </div>
     {% else %}
-        <div class="row">
-            <div class="col s12 m9 l9">
-                {% trans 'You currently have no social network accounts connected to this account.' %}
+        <section class="section">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-two-fifths-desktop">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="notification is-warning">
+                                    {% trans 'You currently have no social network accounts connected to this account.' %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     {% endif %}
 
-    <h2 class="page-sub-heading">{% trans 'Add a 3rd Party Account' %}</h2>
+    <section class="section">
+        <div class="container has-text-centered">
+            <h2 class="title">{% trans 'Add a 3rd Party Account' %}</h2>
+        </div>
+    </section>
 
-    <div class="row">
-        <div class="col s12 m9 l9">
-            <div class="row">
-                <div class="col s12 m3 l3">
-                    <a href="{% provider_login_url 'line' process='connect' scope=scope auth_params=auth_params %}"
-                       class="btn sns-button sns-button-line z-depth-2 waves-effect waves-light">
-                        <i class="fab fa-line fa-4x"></i>
-                    </a>
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-three-fifths">
+                    <div class="columns">
+                        <div class="column">
+                            <a href="{% provider_login_url 'line' process='connect' scope=scope auth_params=auth_params %}"
+                               class="button is-large is-fullwidth sns-button-line">
+                                <i class="fab fa-line fa-2x"></i>
+                            </a>
+                        </div>
+                        <div class="column">
+                            <a href="{% provider_login_url 'facebook' process='connect' scope=scope auth_params=auth_params %}"
+                               class="button is-large is-fullwidth sns-button-facebook">
+                                <i class="fab fa-facebook-square fa-2x"></i>
+                            </a>
+                        </div>
+                        <div class="column">
+                            <a href="{% provider_login_url 'google' process='connect' scope=scope auth_params=auth_params %}"
+                               class="button is-large is-fullwidth sns-button-google">
+                                <i class="fab fa-google-plus-square fa-2x"></i>
+                            </a>
+                        </div>
+                        <div class="column">
+                            <a href="{% provider_login_url 'github' process='connect' scope=scope auth_params=auth_params %}"
+                               class="button is-large is-fullwidth sns-button-github">
+                                <i class="fab fa-github-square fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col s12 m3 l3">
-                    <a href="{% provider_login_url 'facebook' process='connect' scope=scope auth_params=auth_params %}"
-                       class="btn sns-button sns-button-facebook z-depth-2 waves-effect waves-light">
-                        <i class="fab fa-facebook-square fa-4x"></i>
-                    </a>
-                </div>
-                <div class="col s12 m3 l3">
-                    <a href="{% provider_login_url 'google' process='connect' scope=scope auth_params=auth_params %}"
-                       class="btn sns-button sns-button-google z-depth-2 waves-effect waves-light">
-                        <i class="fab fa-google-plus-square fa-4x"></i>
-                    </a>
-                </div>
-                <div class="col s12 m3 l3">
-                    <a href="{% provider_login_url 'github' process='connect' scope=scope auth_params=auth_params %}"
-                       class="btn sns-button sns-button-github z-depth-2 waves-effect waves-light">
-                        <i class="fab fa-github-square fa-4x"></i>
-                    </a>
-                </div>
-                {% providers_media_js %}
             </div>
         </div>
-    </div>
+    </section>
+
+    {% providers_media_js %}
 {% endblock %}
 
 {% block stylesheet %}
