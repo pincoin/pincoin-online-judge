@@ -5,15 +5,27 @@
 {% block title %}{{ page_title }}{% endblock %}
 
 {% block content %}
-    <div class="container">
-        <h1 class="center page-heading">{{ page_title }}</h1>
+    <section class="section">
+        <div class="container has-text-centered">
+            <h1 class="title">{{ page_title }}</h1>
+        </div>
+    </section>
 
-        <div class="row center-align">
-            <div class="col s12 m6 offset-m3 l6 offset-l3 deep-orange-text">
-                {% trans "An error occurred while attempting to login via your social network account." %}
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-two-fifths-desktop">
+                    <div class="columns">
+                        <div class="column">
+                            <div class="notification is-warning">
+                                {% trans "An error occurred while attempting to login via your social network account." %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 {% endblock %}
 
 {% block stylesheet %}
