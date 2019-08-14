@@ -36,7 +36,7 @@
                                         <input id="{{ form.email.id_for_label }}"
                                                name="{{ form.email.name }}"
                                                type="email"
-                                               class="input"
+                                               class="input{% if form.email.errors %} is-danger{% endif %}"
                                                {% if form.email.value != None %}value="{{ form.email.value|stringformat:'s' }}"{% endif %}
                                                {% if form.email.field.required %}required{% endif %}>
                                         <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
@@ -59,7 +59,7 @@
                                         <input id="{{ form.password1.id_for_label }}"
                                                name="{{ form.password1.name }}"
                                                type="password"
-                                               class="input"
+                                               class="input{% if form.password1.errors %} is-danger{% endif %}"
                                                {% if form.password1.value != None %}value="{{ form.password1.value|stringformat:'s' }}"{% endif %}
                                                {% if form.password1.field.required %}required{% endif %}>
                                         <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
@@ -82,7 +82,7 @@
                                         <input id="{{ form.password2.id_for_label }}"
                                                name="{{ form.password2.name }}"
                                                type="password"
-                                               class="input"
+                                               class="input{% if form.password2.errors %} is-danger{% endif %}"
                                                {% if form.password2.value != None %}value="{{ form.password2.value|stringformat:'s' }}"{% endif %}
                                                {% if form.password2.field.required %}required{% endif %}>
                                         <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
@@ -105,7 +105,7 @@
                                         <input id="{{ form.first_name.id_for_label }}"
                                                name="{{ form.first_name.name }}"
                                                type="text"
-                                               class="input"
+                                               class="input{% if form.first_name.errors %} is-danger{% endif %}"
                                                {% if form.first_name.value != None %}value="{{ form.first_name.value|stringformat:'s' }}"{% endif %}
                                                {% if form.first_name.field.required %}required{% endif %}>
                                     </div>
@@ -127,7 +127,7 @@
                                         <input id="{{ form.last_name.id_for_label }}"
                                                name="{{ form.last_name.name }}"
                                                type="text"
-                                               class="input"
+                                               class="input{% if form.last_name.errors %} is-danger{% endif %}"
                                                {% if form.last_name.value != None %}value="{{ form.last_name.value|stringformat:'s' }}"{% endif %}
                                                {% if form.last_name.field.required %}required{% endif %}>
                                     </div>
@@ -149,7 +149,7 @@
                                         <input id="{{ form.username.id_for_label }}"
                                                name="{{ form.username.name }}"
                                                type="text"
-                                               class="input"
+                                               class="input{% if form.username.errors %} is-danger{% endif %}"
                                                {% if form.username.value != None %}value="{{ form.username.value|stringformat:'s' }}"{% endif %}
                                                {% if form.username.field.required %}required{% endif %}>
                                     </div>
