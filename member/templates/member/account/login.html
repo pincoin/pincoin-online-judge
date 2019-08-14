@@ -113,8 +113,8 @@
 
                                 <div class="control">
                                     <button class="button is-primary is-fullwidth" type="submit">
-                                        {% trans 'Sign In' %}
-                                        <i class="fas fa-sign-in-alt fa-sm fa-fw"></i>
+                                        <span class="icon"><i class="fas fa-sign-in-alt fa-fw"></i></span>
+                                        <span>{% trans 'Sign In' %}</span>
                                     </button>
                                 </div>
 
@@ -144,7 +144,8 @@
                         <div class="column">
                             <a class="button is-success is-fullwidth"
                                href="{{ signup_url }}">
-                                {% trans "Sign Up" %}
+                                <span class="icon"><i class="fas fa-user-plus fa-fw"></i></span>
+                                <span>{% trans "Sign Up" %}</span>
                             </a>
                         </div>
                     </div>
