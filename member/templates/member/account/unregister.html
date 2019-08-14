@@ -5,41 +5,54 @@
 {% block title %}{{ page_title }}{% endblock %}
 
 {% block content %}
-    <div class="container">
-        <h1 class="center page-heading">{{ page_title }}</h1>
+    <section class="section">
+        <div class="container has-text-centered">
+            <h1 class="title">{{ page_title }}</h1>
+        </div>
+    </section>
 
-        <div class="row center-align">
-            <form method="post" action="{% url 'account_unregister' %}"
-                  class="col s12 m6 offset-m3 l6 offset-l3">
-                {% csrf_token %}
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-two-fifths">
+                    <div class="columns">
+                        <div class="column">
+                            <form method="post" action="{% url 'account_unregister' %}">
+                                {% csrf_token %}
 
-                {% if form.non_field_errors %}
-                    <div class="deep-orange-text mb-4">
-                        {{ form.non_field_errors }}
-                    </div>
-                {% endif %}
+                                {% if form.non_field_errors %}
+                                    <div class="deep-orange-text mb-4">
+                                        {{ form.non_field_errors }}
+                                    </div>
+                                {% endif %}
 
-                <p>
-                    {{ form.agree.errors }}
-                    <label>
-                        <input type="checkbox" name="{{ form.agree.name }}"/>
-                        <span>{{ form.agree.label }}</span>
-                    </label>
-                </p>
+                                <div class="field">
+                                    <div class="control">
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="{{ form.agree.name }}"/>
+                                            <span class="control-label">{{ form.agree.label }}</span>
+                                        </label>
+                                        {% if form.agree.errors %}
+                                            <p class="help is-danger">
+                                                {% for error in form.agree.errors %}
+                                                    {{ error|escape }}
+                                                {% endfor %}
+                                            </p>
+                                        {% endif %}
+                                    </div>
+                                </div>
 
-                <div class="row pb-2">
-                    <div class="col s12 m6 offset-m3 l6 offset-l3">
-                        <div class="divider"></div>
+                                <button type="submit" class="button is-danger is-fullwidth">
+                                    <span class="icon"><i class="fas fa-user-slash fa-sm fa-fw"></i></span>
+                                    <span>{% trans 'Unregister' %}</span>
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-
-                <button type="submit" class="btn waves-effect waves-light red darken-2">
-                    {% trans 'Unregister' %}
-                    <i class="fas fa-user-slash fa-sm fa-fw"></i>
-                </button>
-            </form>
+            </div>
         </div>
-    </div>
+    </section>
 {% endblock %}
 
 {% block stylesheet %}

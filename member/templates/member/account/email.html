@@ -21,7 +21,7 @@
         </div>
 
         <div class="row">
-            <form action="{% url 'account_email' %}" class="col s12 m9 l9" method="post">
+            <form action="{% url 'account_email' %}" method="post">
                 {% csrf_token %}
 
                 {% for emailaddress in user.emailaddress_set.all %}
