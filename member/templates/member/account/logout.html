@@ -17,9 +17,11 @@
                 <div class="column is-two-fifths">
                     <div class="columns">
                         <div class="column">
-                            <div class="notification is-warning">
-                                {% trans 'Are you sure you want to sign out?' %}
-                            </div>
+                            <article class="message is-danger">
+                                <div class="message-body">
+                                    {% trans 'Are you sure you want to sign out?' %}
+                                </div>
+                            </article>
 
                             <form method="post" action="{% url 'account_logout' %}">
                                 {% csrf_token %}

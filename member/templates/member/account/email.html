@@ -24,9 +24,11 @@
                     <div class="columns">
                         <div class="column">
                             {% if user.emailaddress_set.all %}
-                                <div class="notification is-info">
-                                    {% trans 'The following e-mail addresses are associated with your account:' %}
-                                </div>
+                                <article class="message is-info">
+                                    <div class="message-body">
+                                        {% trans 'The following e-mail addresses are associated with your account:' %}
+                                    </div>
+                                </article>
 
                                 <form action="{% url 'account_email' %}" method="post">
                                     {% csrf_token %}
@@ -104,12 +106,11 @@
                                     </div>
                                 </form>
                             {% else %}
-                                <div class="notification is-warning">
-                                    <strong class="red-text">
-                                        {% trans 'Warning:' %}
-                                    </strong>
-                                    {% trans "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc." %}
-                                </div>
+                                <article class="message is-danger">
+                                    <div class="message-body">
+                                        {% trans "Warning: You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc." %}
+                                    </div>
+                                </article>
                             {% endif %}
                         </div>
                     </div>

@@ -17,16 +17,19 @@
                 <div class="column is-two-fifths">
                     <div class="columns">
                         <div class="column">
-                            <div class="notification is-warning">
-                                <p>
-                                    {% trans 'You decided to cancel logging in to our site using one of your existing accounts.' %}
-                                </p>
-                                <p>
-                                    {% blocktrans %}
-                                        If this was a mistake, please proceed to <a href="{{ login_url }}">sign in</a>.
-                                    {% endblocktrans %}
-                                </p>
-                            </div>
+                            <article class="message is-danger">
+                                <div class="message-body">
+                                    <p>
+                                        {% trans 'You decided to cancel logging in to our site using one of your existing accounts.' %}
+                                    </p>
+                                    <p>
+                                        {% blocktrans %}
+                                            If this was a mistake, please proceed to
+                                            <a href="{{ login_url }}">sign in</a>.
+                                        {% endblocktrans %}
+                                    </p>
+                                </div>
+                            </article>
                         </div>
                     </div>
                 </div>

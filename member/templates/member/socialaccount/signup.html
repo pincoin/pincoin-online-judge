@@ -17,13 +17,15 @@
                 <div class="column is-two-fifths">
                     <div class="columns">
                         <div class="column">
-                            <div class="notification is-info">
-                                {% blocktrans with provider_name=account.get_provider.name site_name=site.name %}
-                                    You are about to use your <strong>{{ provider_name }}</strong> account to login to
-                                    {{ site_name }}.
-                                {% endblocktrans %}
-                                {% trans 'As a final step, please complete the following form:' %}
-                            </div>
+                            <article class="message is-info">
+                                <div class="message-body">
+                                    {% blocktrans with provider_name=account.get_provider.name site_name=site.name %}
+                                        You are about to use your <strong>{{ provider_name }}</strong> account to login
+                                        to {{ site_name }}.
+                                    {% endblocktrans %}
+                                    {% trans 'As a final step, please complete the following form:' %}
+                                </div>
+                            </article>
 
                             {% if form.non_field_errors %}
                                 <ul class="notification is-warning">
