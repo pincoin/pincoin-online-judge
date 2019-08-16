@@ -7,8 +7,6 @@ from django.urls import (
 
 from . import views
 
-app_name = 'member'
-
 urlpatterns = [
     # Account
     path('login/',
