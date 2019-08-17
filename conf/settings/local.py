@@ -9,6 +9,7 @@ LANGUAGE_CODE = 'th-TH'
 LANGUAGES = [
     ('th', _('Thai')),
     ('en', _('English')),
+    ('ko', _('Korean')),
 ]
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),

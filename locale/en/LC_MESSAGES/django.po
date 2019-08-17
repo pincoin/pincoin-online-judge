@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-06 12:03+0000\n"
+"POT-Creation-Date: 2019-08-17 12:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: conf/formmixins.py:23
+msgid "Invalid reCAPTCHA. Please try again."
+msgstr ""
+
 #: conf/models.py:11
 msgid "Parent"
 msgstr ""
 
-#: conf/models.py:20
+#: conf/models.py:20 member/models.py:235
 msgid "Title"
 msgstr ""
 
@@ -36,31 +39,38 @@ msgid ""
 "URL"
 msgstr ""
 
-#: conf/settings.py:96
+#: conf/settings/local.py:10 member/models.py:93
 msgid "Thai"
 msgstr ""
 
-#: conf/settings.py:97
+#: conf/settings/local.py:11 member/models.py:94
 msgid "English"
 msgstr ""
 
-#: conf/templates/conf/base.html:29 conf/templates/conf/base.html:88
+#: conf/settings/local.py:12 member/models.py:95
+msgid "Korean"
+msgstr ""
+
+#: conf/templates/conf/base.html:81
+#: member/templates/member/account/login.html:108
 msgid "Sign In"
 msgstr ""
 
-#: conf/templates/conf/base.html:35 conf/templates/conf/base.html:94
+#: conf/templates/conf/base.html:85
 msgid "Register"
 msgstr ""
 
-#: conf/templates/conf/base.html:42 conf/templates/conf/base.html:101
-msgid "Help"
+#: conf/templates/conf/base.html:92
+msgid "Me"
 msgstr ""
 
-#: conf/templates/conf/base.html:49 conf/templates/conf/base.html:108
-msgid "My Page"
+#: conf/templates/conf/base.html:97 member/admin.py:18 member/models.py:31
+#: member/views.py:258
+msgid "Profile"
 msgstr ""
 
-#: conf/templates/conf/base.html:55 conf/templates/conf/base.html:114
+#: conf/templates/conf/base.html:102
+#: member/templates/member/account/logout.html:30
 msgid "Sign Out"
 msgstr ""
 
@@ -68,158 +78,599 @@ msgstr ""
 msgid "Job App"
 msgstr ""
 
+#: member/adapters.py:30
+msgid "Your email domain is not allowed."
+msgstr ""
+
+#: member/adapters.py:33
+msgid "Your email is banned."
+msgstr ""
+
+#: member/admin.py:15
+msgid "Account"
+msgstr ""
+
+#: member/admin.py:51 member/models.py:41
+msgid "Full name"
+msgstr ""
+
 #: member/apps.py:7
 msgid "Member App"
 msgstr ""
 
-#: member/models.py:16
+#: member/forms.py:22
+msgid "You haven't logged for {} days."
+msgstr ""
+
+#: member/forms.py:62
+msgid "I really would like to unregister."
+msgstr ""
+
+#: member/forms.py:72 member/models.py:116
+msgid "Resume title"
+msgstr ""
+
+#: member/forms.py:77 member/models.py:121
+msgid "Resume description"
+msgstr ""
+
+#: member/forms.py:88
+msgid "You cannot have more than 3 resumes."
+msgstr ""
+
+#: member/forms2.py:9
+msgid "First name"
+msgstr ""
+
+#: member/forms2.py:15
+msgid "Last name"
+msgstr ""
+
+#: member/forms2.py:21
+msgid "I agree to Terms and Conditions."
+msgstr ""
+
+#: member/forms2.py:25
+msgid "I agree to Privacy Policy."
+msgstr ""
+
+#: member/models.py:19
 msgid "Organization"
 msgstr ""
 
-#: member/models.py:22
+#: member/models.py:25
 msgid "User status memo"
 msgstr ""
 
-#: member/models.py:28
-msgid "Profile"
-msgstr ""
-
-#: member/models.py:29
+#: member/models.py:32
 msgid "Profiles"
 msgstr ""
 
-#: member/models.py:38
-msgid "Full name"
-msgstr ""
-
-#: member/models.py:44
+#: member/models.py:47
 msgid "E-mail"
 msgstr ""
 
-#: member/models.py:50
+#: member/models.py:53 member/models.py:109
 msgid "user"
 msgstr ""
 
-#: member/models.py:59
+#: member/models.py:62
 msgid "IP address"
 msgstr ""
 
-#: member/models.py:63
+#: member/models.py:66
 msgid "Login log"
 msgstr ""
 
-#: member/models.py:64
+#: member/models.py:67
 msgid "Login logs"
 msgstr ""
 
-#: member/models.py:72
+#: member/models.py:75
 msgid "Email address"
 msgstr ""
 
-#: member/models.py:76
+#: member/models.py:79
 msgid "Banned Email Address"
 msgstr ""
 
-#: member/models.py:77
+#: member/models.py:80
 msgid "Banned Email Addresses"
+msgstr ""
+
+#: member/models.py:88 quest/models.py:24
+msgid "Draft"
+msgstr ""
+
+#: member/models.py:89 quest/models.py:25
+msgid "Published"
+msgstr ""
+
+#: member/models.py:96
+msgid "Chinese"
+msgstr ""
+
+#: member/models.py:97
+msgid "Japanese"
+msgstr ""
+
+#: member/models.py:101
+msgid "UUID"
+msgstr ""
+
+#: member/models.py:125
+msgid "Primary resume"
+msgstr ""
+
+#: member/models.py:131 quest/models.py:89
+msgid "Status"
+msgstr ""
+
+#: member/models.py:138
+msgid "Language"
+msgstr ""
+
+#: member/models.py:145 member/models.py:146 member/models.py:155
+#: member/views.py:275
+msgid "Resume"
+msgstr ""
+
+#: member/models.py:161 quest/models.py:120
+msgid "Position"
+msgstr ""
+
+#: member/models.py:170 member/models.py:198
+msgid "Present"
+msgstr ""
+
+#: member/models.py:176 member/models.py:204
+msgid "Start date"
+msgstr ""
+
+#: member/models.py:180 member/models.py:208
+msgid "End date"
+msgstr ""
+
+#: member/models.py:186
+msgid "Company"
+msgstr ""
+
+#: member/models.py:191
+msgid "Job title"
+msgstr ""
+
+#: member/models.py:214
+msgid "School"
+msgstr ""
+
+#: member/models.py:219
+msgid "Degree"
+msgstr ""
+
+#: member/models.py:224
+msgid "Major"
+msgstr ""
+
+#: member/models.py:229
+msgid "Research topics"
+msgstr ""
+
+#: member/models.py:240
+msgid "URL"
+msgstr ""
+
+#: member/templates/member/account/account_inactive.html:16
+msgid "This account is inactive."
+msgstr ""
+
+#: member/templates/member/account/email.html:22
+msgid "The following e-mail addresses are associated with your account:"
+msgstr ""
+
+#: member/templates/member/account/email.html:53
+msgid "Primary"
+msgstr ""
+
+#: member/templates/member/account/email.html:59
+msgid "Verified"
+msgstr ""
+
+#: member/templates/member/account/email.html:63
+msgid "Unverified"
+msgstr ""
+
+#: member/templates/member/account/email.html:78
+msgid "Make Primary"
+msgstr ""
+
+#: member/templates/member/account/email.html:86
+msgid "Re-send Verification"
+msgstr ""
+
+#: member/templates/member/account/email.html:94
+#: member/templates/member/socialaccount/connections.html:62
+msgid "Remove"
+msgstr ""
+
+#: member/templates/member/account/email.html:104
+msgid ""
+"Warning: You currently do not have any e-mail address set up. You should "
+"really add an e-mail address so you can receive notifications, reset your "
+"password, etc."
+msgstr ""
+
+#: member/templates/member/account/email.html:111
+msgid "Add E-mail Address"
+msgstr ""
+
+#: member/templates/member/account/email.html:153
+msgid "Add E-mail"
+msgstr ""
+
+#: member/templates/member/account/email.html:167
+msgid "Do you really want to remove the selected e-mail address?"
+msgstr ""
+
+#: member/templates/member/account/email/email_confirmation_message.html:3
+#, python-format
+msgid ""
+"\n"
+"    <p>\n"
+"        Hello from CodingJump!\n"
+"    </p>\n"
+"\n"
+"    <p>\n"
+"        You're receiving this e-mail because user %(user_display)s has given "
+"yours as an e-mail address to connect\n"
+"        their account.\n"
+"    </p>\n"
+"\n"
+"    <p>\n"
+"        To confirm this is correct, go to %(activate_url)s\n"
+"    </p>\n"
+msgstr ""
+
+#: member/templates/member/account/email/email_confirmation_subject.txt:3
+msgid "Please Confirm Your E-mail Address"
+msgstr ""
+
+#: member/templates/member/account/email/password_reset_key_message.html:3
+msgid ""
+"\n"
+"    <p>Hello from CodingJump!</p>\n"
+"    <p>\n"
+"        You're receiving this e-mail because you or someone else has "
+"requested a password for your user account.\n"
+"        It can be safely ignored if you did not request a password reset. "
+"Click the link below to reset your password.\n"
+"    </p>\n"
+msgstr ""
+
+#: member/templates/member/account/email/password_reset_key_subject.txt:3
+msgid "Password Reset E-mail"
+msgstr ""
+
+#: member/templates/member/account/email_confirm.html:20
+#, python-format
+msgid ""
+"\n"
+"                                    Please confirm that\n"
+"                                    <a href=\"mailto:%(email)s\">%(email)s</"
+"a> is an e-mail address for user\n"
+"                                    %(user_display)s.\n"
+"                                "
+msgstr ""
+
+#: member/templates/member/account/email_confirm.html:32
+msgid "Confirm"
+msgstr ""
+
+#: member/templates/member/account/email_confirm.html:41
+msgid "This e-mail confirmation link expired or is invalid."
+msgstr ""
+
+#: member/templates/member/account/email_confirm.html:44
+#, python-format
+msgid ""
+"\n"
+"                                        Please\n"
+"                                        <a href=\"%(email_url)s\">issue a "
+"new e-mail confirmation request</a>\n"
+"                                        .\n"
+"                                    "
+msgstr ""
+
+#: member/templates/member/account/login.html:126
+msgid "Forgot Password?"
+msgstr ""
+
+#: member/templates/member/account/login.html:133
+#: member/templates/member/account/signup.html:196
+#: member/templates/member/socialaccount/signup.html:160
+msgid "Sign Up"
+msgstr ""
+
+#: member/templates/member/account/logout.html:16
+msgid "Are you sure you want to sign out?"
+msgstr ""
+
+#: member/templates/member/account/password_change.html:106
+#: member/templates/member/account/password_reset_from_key.html:89
+msgid "Change password"
+msgstr ""
+
+#: member/templates/member/account/password_reset.html:24
+msgid ""
+"Enter your e-mail address below, and we will send you an e-mail allowing you "
+"to reset it."
+msgstr ""
+
+#: member/templates/member/account/password_reset.html:70
+msgid "Reset My Password"
+msgstr ""
+
+#: member/templates/member/account/password_reset.html:76
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr ""
+
+#: member/templates/member/account/password_reset_done.html:24
+msgid ""
+"We have sent you an e-mail. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+
+#: member/templates/member/account/password_reset_from_key.html:11
+msgid "Bad Token"
+msgstr ""
+
+#: member/templates/member/account/password_reset_from_key.html:21
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has\n"
+"                                    already been used.\n"
+"                                    Please request a <a href="
+"\"%(passwd_reset_url)s\">new password reset</a>\n"
+"                                    ."
+msgstr ""
+
+#: member/templates/member/account/password_reset_from_key.html:96
+#: member/templates/member/account/password_reset_from_key_done.html:16
+msgid "Your password is now changed."
+msgstr ""
+
+#: member/templates/member/account/password_set.html:79
+msgid "Set password"
+msgstr ""
+
+#: member/templates/member/account/resume_detail.html:53
+msgid "Work experience"
+msgstr ""
+
+#: member/templates/member/account/resume_detail.html:55
+msgid "Education"
+msgstr ""
+
+#: member/templates/member/account/resume_detail.html:57
+msgid "Links"
+msgstr ""
+
+#: member/templates/member/account/resume_list.html:60
+msgid "New resume"
+msgstr ""
+
+#: member/templates/member/account/snippets/already_logged_in.html:5
+msgid "Note"
+msgstr ""
+
+#: member/templates/member/account/snippets/already_logged_in.html:5
+#, python-format
+msgid "you are already logged in as %(user_display)s."
+msgstr ""
+
+#: member/templates/member/account/unregister.html:47 member/views.py:96
+msgid "Unregister"
+msgstr ""
+
+#: member/templates/member/account/verification_sent.html:17
+msgid ""
+"We have sent an e-mail to you for verification. Follow the link provided to "
+"finalize the signup process."
+msgstr ""
+
+#: member/templates/member/account/verification_sent.html:20
+msgid "Please contact us if you do not receive it within a few minutes."
+msgstr ""
+
+#: member/templates/member/socialaccount/authentication_error.html:16
+msgid ""
+"An error occurred while attempting to login via your social network account."
+msgstr ""
+
+#: member/templates/member/socialaccount/connections.html:24
+msgid ""
+"You can sign in to your account using any of the following third party "
+"accounts:"
+msgstr ""
+
+#: member/templates/member/socialaccount/connections.html:75
+msgid ""
+"You currently have no social network accounts connected to this account."
+msgstr ""
+
+#: member/templates/member/socialaccount/connections.html:84
+msgid "Add a 3rd Party Account"
+msgstr ""
+
+#: member/templates/member/socialaccount/login_cancelled.html:17
+msgid ""
+"You decided to cancel logging in to our site using one of your existing "
+"accounts."
+msgstr ""
+
+#: member/templates/member/socialaccount/login_cancelled.html:20
+#, python-format
+msgid ""
+"\n"
+"                                    If this was a mistake, please proceed "
+"to\n"
+"                                    <a href=\"%(login_url)s\">sign in</a>.\n"
+"                                "
+msgstr ""
+
+#: member/templates/member/socialaccount/signup.html:16
+#, python-format
+msgid ""
+"\n"
+"                                You are about to use your <strong>"
+"%(provider_name)s</strong> account to login\n"
+"                                to %(site_name)s.\n"
+"                            "
+msgstr ""
+
+#: member/templates/member/socialaccount/signup.html:20
+msgid "As a final step, please complete the following form:"
+msgstr ""
+
+#: member/views.py:49
+msgid "Login"
+msgstr ""
+
+#: member/views.py:59
+msgid "Logout"
+msgstr ""
+
+#: member/views.py:68 member/views.py:234
+msgid "Sign up"
+msgstr ""
+
+#: member/views.py:77
+msgid "Account Inactive"
+msgstr ""
+
+#: member/views.py:129
+msgid "Password Change"
+msgstr ""
+
+#: member/views.py:139
+msgid "Password Set"
+msgstr ""
+
+#: member/views.py:150 member/views.py:170
+msgid "Password Reset"
+msgstr ""
+
+#: member/views.py:160 member/views.py:179
+msgid "Password Reset Done"
+msgstr ""
+
+#: member/views.py:188
+msgid "Email Verification Sent"
+msgstr ""
+
+#: member/views.py:197
+msgid "Confirm Email Request"
+msgstr ""
+
+#: member/views.py:207
+msgid "Email Management"
+msgstr ""
+
+#: member/views.py:216
+msgid "Login Cancelled"
+msgstr ""
+
+#: member/views.py:225
+msgid "Social Network Login Failure"
+msgstr ""
+
+#: member/views.py:243
+msgid "Connect with SNS accounts"
+msgstr ""
+
+#: member/views.py:292
+msgid "Resume - {}"
 msgstr ""
 
 #: quest/apps.py:7
 msgid "Quest App"
 msgstr ""
 
-#: quest/models.py:18 quest/models.py:84
+#: quest/models.py:15 quest/models.py:81
 msgid "Category"
 msgstr ""
 
-#: quest/models.py:19
+#: quest/models.py:16
 msgid "Categories"
 msgstr ""
 
-#: quest/models.py:27
-msgid "Draft"
-msgstr ""
-
-#: quest/models.py:28
-msgid "Published"
-msgstr ""
-
-#: quest/models.py:33
+#: quest/models.py:30
 msgid "Author"
 msgstr ""
 
-#: quest/models.py:43
+#: quest/models.py:40
 msgid "Problem title"
 msgstr ""
 
-#: quest/models.py:48
+#: quest/models.py:45
 msgid "Problem content"
 msgstr ""
 
-#: quest/models.py:52
+#: quest/models.py:49
 msgid "Input description"
 msgstr ""
 
-#: quest/models.py:56
+#: quest/models.py:53
 msgid "Output description"
 msgstr ""
 
-#: quest/models.py:60
+#: quest/models.py:57
 msgid "Sample input data"
 msgstr ""
 
-#: quest/models.py:64
+#: quest/models.py:61
 msgid "Sample output data"
 msgstr ""
 
-#: quest/models.py:68
+#: quest/models.py:65
 msgid "Time limit"
 msgstr ""
 
-#: quest/models.py:69
+#: quest/models.py:66
 msgid "Seconds"
 msgstr ""
 
-#: quest/models.py:73
+#: quest/models.py:70
 msgid "Memory limit"
 msgstr ""
 
-#: quest/models.py:74
+#: quest/models.py:71
 msgid "MB"
 msgstr ""
 
-#: quest/models.py:78
+#: quest/models.py:75
 msgid "Level"
 msgstr ""
 
-#: quest/models.py:92
-msgid "Status"
-msgstr ""
-
-#: quest/models.py:99 quest/models.py:109
+#: quest/models.py:96 quest/models.py:106
 msgid "Problem"
 msgstr ""
 
-#: quest/models.py:100
+#: quest/models.py:97
 msgid "Problems"
 msgstr ""
 
-#: quest/models.py:115
+#: quest/models.py:112
 msgid "Input data"
 msgstr ""
 
-#: quest/models.py:119
+#: quest/models.py:116
 msgid "Output data"
 msgstr ""
 
-#: quest/models.py:123
-msgid "Position"
-msgstr ""
-
-#: quest/models.py:127
+#: quest/models.py:124
 msgid "Test set"
 msgstr ""
 
-#: quest/models.py:128
+#: quest/models.py:125
 msgid "Test sets"
 msgstr ""

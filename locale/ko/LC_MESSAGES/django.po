@@ -19,7 +19,7 @@ msgstr ""
 
 #: conf/formmixins.py:23
 msgid "Invalid reCAPTCHA. Please try again."
-msgstr ""
+msgstr "보안문자를 체크하세요."
 
 #: conf/models.py:11
 msgid "Parent"
@@ -41,229 +41,227 @@ msgstr ""
 
 #: conf/settings/local.py:10 member/models.py:93
 msgid "Thai"
-msgstr "ภาษาไทย"
+msgstr "태국어"
 
 #: conf/settings/local.py:11 member/models.py:94
 msgid "English"
-msgstr "ภาษาอังกฤษ"
+msgstr "영어"
 
 #: conf/settings/local.py:12 member/models.py:95
 msgid "Korean"
-msgstr ""
+msgstr "한국어"
 
 #: conf/templates/conf/base.html:81
 #: member/templates/member/account/login.html:108
 msgid "Sign In"
-msgstr "เข้าสู่ระบบ"
+msgstr "로그인"
 
 #: conf/templates/conf/base.html:85
 msgid "Register"
-msgstr "สมัครสมาชิก"
+msgstr "회원가입"
 
 #: conf/templates/conf/base.html:92
 msgid "Me"
-msgstr ""
+msgstr "나"
 
 #: conf/templates/conf/base.html:97 member/admin.py:18 member/models.py:31
 #: member/views.py:258
 msgid "Profile"
-msgstr ""
+msgstr "프로필"
 
 #: conf/templates/conf/base.html:102
 #: member/templates/member/account/logout.html:30
 msgid "Sign Out"
-msgstr "ออกจากระบบ"
+msgstr "로그아웃"
 
 #: job/apps.py:7
 msgid "Job App"
-msgstr ""
+msgstr "채용"
 
 #: member/adapters.py:30
 msgid "Your email domain is not allowed."
-msgstr ""
+msgstr "차단된 이메일 주소입니다."
 
 #: member/adapters.py:33
 msgid "Your email is banned."
-msgstr ""
+msgstr "이메일 주소가 차단되었습니다."
 
 #: member/admin.py:15
 msgid "Account"
-msgstr ""
+msgstr "계정"
 
 #: member/admin.py:51 member/models.py:41
 msgid "Full name"
-msgstr "ชื่อ-นำสกุล"
+msgstr "성명"
 
 #: member/apps.py:7
 msgid "Member App"
-msgstr ""
+msgstr "회원 관리"
 
 #: member/forms.py:22
 msgid "You haven't logged for {} days."
-msgstr ""
+msgstr "{}일 동안 로그인하지 않았습니다."
 
 #: member/forms.py:62
 msgid "I really would like to unregister."
-msgstr ""
+msgstr "회원탈퇴를 원합니다."
 
 #: member/forms.py:72 member/models.py:116
 msgid "Resume title"
-msgstr ""
+msgstr "이력서 제목"
 
 #: member/forms.py:77 member/models.py:121
 msgid "Resume description"
-msgstr ""
+msgstr "이력서 요약"
 
 #: member/forms.py:88
 msgid "You cannot have more than 3 resumes."
-msgstr ""
+msgstr "이력서는 3개까지 등록 가능합니다."
 
 #: member/forms2.py:9
-#, fuzzy
-#| msgid "Full name"
 msgid "First name"
-msgstr "ชื่อ-นำสกุล"
+msgstr "이름"
 
 #: member/forms2.py:15
 msgid "Last name"
-msgstr ""
+msgstr "성"
 
 #: member/forms2.py:21
 msgid "I agree to Terms and Conditions."
-msgstr ""
+msgstr "이용약관에 동의합니다."
 
 #: member/forms2.py:25
 msgid "I agree to Privacy Policy."
-msgstr ""
+msgstr "개인정보보호방침에 동의합니다."
 
 #: member/models.py:19
 msgid "Organization"
-msgstr ""
+msgstr "소속"
 
 #: member/models.py:25
 msgid "User status memo"
-msgstr ""
+msgstr "사용자 상태"
 
 #: member/models.py:32
 msgid "Profiles"
-msgstr ""
+msgstr "프로필"
 
 #: member/models.py:47
 msgid "E-mail"
-msgstr ""
+msgstr "이메일"
 
 #: member/models.py:53 member/models.py:109
 msgid "user"
-msgstr ""
+msgstr "사용자"
 
 #: member/models.py:62
 msgid "IP address"
-msgstr ""
+msgstr "IP 주소"
 
 #: member/models.py:66
 msgid "Login log"
-msgstr ""
+msgstr "로그인 이력"
 
 #: member/models.py:67
 msgid "Login logs"
-msgstr ""
+msgstr "로그인 이력"
 
 #: member/models.py:75
 msgid "Email address"
-msgstr ""
+msgstr "이메일 주소"
 
 #: member/models.py:79
 msgid "Banned Email Address"
-msgstr ""
+msgstr "차단된 이메일 주소"
 
 #: member/models.py:80
 msgid "Banned Email Addresses"
-msgstr ""
+msgstr "차단된 이메일 주소"
 
 #: member/models.py:88 quest/models.py:24
 msgid "Draft"
-msgstr ""
+msgstr "초안"
 
 #: member/models.py:89 quest/models.py:25
 msgid "Published"
-msgstr ""
+msgstr "발행"
 
 #: member/models.py:96
 msgid "Chinese"
-msgstr ""
+msgstr "중국어"
 
 #: member/models.py:97
 msgid "Japanese"
-msgstr ""
+msgstr "일본어"
 
 #: member/models.py:101
 msgid "UUID"
-msgstr ""
+msgstr "UUID"
 
 #: member/models.py:125
 msgid "Primary resume"
-msgstr ""
+msgstr "기본 이력서"
 
 #: member/models.py:131 quest/models.py:89
 msgid "Status"
-msgstr ""
+msgstr "상태"
 
 #: member/models.py:138
 msgid "Language"
-msgstr ""
+msgstr "언어"
 
 #: member/models.py:145 member/models.py:146 member/models.py:155
 #: member/views.py:275
 msgid "Resume"
-msgstr ""
+msgstr "이력서"
 
 #: member/models.py:161 quest/models.py:120
 msgid "Position"
-msgstr ""
+msgstr "위치"
 
 #: member/models.py:170 member/models.py:198
 msgid "Present"
-msgstr ""
+msgstr "현재"
 
 #: member/models.py:176 member/models.py:204
 msgid "Start date"
-msgstr ""
+msgstr "시작일"
 
 #: member/models.py:180 member/models.py:208
 msgid "End date"
-msgstr ""
+msgstr "종료일"
 
 #: member/models.py:186
 msgid "Company"
-msgstr ""
+msgstr "회사"
 
 #: member/models.py:191
 msgid "Job title"
-msgstr ""
+msgstr "직책/직위"
 
 #: member/models.py:214
 msgid "School"
-msgstr ""
+msgstr "학교"
 
 #: member/models.py:219
 msgid "Degree"
-msgstr ""
+msgstr "학위"
 
 #: member/models.py:224
 msgid "Major"
-msgstr ""
+msgstr "전공"
 
 #: member/models.py:229
 msgid "Research topics"
-msgstr ""
+msgstr "연구분야"
 
 #: member/models.py:240
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: member/templates/member/account/account_inactive.html:16
 msgid "This account is inactive."
-msgstr ""
+msgstr "비활성화 계정"
 
 #: member/templates/member/account/email.html:22
 msgid "The following e-mail addresses are associated with your account:"
@@ -271,28 +269,28 @@ msgstr ""
 
 #: member/templates/member/account/email.html:53
 msgid "Primary"
-msgstr ""
+msgstr "로그인 이메일"
 
 #: member/templates/member/account/email.html:59
 msgid "Verified"
-msgstr ""
+msgstr "인증"
 
 #: member/templates/member/account/email.html:63
 msgid "Unverified"
-msgstr ""
+msgstr "미인증"
 
 #: member/templates/member/account/email.html:78
 msgid "Make Primary"
-msgstr ""
+msgstr "로그인 이메일"
 
 #: member/templates/member/account/email.html:86
 msgid "Re-send Verification"
-msgstr ""
+msgstr "인증메일 재발송"
 
 #: member/templates/member/account/email.html:94
 #: member/templates/member/socialaccount/connections.html:62
 msgid "Remove"
-msgstr ""
+msgstr "삭제"
 
 #: member/templates/member/account/email.html:104
 msgid ""
@@ -303,15 +301,15 @@ msgstr ""
 
 #: member/templates/member/account/email.html:111
 msgid "Add E-mail Address"
-msgstr ""
+msgstr "이메일 추가"
 
 #: member/templates/member/account/email.html:153
 msgid "Add E-mail"
-msgstr ""
+msgstr "이메일 추가"
 
 #: member/templates/member/account/email.html:167
 msgid "Do you really want to remove the selected e-mail address?"
-msgstr ""
+msgstr "이메일 주소 삭제할까요?"
 
 #: member/templates/member/account/email/email_confirmation_message.html:3
 #, python-format
@@ -350,7 +348,7 @@ msgstr ""
 
 #: member/templates/member/account/email/password_reset_key_subject.txt:3
 msgid "Password Reset E-mail"
-msgstr ""
+msgstr "비밀번호 초기화 이메일"
 
 #: member/templates/member/account/email_confirm.html:20
 #, python-format
@@ -365,11 +363,11 @@ msgstr ""
 
 #: member/templates/member/account/email_confirm.html:32
 msgid "Confirm"
-msgstr ""
+msgstr "확인"
 
 #: member/templates/member/account/email_confirm.html:41
 msgid "This e-mail confirmation link expired or is invalid."
-msgstr ""
+msgstr "이메일 인증 링크가 만료되었거나 유효하지 않습니다."
 
 #: member/templates/member/account/email_confirm.html:44
 #, python-format
@@ -384,24 +382,22 @@ msgstr ""
 
 #: member/templates/member/account/login.html:126
 msgid "Forgot Password?"
-msgstr ""
+msgstr "비밀번호 재설정"
 
 #: member/templates/member/account/login.html:133
 #: member/templates/member/account/signup.html:196
 #: member/templates/member/socialaccount/signup.html:160
-#, fuzzy
-#| msgid "Sign In"
 msgid "Sign Up"
-msgstr "เข้าสู่ระบบ"
+msgstr "회원가입"
 
 #: member/templates/member/account/logout.html:16
 msgid "Are you sure you want to sign out?"
-msgstr ""
+msgstr "정말로 로그아웃할까요?"
 
 #: member/templates/member/account/password_change.html:106
 #: member/templates/member/account/password_reset_from_key.html:89
 msgid "Change password"
-msgstr ""
+msgstr "비밀번호 변경"
 
 #: member/templates/member/account/password_reset.html:24
 msgid ""
@@ -411,7 +407,7 @@ msgstr ""
 
 #: member/templates/member/account/password_reset.html:70
 msgid "Reset My Password"
-msgstr ""
+msgstr "비밀번호 초기화"
 
 #: member/templates/member/account/password_reset.html:76
 msgid "Please contact us if you have any trouble resetting your password."
@@ -425,7 +421,7 @@ msgstr ""
 
 #: member/templates/member/account/password_reset_from_key.html:11
 msgid "Bad Token"
-msgstr ""
+msgstr "잘못된 토큰"
 
 #: member/templates/member/account/password_reset_from_key.html:21
 #, python-format
@@ -440,31 +436,31 @@ msgstr ""
 #: member/templates/member/account/password_reset_from_key.html:96
 #: member/templates/member/account/password_reset_from_key_done.html:16
 msgid "Your password is now changed."
-msgstr ""
+msgstr "비밀번호를 변경했습니다."
 
 #: member/templates/member/account/password_set.html:79
 msgid "Set password"
-msgstr ""
+msgstr "비밀번호 설정"
 
 #: member/templates/member/account/resume_detail.html:53
 msgid "Work experience"
-msgstr ""
+msgstr "경력"
 
 #: member/templates/member/account/resume_detail.html:55
 msgid "Education"
-msgstr ""
+msgstr "학력"
 
 #: member/templates/member/account/resume_detail.html:57
 msgid "Links"
-msgstr ""
+msgstr "링크"
 
 #: member/templates/member/account/resume_list.html:60
 msgid "New resume"
-msgstr ""
+msgstr "새 이력서"
 
 #: member/templates/member/account/snippets/already_logged_in.html:5
 msgid "Note"
-msgstr ""
+msgstr "노트"
 
 #: member/templates/member/account/snippets/already_logged_in.html:5
 #, python-format
@@ -472,10 +468,8 @@ msgid "you are already logged in as %(user_display)s."
 msgstr ""
 
 #: member/templates/member/account/unregister.html:47 member/views.py:96
-#, fuzzy
-#| msgid "Register"
 msgid "Unregister"
-msgstr "สมัครสมาชิก"
+msgstr "회원탈퇴"
 
 #: member/templates/member/account/verification_sent.html:17
 msgid ""
@@ -505,7 +499,7 @@ msgstr ""
 
 #: member/templates/member/socialaccount/connections.html:84
 msgid "Add a 3rd Party Account"
-msgstr ""
+msgstr "SNS 로그인 추가"
 
 #: member/templates/member/socialaccount/login_cancelled.html:17
 msgid ""
@@ -539,41 +533,39 @@ msgstr ""
 
 #: member/views.py:49
 msgid "Login"
-msgstr ""
+msgstr "로그인"
 
 #: member/views.py:59
 msgid "Logout"
-msgstr ""
+msgstr "로그아웃"
 
 #: member/views.py:68 member/views.py:234
-#, fuzzy
-#| msgid "Sign Out"
 msgid "Sign up"
-msgstr "ออกจากระบบ"
+msgstr "회원가입"
 
 #: member/views.py:77
 msgid "Account Inactive"
-msgstr ""
+msgstr "비활성화 계정"
 
 #: member/views.py:129
 msgid "Password Change"
-msgstr ""
+msgstr "비밀번호 변경"
 
 #: member/views.py:139
 msgid "Password Set"
-msgstr ""
+msgstr "비밀번호 설정"
 
 #: member/views.py:150 member/views.py:170
 msgid "Password Reset"
-msgstr ""
+msgstr "비밀번호 재설정"
 
 #: member/views.py:160 member/views.py:179
 msgid "Password Reset Done"
-msgstr ""
+msgstr "비밀번호 재설정 완료"
 
 #: member/views.py:188
 msgid "Email Verification Sent"
-msgstr ""
+msgstr "인증 이메일 발송"
 
 #: member/views.py:197
 msgid "Confirm Email Request"
@@ -581,107 +573,104 @@ msgstr ""
 
 #: member/views.py:207
 msgid "Email Management"
-msgstr ""
+msgstr "로그인 이메일 관리"
 
 #: member/views.py:216
 msgid "Login Cancelled"
-msgstr ""
+msgstr "로그인 취소"
 
 #: member/views.py:225
 msgid "Social Network Login Failure"
-msgstr ""
+msgstr "SNS 로그인 실패"
 
 #: member/views.py:243
 msgid "Connect with SNS accounts"
-msgstr ""
+msgstr "SNS로 로그인"
 
 #: member/views.py:292
 msgid "Resume - {}"
-msgstr ""
+msgstr "이력서 - {}"
 
 #: quest/apps.py:7
 msgid "Quest App"
-msgstr ""
+msgstr "문제은행"
 
 #: quest/models.py:15 quest/models.py:81
 msgid "Category"
-msgstr ""
+msgstr "카테고리"
 
 #: quest/models.py:16
 msgid "Categories"
-msgstr ""
+msgstr "카테고리"
 
 #: quest/models.py:30
 msgid "Author"
-msgstr ""
+msgstr "출제자"
 
 #: quest/models.py:40
 msgid "Problem title"
-msgstr ""
+msgstr "문제 제목"
 
 #: quest/models.py:45
 msgid "Problem content"
-msgstr ""
+msgstr "문제 내용"
 
 #: quest/models.py:49
 msgid "Input description"
-msgstr ""
+msgstr "입력 설명"
 
 #: quest/models.py:53
 msgid "Output description"
-msgstr ""
+msgstr "출력 설명"
 
 #: quest/models.py:57
 msgid "Sample input data"
-msgstr ""
+msgstr "예제 입력 데이터"
 
 #: quest/models.py:61
 msgid "Sample output data"
-msgstr ""
+msgstr "예제 출력 데이터"
 
 #: quest/models.py:65
 msgid "Time limit"
-msgstr ""
+msgstr "시간 제한"
 
 #: quest/models.py:66
 msgid "Seconds"
-msgstr ""
+msgstr "초"
 
 #: quest/models.py:70
 msgid "Memory limit"
-msgstr ""
+msgstr "메모리 제한"
 
 #: quest/models.py:71
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
 #: quest/models.py:75
 msgid "Level"
-msgstr ""
+msgstr "레벨"
 
 #: quest/models.py:96 quest/models.py:106
 msgid "Problem"
-msgstr ""
+msgstr "문제"
 
 #: quest/models.py:97
 msgid "Problems"
-msgstr ""
+msgstr "문제"
 
 #: quest/models.py:112
 msgid "Input data"
-msgstr ""
+msgstr "입력 데이터"
 
 #: quest/models.py:116
 msgid "Output data"
-msgstr ""
+msgstr "출력 데이터"
 
 #: quest/models.py:124
 msgid "Test set"
-msgstr ""
+msgstr "테스트 세트"
 
 #: quest/models.py:125
 msgid "Test sets"
-msgstr ""
-
-#~ msgid "Help"
-#~ msgstr "สอบถาม"
+msgstr "테스트 세트"
