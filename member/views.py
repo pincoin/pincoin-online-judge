@@ -285,7 +285,7 @@ class MemberResumeDetailView(auth_mixins.LoginRequiredMixin, generic.DetailView)
         queryset = models.Resume.objects.select_related('user')
         return get_object_or_404(queryset,
                                  user__pk=self.request.user.id,
-                                 resume_no=self.kwargs['uuid'])
+                                 resume_uuid=self.kwargs['resume_uuid'])
 
     def get_context_data(self, **kwargs):
         context = super(MemberResumeDetailView, self).get_context_data(**kwargs)
@@ -317,7 +317,7 @@ class MemberResumeCreateView(generic.FormView):
         data['primary'] = False
         data['status'] = models.Resume.STATUS_CHOICES.draft
         data['language'] = models.Resume.LANGUAGE_CHOICES.thai
-        data['uuid'] = resume.resume_no
+        data['resume_uuid'] = resume.resume_uuid
 
         return JsonResponse(data)
 
@@ -338,7 +338,7 @@ class MemberResumeDeleteView(generic.FormView):
     def get_form_kwargs(self):
         kwargs = super(MemberResumeDeleteView, self).get_form_kwargs()
         kwargs['request'] = self.request
-        kwargs['resume_no'] = self.kwargs['uuid']
+        kwargs['resume_uuid'] = self.kwargs['resume_uuid']
         return kwargs
 
     def form_valid(self, form):

@@ -92,12 +92,14 @@ class ResumeForm(forms.Form):
 class ResumeDeleteForm(forms.Form):
     def __init__(self, *args, **kwargs):
         self.request = kwargs.pop('request', None)
-        self.resume_no = kwargs.pop('resume_no', None)
+        self.resume_uuid = kwargs.pop('resume_uuid', None)
 
         super(ResumeDeleteForm, self).__init__(*args, **kwargs)
 
     def clean(self):
-        self.cleaned_data['resume'] = models.Resume.objects.get(user__pk=self.request.user.id, resume_no=self.resume_no)
+        self.cleaned_data['resume'] = models.Resume.objects \
+            .get(user__pk=self.request.user.id,
+                 resume_uuid=self.resume_uuid)
 
         if not self.cleaned_data['resume']:
             raise forms.ValidationError(_('Resume does not exist.'))

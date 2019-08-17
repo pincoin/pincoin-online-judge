@@ -97,7 +97,7 @@ class Resume(TimeStampedModel):
         (4, 'japanese', _('Japanese')),
     )
 
-    resume_no = models.UUIDField(
+    resume_uuid = models.UUIDField(
         verbose_name=_('UUID'),
         unique=True,
         default=uuid.uuid4,

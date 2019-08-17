@@ -24,14 +24,8 @@ $(document).ready(function () {
     });
 
     $('.delete-resume').on('click', function (e) {
-        console.log('delete resume');
-
-        var me = $(this), data = me.data('resume-no');
-
-        console.log(data);
-
         $.ajax({
-            url: '/accounts/resume/delete/' + data,
+            url: '/accounts/resume/delete/' + $(this).data('resume-no'),
             type: 'post',
             dataType: 'json',
             data: {

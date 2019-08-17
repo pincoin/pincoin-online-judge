@@ -24,7 +24,7 @@
                                     {% if resume.primary %}
                                         <i class="fas fa-check fa-fw"></i>
                                     {% endif %}
-                                    <a href="{% url 'account_resume_detail' resume.resume_no %}"
+                                    <a href="{% url 'account_resume_detail' resume.resume_uuid %}"
                                        class="resume-list-title{% if resume.primary %} resume-list-title-primary{% endif %}">
                                         {{ resume.title|truncatechars:30 }}
                                     </a>
@@ -48,7 +48,7 @@
                             </div>
                             <footer class="card-footer">
                                 <a href="#" class="card-footer-item">Make Primary</a>
-                                <a href="#" class="delete-resume card-footer-item" data-resume-no="{{ resume.resume_no }}">Delete</a>
+                                <a href="#" class="delete-resume card-footer-item" data-resume-no="{{ resume.resume_uuid }}">Delete</a>
                             </footer>
                         </div>
                     </div>
