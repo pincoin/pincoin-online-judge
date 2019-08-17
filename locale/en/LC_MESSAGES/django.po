@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-17 12:48+0000\n"
+"POT-Creation-Date: 2019-08-17 15:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,7 +65,7 @@ msgid "Me"
 msgstr ""
 
 #: conf/templates/conf/base.html:97 member/admin.py:18 member/models.py:31
-#: member/views.py:258
+#: member/templates/member/account/profile_base.html:16 member/views.py:258
 msgid "Profile"
 msgstr ""
 
@@ -115,7 +115,11 @@ msgid "Resume description"
 msgstr ""
 
 #: member/forms.py:88
-msgid "You cannot have more than 3 resumes."
+msgid "You cannot have more than {} resumes."
+msgstr ""
+
+#: member/forms.py:105
+msgid "Resume does not exist."
 msgstr ""
 
 #: member/forms2.py:9
@@ -211,7 +215,7 @@ msgid "Language"
 msgstr ""
 
 #: member/models.py:145 member/models.py:146 member/models.py:155
-#: member/views.py:275
+#: member/templates/member/account/profile_base.html:20 member/views.py:275
 msgid "Resume"
 msgstr ""
 
@@ -396,6 +400,7 @@ msgstr ""
 
 #: member/templates/member/account/password_change.html:106
 #: member/templates/member/account/password_reset_from_key.html:89
+#: member/templates/member/account/profile_base.html:40
 msgid "Change password"
 msgstr ""
 
@@ -442,6 +447,31 @@ msgstr ""
 msgid "Set password"
 msgstr ""
 
+#: member/templates/member/account/profile_base.html:24
+msgid "Organizations"
+msgstr ""
+
+#: member/templates/member/account/profile_base.html:28
+msgid "Emails"
+msgstr ""
+
+#: member/templates/member/account/profile_base.html:32
+msgid "SNS accounts"
+msgstr ""
+
+#: member/templates/member/account/profile_base.html:36
+msgid "Notifications"
+msgstr ""
+
+#: member/templates/member/account/profile_base.html:44
+msgid "Billing"
+msgstr ""
+
+#: member/templates/member/account/profile_base.html:48
+#: member/templates/member/account/unregister.html:47 member/views.py:96
+msgid "Unregister"
+msgstr ""
+
 #: member/templates/member/account/resume_detail.html:53
 msgid "Work experience"
 msgstr ""
@@ -465,10 +495,6 @@ msgstr ""
 #: member/templates/member/account/snippets/already_logged_in.html:5
 #, python-format
 msgid "you are already logged in as %(user_display)s."
-msgstr ""
-
-#: member/templates/member/account/unregister.html:47 member/views.py:96
-msgid "Unregister"
 msgstr ""
 
 #: member/templates/member/account/verification_sent.html:17

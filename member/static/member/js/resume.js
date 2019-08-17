@@ -16,7 +16,7 @@ $(document).ready(function () {
                 }
             }
         }).done(function (data, textStatus, jqXHR) {
-            window.location.href = '/accounts/resume/' + data.uuid;
+            window.location.href = '/accounts/resume/' + data.resume_uuid;
         }).fail(function (jqXHR, textStatus, errorThrown) {
             $('#warning').show();
             $('#warning-message').html('You can write 3 resumes.');

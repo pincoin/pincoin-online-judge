@@ -1,5 +1,7 @@
 {% extends 'conf/base.html' %}
 
+{% load i18n %}
+
 {% block content %}
     <div class="section">
         <div class="container">
@@ -11,39 +13,39 @@
                         </p>
                         <a href="{% url 'account_profile' %}"
                            class="panel-block{% if sidemenu == 'profile' %} is-active{% endif %}">
-                            Profile
+                            {% trans 'Profile' %}
                         </a>
                         <a href="{% url 'account_resume_list' %}"
                            class="panel-block{% if sidemenu == 'resume' %} is-active{% endif %}">
-                            Resume
+                            {% trans 'Resume' %}
                         </a>
                         <a href="#"
                            class="panel-block{% if sidemenu == 'organizations' %} is-active{% endif %}">
-                            Organizations
+                            {% trans 'Organizations' %}
                         </a>
                         <a href="{% url 'account_email' %}"
                            class="panel-block{% if sidemenu == 'emails' %} is-active{% endif %}">
-                            Emails
+                            {% trans 'Emails' %}
                         </a>
                         <a href="{% url 'socialaccount_connections' %}"
                            class="panel-block{% if sidemenu == 'sns' %} is-active{% endif %}">
-                            SNS accounts
+                            {% trans 'SNS accounts' %}
                         </a>
                         <a href="#"
                            class="panel-block{% if sidemenu == 'notifications' %} is-active{% endif %}">
-                            Notifications
+                            {% trans 'Notifications' %}
                         </a>
                         <a href="{% url 'account_change_password' %}"
                            class="panel-block{% if sidemenu == 'password' %} is-active{% endif %}">
-                            Change password
+                            {% trans 'Change password' %}
                         </a>
                         <a href="#"
                            class="panel-block{% if sidemenu == 'billing' %} is-active{% endif %}">
-                            Billing
+                            {% trans 'Billing' %}
                         </a>
                         <a href="{% url 'account_unregister' %}"
                            class="panel-block{% if sidemenu == 'unregister' %} is-active{% endif %}">
-                            Unregister
+                            {% trans 'Unregister' %}
                         </a>
                     </nav>
                 </div>

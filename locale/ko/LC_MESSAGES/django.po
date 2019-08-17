@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-17 12:48+0000\n"
+"POT-Creation-Date: 2019-08-17 15:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,15 +23,15 @@ msgstr "보안문자를 체크하세요."
 
 #: conf/models.py:11
 msgid "Parent"
-msgstr ""
+msgstr "부모"
 
 #: conf/models.py:20 member/models.py:235
 msgid "Title"
-msgstr ""
+msgstr "제목"
 
 #: conf/models.py:25
 msgid "Slug"
-msgstr ""
+msgstr "슬러그"
 
 #: conf/models.py:26
 msgid ""
@@ -65,7 +65,7 @@ msgid "Me"
 msgstr "나"
 
 #: conf/templates/conf/base.html:97 member/admin.py:18 member/models.py:31
-#: member/views.py:258
+#: member/templates/member/account/profile_base.html:16 member/views.py:258
 msgid "Profile"
 msgstr "프로필"
 
@@ -115,8 +115,12 @@ msgid "Resume description"
 msgstr "이력서 요약"
 
 #: member/forms.py:88
-msgid "You cannot have more than 3 resumes."
-msgstr "이력서는 3개까지 등록 가능합니다."
+msgid "You cannot have more than {} resumes."
+msgstr "이력서는 {}개까지 등록 가능합니다."
+
+#: member/forms.py:105
+msgid "Resume does not exist."
+msgstr "이력서 없음"
 
 #: member/forms2.py:9
 msgid "First name"
@@ -211,7 +215,7 @@ msgid "Language"
 msgstr "언어"
 
 #: member/models.py:145 member/models.py:146 member/models.py:155
-#: member/views.py:275
+#: member/templates/member/account/profile_base.html:20 member/views.py:275
 msgid "Resume"
 msgstr "이력서"
 
@@ -396,6 +400,7 @@ msgstr "정말로 로그아웃할까요?"
 
 #: member/templates/member/account/password_change.html:106
 #: member/templates/member/account/password_reset_from_key.html:89
+#: member/templates/member/account/profile_base.html:40
 msgid "Change password"
 msgstr "비밀번호 변경"
 
@@ -403,8 +408,7 @@ msgstr "비밀번호 변경"
 msgid ""
 "Enter your e-mail address below, and we will send you an e-mail allowing you "
 "to reset it."
-msgstr ""
-"비밀번호 재설정 링크를 받기 위해 로그인 이메일 주소를 입력하세요."
+msgstr "비밀번호 재설정 링크를 받기 위해 로그인 이메일 주소를 입력하세요."
 
 #: member/templates/member/account/password_reset.html:70
 msgid "Reset My Password"
@@ -443,6 +447,31 @@ msgstr "비밀번호를 변경했습니다."
 msgid "Set password"
 msgstr "비밀번호 설정"
 
+#: member/templates/member/account/profile_base.html:24
+msgid "Organizations"
+msgstr "소속"
+
+#: member/templates/member/account/profile_base.html:28
+msgid "Emails"
+msgstr "로그인 이메일"
+
+#: member/templates/member/account/profile_base.html:32
+msgid "SNS accounts"
+msgstr "SNS 로그인"
+
+#: member/templates/member/account/profile_base.html:36
+msgid "Notifications"
+msgstr "알림설정"
+
+#: member/templates/member/account/profile_base.html:44
+msgid "Billing"
+msgstr "청구내역"
+
+#: member/templates/member/account/profile_base.html:48
+#: member/templates/member/account/unregister.html:47 member/views.py:96
+msgid "Unregister"
+msgstr "회원탈퇴"
+
 #: member/templates/member/account/resume_detail.html:53
 msgid "Work experience"
 msgstr "경력"
@@ -457,7 +486,7 @@ msgstr "링크"
 
 #: member/templates/member/account/resume_list.html:60
 msgid "New resume"
-msgstr "새 이력서"
+msgstr "이력서 작성하기"
 
 #: member/templates/member/account/snippets/already_logged_in.html:5
 msgid "Note"
@@ -467,10 +496,6 @@ msgstr "노트"
 #, python-format
 msgid "you are already logged in as %(user_display)s."
 msgstr ""
-
-#: member/templates/member/account/unregister.html:47 member/views.py:96
-msgid "Unregister"
-msgstr "회원탈퇴"
 
 #: member/templates/member/account/verification_sent.html:17
 msgid ""
@@ -497,6 +522,7 @@ msgstr ""
 msgid ""
 "You currently have no social network accounts connected to this account."
 msgstr ""
+"아직 SNS 계정 로그인 설정이 없습니다."
 
 #: member/templates/member/socialaccount/connections.html:84
 msgid "Add a 3rd Party Account"
