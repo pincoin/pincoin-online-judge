@@ -6,24 +6,16 @@
 
 {% block content %}
     <section class="section">
-        <div class="container has-text-centered">
-            <h1 class="title">{{ page_title }}</h1>
-        </div>
-    </section>
-
-    <section class="section">
         <div class="container">
+            <h1 class="title has-text-centered">{{ page_title }}</h1>
+
             <div class="columns is-centered">
                 <div class="column is-two-fifths">
-                    <div class="columns">
-                        <div class="column">
-                            <article class="message is-danger">
-                                <div class="message-body">
-                                    {% trans "An error occurred while attempting to login via your social network account." %}
-                                </div>
-                            </article>
+                    <article class="message is-danger">
+                        <div class="message-body">
+                            {% trans "An error occurred while attempting to login via your social network account." %}
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </div>

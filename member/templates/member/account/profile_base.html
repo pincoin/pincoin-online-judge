@@ -6,7 +6,7 @@
             <div class="columns">
                 <div class="column is-4">
                     <nav class="panel">
-                        <p class="panel-heading has-text-centered">
+                        <p class="panel-heading has-text-centered has-text-weight-bold">
                             {{ request.user.username }}
                         </p>
                         <a href="{% url 'account_profile' %}"
@@ -40,6 +40,10 @@
                         <a href="#"
                            class="panel-block{% if sidemenu == 'billing' %} is-active{% endif %}">
                             Billing
+                        </a>
+                        <a href="{% url 'account_unregister' %}"
+                           class="panel-block{% if sidemenu == 'unregister' %} is-active{% endif %}">
+                            Unregister
                         </a>
                     </nav>
                 </div>
