@@ -328,3 +328,30 @@ class MemberResumeCreateView(generic.FormView):
             'status': 'false',
             'message': 'Bad Request'
         }, status=400)
+
+
+class MemberResumeDeleteView(generic.FormView):
+    logger = logging.getLogger(__name__)
+
+    form_class = forms.ResumeDeleteForm
+
+    def get_form_kwargs(self):
+        kwargs = super(MemberResumeDeleteView, self).get_form_kwargs()
+        kwargs['request'] = self.request
+        kwargs['resume_no'] = self.kwargs['uuid']
+        return kwargs
+
+    def form_valid(self, form):
+        data = {}
+
+        form.cleaned_data['resume'].delete()
+
+        return JsonResponse(data)
+
+    def form_invalid(self, form):
+        self.logger.debug(form.errors)
+
+        return JsonResponse({
+            'status': 'false',
+            'message': 'Bad Request'
+        }, status=400)

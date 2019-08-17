@@ -404,6 +404,7 @@ msgid ""
 "Enter your e-mail address below, and we will send you an e-mail allowing you "
 "to reset it."
 msgstr ""
+"비밀번호 재설정 링크를 받기 위해 로그인 이메일 주소를 입력하세요."
 
 #: member/templates/member/account/password_reset.html:70
 msgid "Reset My Password"

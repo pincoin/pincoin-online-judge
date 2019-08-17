@@ -5,7 +5,7 @@
     {% load i18n %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CODING JUMP : {% block title %}{% endblock %}</title>
+    <title>Coding Jump : {% block title %}{% endblock %}</title>
     {% block stylesheet %}
         <link rel="stylesheet"
               href="{% static "conf/css/sarabun.css" %}">
@@ -34,8 +34,8 @@
     <div class="container">
         <div class="navbar-brand">
             <a class="navbar-item" href="{% url 'home' %}">
-                <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo4.png"
-                     width="180" height="24.28" alt="CODING JUMP">
+                <img src="{% static 'conf/images/logo.png' %}"
+                     width="180" alt="Coding Jump">
             </a>
             <a class="navbar-burger">
                 <span aria-hidden="true"></span>
@@ -115,7 +115,7 @@
     <div class="container">
         <div class="columns">
             <div class="column">
-                Copyright &copy; {% now "Y" %} <strong>CODING JUMP</strong>
+                Copyright &copy; {% now "Y" %} <strong>Coding Jump</strong>
                 All Rights Reserved.
             </div>
             <div class="column has-text-right-tablet">

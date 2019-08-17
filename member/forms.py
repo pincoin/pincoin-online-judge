@@ -84,5 +84,20 @@ class ResumeForm(forms.Form):
         super(ResumeForm, self).__init__(*args, **kwargs)
 
     def clean(self):
-        if models.Resume.objects.filter(user__pk=self.request.user.id).count() > 10:
-            raise forms.ValidationError(_('You cannot have more than 3 resumes.'))
+        if models.Resume.objects.filter(user__pk=self.request.user.id).count() > member_settings.NUMBER_OF_RESUME:
+            raise forms.ValidationError(_('You cannot have more than {} resumes.'
+                                          .format(member_settings.NUMBER_OF_RESUME)))
+
+
+class ResumeDeleteForm(forms.Form):
+    def __init__(self, *args, **kwargs):
+        self.request = kwargs.pop('request', None)
+        self.resume_no = kwargs.pop('resume_no', None)
+
+        super(ResumeDeleteForm, self).__init__(*args, **kwargs)
+
+    def clean(self):
+        self.cleaned_data['resume'] = models.Resume.objects.get(user__pk=self.request.user.id, resume_no=self.resume_no)
+
+        if not self.cleaned_data['resume']:
+            raise forms.ValidationError(_('Resume does not exist.'))
