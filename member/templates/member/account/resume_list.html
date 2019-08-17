@@ -48,13 +48,17 @@
                             </div>
                             <footer class="card-footer">
                                 <a href="#" class="card-footer-item">Make Primary</a>
-                                <a href="#" class="delete-resume card-footer-item" data-resume-no="{{ resume.resume_uuid }}">Delete</a>
+                                <a href="#" class="delete-resume card-footer-item"
+                                   data-resume-no="{{ resume.resume_uuid }}">Delete</a>
                             </footer>
                         </div>
                     </div>
                 {% endfor %}
 
                 <div class="column is-four-fifths">
+                    <p class="notification is-warning is-hidden error-message">
+                        Error
+                    </p>
                     <a id="new-resume" href="#" class="button is-link is-fullwidth">
                         <i class="fas fa-file-invoice fa-fw"></i>
                         {% trans 'New resume' %}

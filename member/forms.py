@@ -84,7 +84,7 @@ class ResumeForm(forms.Form):
         super(ResumeForm, self).__init__(*args, **kwargs)
 
     def clean(self):
-        if models.Resume.objects.filter(user__pk=self.request.user.id).count() > member_settings.NUMBER_OF_RESUME:
+        if models.Resume.objects.filter(user__pk=self.request.user.id).count() >= member_settings.NUMBER_OF_RESUME:
             raise forms.ValidationError(_('You cannot have more than {} resumes.'
                                           .format(member_settings.NUMBER_OF_RESUME)))
 
