@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-17 15:52+0000\n"
+"POT-Creation-Date: 2019-08-18 00:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -478,19 +478,24 @@ msgstr ""
 msgid "Unregister"
 msgstr "สมัครสมาชิก"
 
-#: member/templates/member/account/resume_detail.html:53
+#: member/templates/member/account/resume_detail.html:51
+#: member/templates/member/account/resume_list.html:55
+msgid "Delete resume"
+msgstr ""
+
+#: member/templates/member/account/resume_detail.html:58
 msgid "Work experience"
 msgstr ""
 
-#: member/templates/member/account/resume_detail.html:55
+#: member/templates/member/account/resume_detail.html:60
 msgid "Education"
 msgstr ""
 
-#: member/templates/member/account/resume_detail.html:57
+#: member/templates/member/account/resume_detail.html:62
 msgid "Links"
 msgstr ""
 
-#: member/templates/member/account/resume_list.html:60
+#: member/templates/member/account/resume_list.html:68
 msgid "New resume"
 msgstr ""
 

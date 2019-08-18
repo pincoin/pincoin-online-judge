@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-17 15:52+0000\n"
+"POT-Creation-Date: 2019-08-18 00:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -472,19 +472,24 @@ msgstr "청구내역"
 msgid "Unregister"
 msgstr "회원탈퇴"
 
-#: member/templates/member/account/resume_detail.html:53
+#: member/templates/member/account/resume_detail.html:51
+#: member/templates/member/account/resume_list.html:55
+msgid "Delete resume"
+msgstr "이력서 삭제"
+
+#: member/templates/member/account/resume_detail.html:58
 msgid "Work experience"
 msgstr "경력"
 
-#: member/templates/member/account/resume_detail.html:55
+#: member/templates/member/account/resume_detail.html:60
 msgid "Education"
 msgstr "학력"
 
-#: member/templates/member/account/resume_detail.html:57
+#: member/templates/member/account/resume_detail.html:62
 msgid "Links"
 msgstr "링크"
 
-#: member/templates/member/account/resume_list.html:60
+#: member/templates/member/account/resume_list.html:68
 msgid "New resume"
 msgstr "이력서 작성하기"
 
@@ -521,8 +526,7 @@ msgstr ""
 #: member/templates/member/socialaccount/connections.html:75
 msgid ""
 "You currently have no social network accounts connected to this account."
-msgstr ""
-"아직 SNS 계정 로그인 설정이 없습니다."
+msgstr "아직 SNS 계정 로그인 설정이 없습니다."
 
 #: member/templates/member/socialaccount/connections.html:84
 msgid "Add a 3rd Party Account"
