@@ -47,8 +47,11 @@
                                 </div>
                             </div>
                             <footer class="card-footer">
-                                <a href="#" class="card-footer-item">
-                                    Make Primary
+                                <a href="#" class="make-primary-resume card-footer-item"
+                                   data-resume-no="{{ resume.resume_uuid }}">
+                                    <span class="button is-link">
+                                        {% trans 'Make primary resume' %}
+                                    </span>
                                 </a>
                                 <a href="#" class="delete-resume card-footer-item"
                                    data-resume-no="{{ resume.resume_uuid }}">
@@ -62,13 +65,28 @@
                 {% endfor %}
 
                 <div class="column is-four-fifths">
-                    <p class="notification is-warning is-hidden error-message">
-                        Error
-                    </p>
+                    <p class="notification is-warning is-hidden error-message"></p>
                     <a id="new-resume" href="#" class="button is-link is-fullwidth">
                         <i class="fas fa-file-invoice fa-fw"></i>
                         {% trans 'New resume' %}
                     </a>
+                </div>
+
+                <div class="modal">
+                    <div class="modal-background"></div>
+                    <div class="modal-card">
+                        <header class="modal-card-head">
+                            <p class="modal-card-title">Modal title</p>
+                            <button class="delete" aria-label="close"></button>
+                        </header>
+                        <section class="modal-card-body">
+                            <!-- Content ... -->
+                        </section>
+                        <footer class="modal-card-foot">
+                            <button class="button is-success">Save changes</button>
+                            <button class="button cancel">Cancel</button>
+                        </footer>
+                    </div>
                 </div>
             </div>
         </div>

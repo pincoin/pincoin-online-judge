@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-18 00:48+0000\n"
+"POT-Creation-Date: 2019-08-18 01:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,7 +37,7 @@ msgstr "슬러그"
 msgid ""
 "A short label containing only letters, numbers, underscores or hyphens for "
 "URL"
-msgstr ""
+msgstr "알파벳, 숫자, 밑줄 또는 하이픈으로 짧은 URL"
 
 #: conf/settings/local.py:10 member/models.py:93
 msgid "Thai"
@@ -269,7 +269,7 @@ msgstr "비활성화 계정"
 
 #: member/templates/member/account/email.html:22
 msgid "The following e-mail addresses are associated with your account:"
-msgstr ""
+msgstr "계정과 연결된 이메일 주소입니다."
 
 #: member/templates/member/account/email.html:53
 msgid "Primary"
@@ -336,7 +336,7 @@ msgstr ""
 
 #: member/templates/member/account/email/email_confirmation_subject.txt:3
 msgid "Please Confirm Your E-mail Address"
-msgstr ""
+msgstr "이메일 주소 확인 요청"
 
 #: member/templates/member/account/email/password_reset_key_message.html:3
 msgid ""
@@ -416,13 +416,14 @@ msgstr "비밀번호 초기화"
 
 #: member/templates/member/account/password_reset.html:76
 msgid "Please contact us if you have any trouble resetting your password."
-msgstr ""
+msgstr "5분 이내로 메일을 받지 못하면 저희에게 연락바랍니다."
 
 #: member/templates/member/account/password_reset_done.html:24
 msgid ""
 "We have sent you an e-mail. Please contact us if you do not receive it "
 "within a few minutes."
 msgstr ""
+"5분 이내로 메일을 받지 못하면 저희에게 연락바랍니다."
 
 #: member/templates/member/account/password_reset_from_key.html:11
 msgid "Bad Token"
@@ -472,24 +473,29 @@ msgstr "청구내역"
 msgid "Unregister"
 msgstr "회원탈퇴"
 
-#: member/templates/member/account/resume_detail.html:51
-#: member/templates/member/account/resume_list.html:55
+#: member/templates/member/account/resume_detail.html:48
+#: member/templates/member/account/resume_list.html:52
+msgid "Make primary resume"
+msgstr "기본 이력서로 지정"
+
+#: member/templates/member/account/resume_detail.html:54
+#: member/templates/member/account/resume_list.html:58
 msgid "Delete resume"
 msgstr "이력서 삭제"
 
-#: member/templates/member/account/resume_detail.html:58
+#: member/templates/member/account/resume_detail.html:62
 msgid "Work experience"
 msgstr "경력"
 
-#: member/templates/member/account/resume_detail.html:60
+#: member/templates/member/account/resume_detail.html:64
 msgid "Education"
 msgstr "학력"
 
-#: member/templates/member/account/resume_detail.html:62
+#: member/templates/member/account/resume_detail.html:66
 msgid "Links"
 msgstr "링크"
 
-#: member/templates/member/account/resume_list.html:68
+#: member/templates/member/account/resume_list.html:72
 msgid "New resume"
 msgstr "이력서 작성하기"
 
@@ -500,7 +506,7 @@ msgstr "노트"
 #: member/templates/member/account/snippets/already_logged_in.html:5
 #, python-format
 msgid "you are already logged in as %(user_display)s."
-msgstr ""
+msgstr "%(user_display)s: 이미 로그인했습니다."
 
 #: member/templates/member/account/verification_sent.html:17
 msgid ""
@@ -510,12 +516,13 @@ msgstr ""
 
 #: member/templates/member/account/verification_sent.html:20
 msgid "Please contact us if you do not receive it within a few minutes."
-msgstr ""
+msgstr "5분 이내로 메일을 받지 못하면 저희에게 연락바랍니다."
 
 #: member/templates/member/socialaccount/authentication_error.html:16
 msgid ""
 "An error occurred while attempting to login via your social network account."
 msgstr ""
+"SNS 로그인하지 못했습니다."
 
 #: member/templates/member/socialaccount/connections.html:24
 msgid ""
@@ -530,7 +537,7 @@ msgstr "아직 SNS 계정 로그인 설정이 없습니다."
 
 #: member/templates/member/socialaccount/connections.html:84
 msgid "Add a 3rd Party Account"
-msgstr "SNS 로그인 추가"
+msgstr "SNS 로그인 연동"
 
 #: member/templates/member/socialaccount/login_cancelled.html:17
 msgid ""
@@ -616,7 +623,7 @@ msgstr "SNS 로그인 실패"
 
 #: member/views.py:243
 msgid "Connect with SNS accounts"
-msgstr "SNS로 로그인"
+msgstr "SNS 로그인"
 
 #: member/views.py:292
 msgid "Resume - {}"

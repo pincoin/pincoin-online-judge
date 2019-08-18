@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-18 00:48+0000\n"
+"POT-Creation-Date: 2019-08-18 01:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -472,24 +472,29 @@ msgstr ""
 msgid "Unregister"
 msgstr ""
 
-#: member/templates/member/account/resume_detail.html:51
-#: member/templates/member/account/resume_list.html:55
+#: member/templates/member/account/resume_detail.html:48
+#: member/templates/member/account/resume_list.html:52
+msgid "Make primary resume"
+msgstr ""
+
+#: member/templates/member/account/resume_detail.html:54
+#: member/templates/member/account/resume_list.html:58
 msgid "Delete resume"
 msgstr ""
 
-#: member/templates/member/account/resume_detail.html:58
+#: member/templates/member/account/resume_detail.html:62
 msgid "Work experience"
 msgstr ""
 
-#: member/templates/member/account/resume_detail.html:60
+#: member/templates/member/account/resume_detail.html:64
 msgid "Education"
 msgstr ""
 
-#: member/templates/member/account/resume_detail.html:62
+#: member/templates/member/account/resume_detail.html:66
 msgid "Links"
 msgstr ""
 
-#: member/templates/member/account/resume_list.html:68
+#: member/templates/member/account/resume_list.html:72
 msgid "New resume"
 msgstr ""
 

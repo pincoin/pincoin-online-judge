@@ -12,7 +12,7 @@ $(document).ready(function () {
             },
             beforeSend: function (xhr, settings) {
                 if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                    xhr.setRequestHeader('X-CSRFToken', csrftoken);
                 }
             }
         }).done(function (data, textStatus, jqXHR) {
@@ -36,14 +36,22 @@ $(document).ready(function () {
             },
             beforeSend: function (xhr, settings) {
                 if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                    xhr.setRequestHeader('X-CSRFToken', csrftoken);
                 }
             }
         }).done(function (data, textStatus, jqXHR) {
             window.location.href = '/accounts/resume/';
         }).fail(function (jqXHR, textStatus, errorThrown) {
-            $('#warning').show();
-            $('#warning-message').html('You can write 3 resumes.');
         });
+    });
+
+    $('.make-primary-resume').on('click', function (e) {
+        $('.modal').toggleClass('is-active');
+        $('html').toggleClass('is-clipped');
+    });
+
+    $('.modal-card-head .delete, .modal-card-foot .cancel').on('click', function (e) {
+        $('.modal').toggleClass('is-active');
+        $('html').toggleClass('is-clipped');
     });
 });
