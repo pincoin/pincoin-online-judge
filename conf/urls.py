@@ -14,6 +14,9 @@ urlpatterns = [
     path('{}'.format(settings.ADMIN_URL),
          admin.site.urls),
 
+    path('i18n/',
+         include('django.conf.urls.i18n')),
+
     path('quest/',
          include('quest.urls', namespace='quest')),
 

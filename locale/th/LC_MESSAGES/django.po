@@ -49,7 +49,7 @@ msgstr "ภาษาอังกฤษ"
 
 #: conf/settings/local.py:12 member/models.py:95
 msgid "Korean"
-msgstr ""
+msgstr "ภาษาเกาหลี"
 
 #: conf/templates/conf/base.html:81
 #: member/templates/member/account/login.html:108
@@ -62,7 +62,7 @@ msgstr "สมัครสมาชิก"
 
 #: conf/templates/conf/base.html:92
 msgid "Me"
-msgstr ""
+msgstr "ฉัน"
 
 #: conf/templates/conf/base.html:97 member/admin.py:18 member/models.py:31
 #: member/templates/member/account/profile_base.html:16 member/views.py:258
