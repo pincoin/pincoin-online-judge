@@ -23,10 +23,6 @@
                            class="panel-block{% if sidemenu == 'organizations' %} is-active{% endif %}">
                             {% trans 'Organizations' %}
                         </a>
-                        <a href="{% url 'account_email' %}"
-                           class="panel-block{% if sidemenu == 'emails' %} is-active{% endif %}">
-                            {% trans 'Emails' %}
-                        </a>
                         <a href="{% url 'socialaccount_connections' %}"
                            class="panel-block{% if sidemenu == 'sns' %} is-active{% endif %}">
                             {% trans 'SNS accounts' %}
