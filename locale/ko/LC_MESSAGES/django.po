@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-18 01:34+0000\n"
+"POT-Creation-Date: 2019-08-19 16:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,25 +51,52 @@ msgstr "영어"
 msgid "Korean"
 msgstr "한국어"
 
-#: conf/templates/conf/base.html:81
-#: member/templates/member/account/login.html:108
+#: conf/templates/conf/base.html:52
+msgid "Archive"
+msgstr "문제은행"
+
+#: conf/templates/conf/base.html:56
+msgid "By Level"
+msgstr "단계별로 풀어보기"
+
+#: conf/templates/conf/base.html:59
+msgid "By Category"
+msgstr "알고리즘 분류"
+
+#: conf/templates/conf/base.html:64
+msgid "Contest"
+msgstr "대회"
+
+#: conf/templates/conf/base.html:67
+msgid "Stat"
+msgstr "채점현황"
+
+#: conf/templates/conf/base.html:70
+msgid "Ranking"
+msgstr "순위"
+
+#: conf/templates/conf/base.html:73
+msgid "Jobs"
+msgstr "채용"
+
+#: conf/templates/conf/base.html:79
+msgid "Help"
+msgstr "도움말"
+
+#: conf/templates/conf/base.html:89
 msgid "Sign In"
 msgstr "로그인"
 
-#: conf/templates/conf/base.html:85
-msgid "Register"
-msgstr "회원가입"
-
-#: conf/templates/conf/base.html:92
+#: conf/templates/conf/base.html:96
 msgid "Me"
 msgstr "나"
 
-#: conf/templates/conf/base.html:97 member/admin.py:18 member/models.py:31
+#: conf/templates/conf/base.html:101 member/admin.py:18 member/models.py:31
 #: member/templates/member/account/profile_base.html:16 member/views.py:258
 msgid "Profile"
 msgstr "프로필"
 
-#: conf/templates/conf/base.html:102
+#: conf/templates/conf/base.html:106
 #: member/templates/member/account/logout.html:30
 msgid "Sign Out"
 msgstr "로그아웃"
@@ -384,23 +411,13 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: member/templates/member/account/login.html:126
-msgid "Forgot Password?"
-msgstr "비밀번호 재설정"
-
-#: member/templates/member/account/login.html:133
-#: member/templates/member/account/signup.html:196
-#: member/templates/member/socialaccount/signup.html:160
-msgid "Sign Up"
-msgstr "회원가입"
-
 #: member/templates/member/account/logout.html:16
 msgid "Are you sure you want to sign out?"
 msgstr "정말로 로그아웃할까요?"
 
 #: member/templates/member/account/password_change.html:106
 #: member/templates/member/account/password_reset_from_key.html:89
-#: member/templates/member/account/profile_base.html:40
+#: member/templates/member/account/profile_base.html:36
 msgid "Change password"
 msgstr "비밀번호 변경"
 
@@ -422,8 +439,7 @@ msgstr "5분 이내로 메일을 받지 못하면 저희에게 연락바랍니�
 msgid ""
 "We have sent you an e-mail. Please contact us if you do not receive it "
 "within a few minutes."
-msgstr ""
-"5분 이내로 메일을 받지 못하면 저희에게 연락바랍니다."
+msgstr "5분 이내로 메일을 받지 못하면 저희에게 연락바랍니다."
 
 #: member/templates/member/account/password_reset_from_key.html:11
 msgid "Bad Token"
@@ -453,33 +469,29 @@ msgid "Organizations"
 msgstr "소속"
 
 #: member/templates/member/account/profile_base.html:28
-msgid "Emails"
-msgstr "로그인 이메일"
-
-#: member/templates/member/account/profile_base.html:32
 msgid "SNS accounts"
 msgstr "SNS 로그인"
 
-#: member/templates/member/account/profile_base.html:36
+#: member/templates/member/account/profile_base.html:32
 msgid "Notifications"
 msgstr "알림설정"
 
-#: member/templates/member/account/profile_base.html:44
+#: member/templates/member/account/profile_base.html:40
 msgid "Billing"
 msgstr "청구내역"
 
-#: member/templates/member/account/profile_base.html:48
+#: member/templates/member/account/profile_base.html:44
 #: member/templates/member/account/unregister.html:47 member/views.py:96
 msgid "Unregister"
 msgstr "회원탈퇴"
 
 #: member/templates/member/account/resume_detail.html:48
-#: member/templates/member/account/resume_list.html:52
+#: member/templates/member/account/resume_list.html:53
 msgid "Make primary resume"
 msgstr "기본 이력서로 지정"
 
 #: member/templates/member/account/resume_detail.html:54
-#: member/templates/member/account/resume_list.html:58
+#: member/templates/member/account/resume_list.html:59
 msgid "Delete resume"
 msgstr "이력서 삭제"
 
@@ -495,9 +507,14 @@ msgstr "학력"
 msgid "Links"
 msgstr "링크"
 
-#: member/templates/member/account/resume_list.html:72
+#: member/templates/member/account/resume_list.html:71
 msgid "New resume"
 msgstr "이력서 작성하기"
+
+#: member/templates/member/account/signup.html:196
+#: member/templates/member/socialaccount/signup.html:160
+msgid "Sign Up"
+msgstr "회원가입"
 
 #: member/templates/member/account/snippets/already_logged_in.html:5
 msgid "Note"
@@ -521,8 +538,7 @@ msgstr "5분 이내로 메일을 받지 못하면 저희에게 연락바랍니�
 #: member/templates/member/socialaccount/authentication_error.html:16
 msgid ""
 "An error occurred while attempting to login via your social network account."
-msgstr ""
-"SNS 로그인하지 못했습니다."
+msgstr "SNS 로그인하지 못했습니다."
 
 #: member/templates/member/socialaccount/connections.html:24
 msgid ""

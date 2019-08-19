@@ -47,26 +47,33 @@
 
         <div class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item">
-                    Archive
+                <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            {% trans 'Archive' %}
+                        </a>
+                        <div class="navbar-dropdown">
+                            <a href="#" class="navbar-item">
+                                <span>{% trans "By Level" %}</span>
+                            </a>
+                            <a href="#" class="navbar-item">
+                                <span>{% trans "By Category" %}</span>
+                            </a>
+                        </div>
+                    </div>
+                <a href="#" class="navbar-item">
+                    {% trans 'Contest' %}
                 </a>
-                <a class="navbar-item">
-                    Contest
+                <a href="#" class="navbar-item">
+                    {% trans 'Stat' %}
                 </a>
-                <a class="navbar-item">
-                    Stat
+                <a href="#" class="navbar-item">
+                    {% trans 'Ranking' %}
                 </a>
-                <a class="navbar-item">
-                    Ranking
+                <a href="#" class="navbar-item">
+                    {% trans 'Jobs' %}
                 </a>
-                <a class="navbar-item">
-                    Job
-                </a>
-                <a class="navbar-item">
-                    Blog
-                </a>
-                <a class="navbar-item">
-                    Help
+                <a href="#" class="navbar-item">
+                    {% trans 'Help' %}
                 </a>
             </div>
 
