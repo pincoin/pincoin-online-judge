@@ -20,6 +20,9 @@ urlpatterns = [
     path('quest/',
          include('quest.urls', namespace='quest')),
 
+    path('job/',
+         include('job.urls', namespace='job')),
+
     path('accounts/',
          include('member.urls')),
 ]
