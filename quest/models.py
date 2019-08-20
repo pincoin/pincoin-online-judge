@@ -86,6 +86,14 @@ class Problem(SoftDeletableModel, TimeStampedModel):
         (1, 'published', _('Published')),
     )
 
+    LEVEL_CHOICES = Choices(
+        (1, 'level1', _('Level 1')),
+        (2, 'level2', _('Level 2')),
+        (3, 'level3', _('Level 3')),
+        (4, 'level4', _('Level 4')),
+        (5, 'level5', _('Level 5')),
+    )
+
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         verbose_name=_('Author'),
@@ -134,6 +142,8 @@ class Problem(SoftDeletableModel, TimeStampedModel):
 
     level = models.IntegerField(
         verbose_name=_('Level'),
+        choices=LEVEL_CHOICES,
+        default=LEVEL_CHOICES.level1,
         db_index=True,
     )
 
