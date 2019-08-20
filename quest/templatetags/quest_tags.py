@@ -7,8 +7,10 @@ register = template.Library()
 
 @register.simple_tag
 def get_categories(language='th'):
-    categories = models.Category.objects \
-        .filter(children__isnull=True) \
-        .order_by('tree_id', 'lft')
+    categories = models.CategoryTranslation.objects \
+        .select_related('category') \
+        .filter(category__children__isnull=True,
+                language=language) \
+        .order_by('category__tree_id', 'category__lft')
 
     return categories

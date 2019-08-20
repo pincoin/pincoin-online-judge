@@ -20,19 +20,15 @@
     <section class="section">
         <div class="container">
             <div class="columns is-multiline">
-                {% get_categories as categories %}
+                {% get_categories LANGUAGE_CODE as categories %}
 
                 {% for category in categories %}
                     <div class="column is-3">
                         <article class="box">
                             <div>
-                                <a href=""
-                                   class="card-header-title">
+                                <a href="">
                                     {{ category.title }}
                                 </a>
-                                <span class="icon">
-                                    <i class="fas fa-angle-double-right"></i>
-                                </span>
                             </div>
                         </article>
                     </div>

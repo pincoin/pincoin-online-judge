@@ -3,6 +3,11 @@
 <head>
     {% load static %}
     {% load i18n %}
+
+    {% get_current_language as LANGUAGE_CODE %}
+    {% get_available_languages as LANGUAGES %}
+    {% get_language_info_list for LANGUAGES as languages %}
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Coding Jump : {% block title %}{% endblock %}</title>
@@ -48,18 +53,18 @@
         <div class="navbar-menu">
             <div class="navbar-start">
                 <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">
-                            {% trans 'Problem Archive' %}
+                    <a class="navbar-link">
+                        {% trans 'Problem Archive' %}
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a href="{% url 'quest:problem_list_by_level' %}" class="navbar-item">
+                            <span>{% trans "By Level" %}</span>
                         </a>
-                        <div class="navbar-dropdown">
-                            <a href="{% url 'quest:problem_list_by_level' %}" class="navbar-item">
-                                <span>{% trans "By Level" %}</span>
-                            </a>
-                            <a href="{% url 'quest:problem_list_by_category' %}" class="navbar-item">
-                                <span>{% trans "By Category" %}</span>
-                            </a>
-                        </div>
+                        <a href="{% url 'quest:problem_list_by_category' %}" class="navbar-item">
+                            <span>{% trans "By Category" %}</span>
+                        </a>
                     </div>
+                </div>
                 <a href="{% url 'quest:contest_list' %}" class="navbar-item">
                     {% trans 'Programming Contest' %}
                 </a>
@@ -125,9 +130,6 @@
                     <input name="next" type="hidden" value="{{ redirect_to }}"/>
                     <div class="select is-small">
                         <select id="language-selector" name="language">
-                            {% get_current_language as LANGUAGE_CODE %}
-                            {% get_available_languages as LANGUAGES %}
-                            {% get_language_info_list for LANGUAGES as languages %}
                             {% for language in languages %}
                                 <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %}
                                         selected{% endif %}>
