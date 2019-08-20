@@ -24,17 +24,16 @@
 
                 {% for category in categories %}
                     <div class="column is-3">
-                        <article class="card">
-                            <header class="card-header">
-                                <p class="card-header-title">
+                        <article class="box">
+                            <div>
+                                <a href=""
+                                   class="card-header-title">
                                     {{ category.title }}
-                                </p>
-                                <a href="#" class="card-header-icon">
+                                </a>
                                 <span class="icon">
                                     <i class="fas fa-angle-double-right"></i>
                                 </span>
-                                </a>
-                            </header>
+                            </div>
                         </article>
                     </div>
                 {% endfor %}

@@ -6,20 +6,48 @@ from model_utils.models import (
     TimeStampedModel, SoftDeletableModel
 )
 from mptt.fields import TreeForeignKey
+from mptt.models import MPTTModel
 
-from conf.models import AbstractCategory
 
+class Category(TimeStampedModel, MPTTModel):
+    parent = TreeForeignKey(
+        'self',
+        verbose_name=_('Parent'),
+        blank=True,
+        null=True,
+        related_name='children',
+        db_index=True,
+        on_delete=models.SET_NULL,
+    )
 
-class Category(AbstractCategory):
+    slug = models.SlugField(
+        verbose_name=_('Slug'),
+        help_text=_('A short label containing only letters, numbers, underscores or hyphens for URL'),
+        max_length=255,
+        unique=True,
+        allow_unicode=True,
+    )
+
     class Meta:
         verbose_name = _('Category')
         verbose_name_plural = _('Categories')
 
+    class MPTTMeta:
+        order_insertion_by = ['created']
+
     def __str__(self):
-        return self.title
+        return self.slug
 
 
-class CategoryLanguage(TimeStampedModel):
+class CategoryTranslation(TimeStampedModel):
+    LANGUAGE = Choices(
+        ('th', _('Thai')),
+        ('en', _('English')),
+        ('ko', _('Korean')),
+        ('cn', _('Chinese')),
+        ('ja', _('Japanese')),
+    )
+
     category = models.ForeignKey(
         'quest.Category',
         verbose_name=_('Category'),
@@ -28,9 +56,14 @@ class CategoryLanguage(TimeStampedModel):
     )
 
     language = models.CharField(
+        choices=LANGUAGE,
         max_length=2,
-        default='th',
-        help_text='th|en|ko|cn|ja',
+        default=LANGUAGE.th,
+    )
+
+    title = models.CharField(
+        verbose_name=_('Title'),
+        max_length=128,
     )
 
     description = models.TextField(
@@ -40,6 +73,9 @@ class CategoryLanguage(TimeStampedModel):
     class Meta:
         verbose_name = _('i18n Category')
         verbose_name_plural = _('i18n Categories')
+
+    def __str__(self):
+        return self.title
 
 
 class Problem(SoftDeletableModel, TimeStampedModel):

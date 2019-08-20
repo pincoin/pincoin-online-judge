@@ -60,13 +60,13 @@
                             </a>
                         </div>
                     </div>
-                <a href="#" class="navbar-item">
+                <a href="{% url 'quest:contest_list' %}" class="navbar-item">
                     {% trans 'Programming Contest' %}
                 </a>
-                <a href="#" class="navbar-item">
+                <a href="{% url 'quest:stat_list' %}" class="navbar-item">
                     {% trans 'Stat' %}
                 </a>
-                <a href="#" class="navbar-item">
+                <a href="{% url 'quest:rank_list' %}" class="navbar-item">
                     {% trans 'Ranking' %}
                 </a>
                 <a href="{% url 'job:job_list' %}" class="navbar-item">

@@ -2,15 +2,21 @@ from django.contrib import admin
 from mptt.admin import DraggableMPTTAdmin
 
 from .models import (
-    Problem, TestSet, Category
+    Problem, TestSet, Category, CategoryTranslation
 )
 
 
-class TableSetInline(admin.StackedInline):
+class TestSetInline(admin.StackedInline):
     model = TestSet
     extra = 1
     fields = ('input_data', 'output_data', 'position')
     ordering = ('position',)
+
+
+class CategoryLanguageSetInline(admin.StackedInline):
+    model = CategoryTranslation
+    extra = 1
+    fields = ('language', 'title', 'description')
 
 
 class ProblemAdmin(admin.ModelAdmin):
@@ -19,8 +25,10 @@ class ProblemAdmin(admin.ModelAdmin):
     list_select_related = ('category', 'author')
     search_fields = ('title', 'content')
     date_hierarchy = 'created'
-    inlines = (TableSetInline,)
+
     ordering = ('status', '-created')
+
+    inlines = (TestSetInline,)
 
     raw_id_fields = ('author',)
     readonly_fields = ('is_removed',)
@@ -29,9 +37,10 @@ class ProblemAdmin(admin.ModelAdmin):
 class CategoryAdmin(DraggableMPTTAdmin):
     list_display = ('tree_actions', 'indented_title', 'slug')
     list_filter = ('problem__title',)
-    prepopulated_fields = {'slug': ('title',)}
     mptt_level_indent = 20
     ordering = ('tree_id', 'lft')
+
+    inlines = (CategoryLanguageSetInline,)
 
 
 admin.site.register(Problem, ProblemAdmin)
