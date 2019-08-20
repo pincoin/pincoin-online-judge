@@ -1,7 +1,5 @@
-from django.views.generic import RedirectView
+from django.views.generic import TemplateView
 
 
-class HomeView(RedirectView):
-    permanent = False
-    query_string = True
-    pattern_name = 'quest:home'
+class HomeView(TemplateView):
+    template_name = "conf/home.html"

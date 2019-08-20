@@ -52,10 +52,10 @@
                             {% trans 'Problem Archive' %}
                         </a>
                         <div class="navbar-dropdown">
-                            <a href="#" class="navbar-item">
+                            <a href="{% url 'quest:problem_list_by_level' %}" class="navbar-item">
                                 <span>{% trans "By Level" %}</span>
                             </a>
-                            <a href="#" class="navbar-item">
+                            <a href="{% url 'quest:problem_list_by_category' %}" class="navbar-item">
                                 <span>{% trans "By Category" %}</span>
                             </a>
                         </div>
