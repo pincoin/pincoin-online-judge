@@ -38,6 +38,7 @@ INSTALLED_APPS = [
 ]
 
 INSTALLED_APPS += [
+    'mptt',
     'rest_framework',
     'allauth',
     'allauth.account',
