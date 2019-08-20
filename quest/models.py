@@ -74,6 +74,8 @@ class CategoryTranslation(TimeStampedModel):
         verbose_name = _('i18n Category')
         verbose_name_plural = _('i18n Categories')
 
+        unique_together = ('category', 'language',)
+
     def __str__(self):
         return self.title
 
