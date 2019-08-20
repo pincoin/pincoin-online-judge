@@ -11,6 +11,22 @@ from conf.models import AbstractCategory
 
 
 class Category(AbstractCategory):
+    class Meta:
+        verbose_name = _('Category')
+        verbose_name_plural = _('Categories')
+
+    def __str__(self):
+        return self.title
+
+
+class CategoryLanguage(TimeStampedModel):
+    category = models.ForeignKey(
+        'quest.Category',
+        verbose_name=_('Category'),
+        db_index=True,
+        on_delete=models.CASCADE,
+    )
+
     language = models.CharField(
         max_length=2,
         default='th',
@@ -22,11 +38,8 @@ class Category(AbstractCategory):
     )
 
     class Meta:
-        verbose_name = _('Category')
-        verbose_name_plural = _('Categories')
-
-    def __str__(self):
-        return self.title
+        verbose_name = _('i18n Category')
+        verbose_name_plural = _('i18n Categories')
 
 
 class Problem(SoftDeletableModel, TimeStampedModel):
