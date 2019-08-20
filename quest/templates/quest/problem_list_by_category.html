@@ -1,5 +1,7 @@
 {% extends 'conf/base.html' %}
 
+{% load quest_tags %}
+
 {% block title %}{{ page_title }}{% endblock %}
 
 {% block content %}
@@ -18,188 +20,24 @@
     <section class="section">
         <div class="container">
             <div class="columns is-multiline">
-                <div class="column is-2">
-                    <article class="card">
-                        <header class="card-header">
-                            <p class="card-header-title">
-                                Fundamentals
-                            </p>
-                        </header>
-                        <footer class="card-footer">
-                            <a href="#" class="card-footer-item">
-                                <span class="button is-link">Challenge now!</span>
-                            </a>
-                        </footer>
-                    </article>
-                </div>
-                <div class="column is-2">
-                    <article class="card">
-                        <header class="card-header">
-                            <p class="card-header-title">
-                                Implementations
-                            </p>
-                        </header>
-                        <footer class="card-footer">
-                            <a href="#" class="card-footer-item">
-                                <span class="button is-link">Challenge now!</span>
-                            </a>
-                        </footer>
-                    </article>
-                </div>
-                <div class="column is-2">
-                    <article class="card">
-                        <header class="card-header">
-                            <p class="card-header-title">
-                                Stack / Queue
-                            </p>
-                        </header>
-                        <footer class="card-footer">
-                            <a href="#" class="card-footer-item">
-                                <span class="button is-link">Challenge now!</span>
-                            </a>
-                        </footer>
-                    </article>
-                </div>
-                <div class="column is-2">
-                    <article class="card">
-                        <header class="card-header">
-                            <p class="card-header-title">
-                                Searching
-                            </p>
-                        </header>
-                        <footer class="card-footer">
-                            <a href="#" class="card-footer-item">
-                                <span class="button is-link">Challenge now!</span>
-                            </a>
-                        </footer>
-                    </article>
-                </div>
-                <div class="column is-2">
-                    <article class="card">
-                        <header class="card-header">
-                            <p class="card-header-title">
-                                Hash
-                            </p>
-                        </header>
-                        <footer class="card-footer">
-                            <a href="#" class="card-footer-item">
-                                <span class="button is-link">Challenge now!</span>
-                            </a>
-                        </footer>
-                    </article>
-                </div>
-                <div class="column is-2">
-                    <article class="card">
-                        <header class="card-header">
-                            <p class="card-header-title">
-                                Sorting
-                            </p>
-                        </header>
-                        <footer class="card-footer">
-                            <a href="#" class="card-footer-item">
-                                <span class="button is-link">Challenge now!</span>
-                            </a>
-                        </footer>
-                    </article>
-                </div>
-                <div class="column is-2">
-                    <article class="card">
-                        <header class="card-header">
-                            <p class="card-header-title">
-                                Mathematics
-                            </p>
-                        </header>
-                        <footer class="card-footer">
-                            <a href="#" class="card-footer-item">
-                                <span class="button is-link">Challenge now!</span>
-                            </a>
-                        </footer>
-                    </article>
-                </div>
-                <div class="column is-2">
-                    <article class="card">
-                        <header class="card-header">
-                            <p class="card-header-title">
-                                Graph
-                            </p>
-                        </header>
-                        <footer class="card-footer">
-                            <a href="#" class="card-footer-item">
-                                <span class="button is-link">Challenge now!</span>
-                            </a>
-                        </footer>
-                    </article>
-                </div>
-                <div class="column is-2">
-                    <article class="card">
-                        <header class="card-header">
-                            <p class="card-header-title">
-                                DFS / BFS
-                            </p>
-                        </header>
-                        <footer class="card-footer">
-                            <a href="#" class="card-footer-item">
-                                <span class="button is-link">Challenge now!</span>
-                            </a>
-                        </footer>
-                    </article>
-                </div>
-                <div class="column is-2">
-                    <article class="card">
-                        <header class="card-header">
-                            <p class="card-header-title">
-                                Binary Search
-                            </p>
-                        </header>
-                        <footer class="card-footer">
-                            <a href="#" class="card-footer-item">
-                                <span class="button is-link">Challenge now!</span>
-                            </a>
-                        </footer>
-                    </article>
-                </div>
-                <div class="column is-2">
-                    <article class="card">
-                        <header class="card-header">
-                            <p class="card-header-title">
-                                Heap
-                            </p>
-                        </header>
-                        <footer class="card-footer">
-                            <a href="#" class="card-footer-item">
-                                <span class="button is-link">Challenge now!</span>
-                            </a>
-                        </footer>
-                    </article>
-                </div>
-                <div class="column is-2">
-                    <article class="card">
-                        <header class="card-header">
-                            <p class="card-header-title">
-                                Dynamic Programming
-                            </p>
-                        </header>
-                        <footer class="card-footer">
-                            <a href="#" class="card-footer-item">
-                                <span class="button is-link">Challenge now!</span>
-                            </a>
-                        </footer>
-                    </article>
-                </div>
-                <div class="column is-2">
-                    <article class="card">
-                        <header class="card-header">
-                            <p class="card-header-title">
-                                Greedy algorithms
-                            </p>
-                        </header>
-                        <footer class="card-footer">
-                            <a href="#" class="card-footer-item">
-                                <span class="button is-link">Challenge now!</span>
-                            </a>
-                        </footer>
-                    </article>
-                </div>
+                {% get_categories as categories %}
+
+                {% for category in categories %}
+                    <div class="column is-3">
+                        <article class="card">
+                            <header class="card-header">
+                                <p class="card-header-title">
+                                    {{ category.title }}
+                                </p>
+                                <a href="#" class="card-header-icon">
+                                <span class="icon">
+                                    <i class="fas fa-angle-double-right"></i>
+                                </span>
+                                </a>
+                            </header>
+                        </article>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </section>

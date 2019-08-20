@@ -11,6 +11,15 @@ from conf.models import AbstractCategory
 
 
 class Category(AbstractCategory):
+    language = models.CharField(
+        max_length=2,
+        help_text='th|en|ko|cn|ja',
+    )
+
+    description = models.TextField(
+        verbose_name=_('Category description'),
+    )
+
     class Meta:
         verbose_name = _('Category')
         verbose_name_plural = _('Categories')
