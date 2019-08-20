@@ -85,29 +85,29 @@
 
             <div class="columns">
                 <div class="column is-four-fifths">
-                    <div class="columns">
-                        <div class="column">
-                            <a href="{% provider_login_url 'line' process='connect' scope=scope auth_params=auth_params %}"
-                               class="button is-large is-fullwidth sns-button-line">
-                                <i class="fab fa-line fa-2x"></i>
-                            </a>
-                        </div>
-                        <div class="column">
-                            <a href="{% provider_login_url 'facebook' process='connect' scope=scope auth_params=auth_params %}"
-                               class="button is-large is-fullwidth sns-button-facebook">
-                                <i class="fab fa-facebook-square fa-2x"></i>
-                            </a>
-                        </div>
-                        <div class="column">
+                    <div class="columns is-mobile is-multiline">
+                        <div class="column is-half-mobile">
                             <a href="{% provider_login_url 'google' process='connect' scope=scope auth_params=auth_params %}"
                                class="button is-large is-fullwidth sns-button-google">
                                 <i class="fab fa-google-plus-square fa-2x"></i>
                             </a>
                         </div>
-                        <div class="column">
+                        <div class="column is-half-mobile">
+                            <a href="{% provider_login_url 'line' process='connect' scope=scope auth_params=auth_params %}"
+                               class="button is-large is-fullwidth sns-button-line">
+                                <i class="fab fa-line fa-2x"></i>
+                            </a>
+                        </div>
+                        <div class="column is-half-mobile">
                             <a href="{% provider_login_url 'github' process='connect' scope=scope auth_params=auth_params %}"
                                class="button is-large is-fullwidth sns-button-github">
                                 <i class="fab fa-github-square fa-2x"></i>
+                            </a>
+                        </div>
+                        <div class="column is-half-mobile">
+                            <a href="{% provider_login_url 'facebook' process='connect' scope=scope auth_params=auth_params %}"
+                               class="button is-large is-fullwidth sns-button-facebook">
+                                <i class="fab fa-facebook-square fa-2x"></i>
                             </a>
                         </div>
                     </div>
