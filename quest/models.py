@@ -13,6 +13,7 @@ from conf.models import AbstractCategory
 class Category(AbstractCategory):
     language = models.CharField(
         max_length=2,
+        default='th',
         help_text='th|en|ko|cn|ja',
     )
 
