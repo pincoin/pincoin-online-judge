@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-19 16:59+0000\n"
+"POT-Creation-Date: 2019-08-20 01:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,7 +52,7 @@ msgid "Korean"
 msgstr "ภาษาเกาหลี"
 
 #: conf/templates/conf/base.html:52
-msgid "Archive"
+msgid "Problem Archive"
 msgstr ""
 
 #: conf/templates/conf/base.html:56
@@ -64,7 +64,7 @@ msgid "By Category"
 msgstr ""
 
 #: conf/templates/conf/base.html:64
-msgid "Contest"
+msgid "Programming Contest"
 msgstr ""
 
 #: conf/templates/conf/base.html:67
@@ -79,24 +79,24 @@ msgstr ""
 msgid "Jobs"
 msgstr ""
 
-#: conf/templates/conf/base.html:79
+#: conf/templates/conf/base.html:76
 msgid "Help"
 msgstr ""
 
-#: conf/templates/conf/base.html:89
+#: conf/templates/conf/base.html:86
 msgid "Sign In"
 msgstr "เข้าสู่ระบบ"
 
-#: conf/templates/conf/base.html:96
+#: conf/templates/conf/base.html:93
 msgid "Me"
 msgstr "ฉัน"
 
-#: conf/templates/conf/base.html:101 member/admin.py:18 member/models.py:31
+#: conf/templates/conf/base.html:98 member/admin.py:18 member/models.py:31
 #: member/templates/member/account/profile_base.html:16 member/views.py:258
 msgid "Profile"
 msgstr ""
 
-#: conf/templates/conf/base.html:106
+#: conf/templates/conf/base.html:103
 #: member/templates/member/account/logout.html:30
 msgid "Sign Out"
 msgstr "ออกจากระบบ"
@@ -484,8 +484,6 @@ msgstr ""
 
 #: member/templates/member/account/profile_base.html:44
 #: member/templates/member/account/unregister.html:47 member/views.py:96
-#, fuzzy
-#| msgid "Register"
 msgid "Unregister"
 msgstr "สมัครสมาชิก"
 
@@ -517,10 +515,8 @@ msgstr ""
 
 #: member/templates/member/account/signup.html:196
 #: member/templates/member/socialaccount/signup.html:160
-#, fuzzy
-#| msgid "Sign In"
 msgid "Sign Up"
-msgstr "เข้าสู่ระบบ"
+msgstr "สมัครสมาชิก"
 
 #: member/templates/member/account/snippets/already_logged_in.html:5
 msgid "Note"
@@ -600,10 +596,8 @@ msgid "Logout"
 msgstr ""
 
 #: member/views.py:68 member/views.py:234
-#, fuzzy
-#| msgid "Sign Out"
 msgid "Sign up"
-msgstr "ออกจากระบบ"
+msgstr "สมัครสมาชิก"
 
 #: member/views.py:77
 msgid "Account Inactive"

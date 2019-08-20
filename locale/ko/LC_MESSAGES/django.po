@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-19 16:59+0000\n"
+"POT-Creation-Date: 2019-08-20 01:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,7 +52,7 @@ msgid "Korean"
 msgstr "한국어"
 
 #: conf/templates/conf/base.html:52
-msgid "Archive"
+msgid "Problem Archive"
 msgstr "문제은행"
 
 #: conf/templates/conf/base.html:56
@@ -64,7 +64,7 @@ msgid "By Category"
 msgstr "알고리즘 분류"
 
 #: conf/templates/conf/base.html:64
-msgid "Contest"
+msgid "Programming Contest"
 msgstr "대회"
 
 #: conf/templates/conf/base.html:67
@@ -79,24 +79,24 @@ msgstr "순위"
 msgid "Jobs"
 msgstr "채용"
 
-#: conf/templates/conf/base.html:79
+#: conf/templates/conf/base.html:76
 msgid "Help"
 msgstr "도움말"
 
-#: conf/templates/conf/base.html:89
+#: conf/templates/conf/base.html:86
 msgid "Sign In"
 msgstr "로그인"
 
-#: conf/templates/conf/base.html:96
+#: conf/templates/conf/base.html:93
 msgid "Me"
 msgstr "나"
 
-#: conf/templates/conf/base.html:101 member/admin.py:18 member/models.py:31
+#: conf/templates/conf/base.html:98 member/admin.py:18 member/models.py:31
 #: member/templates/member/account/profile_base.html:16 member/views.py:258
 msgid "Profile"
 msgstr "프로필"
 
-#: conf/templates/conf/base.html:106
+#: conf/templates/conf/base.html:103
 #: member/templates/member/account/logout.html:30
 msgid "Sign Out"
 msgstr "로그아웃"
