@@ -1,5 +1,7 @@
 {% extends 'conf/base.html' %}
 
+{% load static %}
+
 {% block title %}{{ page_title }}{% endblock %}
 
 {% block content %}
@@ -17,42 +19,48 @@
     </div>
     <section class="section">
         <div class="container">
-            <div class="columns is-multiline">
+            <div class="columns is-multiline is-gapless">
                 <div class="column is-full">
-                    <article class="card">
-                        <div class="card-content">
-                            <div class="content">
-                                <p class="title">
-                                    Python backend developer
-                                </p>
-                                <p class="subtitle">
-                                    PINCOIN
-                                </p>
-                                <p>
-                                    1~3yrs / Seoul
-                                </p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="column is-full">
-                    <article class="card">
-                        <div class="card-content">
-                            <div class="content">
-                                <p class="title">
-                                    Frontend developer
-                                </p>
-                                <p class="subtitle">
-                                    PINCOIN
-                                </p>
-                                <p>
-                                    1~3yrs / Seoul
-                                </p>
-                            </div>
+                    <article class="media">
+                        <figure class="media-left">
+                            <p class="image is-128x128">
+                                <img src="https://via.placeholder.com/128" alt="company logo">
+                            </p>
+                        </figure>
+                        <div class="media-content">
+                            <ul>
+                                <li class="is-size-5 has-text-weight-bold pb-5">
+                                    <a href="#" class="">
+                                        Python backend developer
+                                    </a>
+                                </li>
+                                <li class="pb-5">
+                                    <a href="#" class="">PINCOIN</a>
+                                </li>
+                                <li class="pb-10">
+                                    <ul>
+                                        <li><i class="fas fa-desktop"></i> 경력무관</li>
+                                        <li><i class="fas fa-map-marker-alt"></i> 서울 서초구 강남대로</li>
+                                    </ul>
+                                </li>
+                                <li class="tags are-medium">
+                                    <span class="tag tech-stack-tag">Python</span>
+                                    <span class="tag tech-stack-tag">REST-API</span>
+                                    <span class="tag tech-stack-tag">Websocket</span>
+                                    <span class="tag tech-stack-tag">Python</span>
+                                    <span class="tag tech-stack-tag">REST-API</span>
+                                    <span class="tag tech-stack-tag">Websocket</span>
+                                </li>
+                            </ul>
                         </div>
                     </article>
                 </div>
             </div>
         </div>
     </section>
+{% endblock %}
+
+{% block stylesheet %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static "job/css/job.css" %}">
 {% endblock %}
