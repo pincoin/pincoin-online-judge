@@ -20,47 +20,49 @@
     <section class="section">
         <div class="container">
             <div class="columns is-multiline is-gapless">
-                <div class="column is-full">
-                    <article class="media">
-                        <figure class="media-left">
-                            <p class="image is-128x128">
-                                <img src="https://via.placeholder.com/128" alt="company logo">
-                            </p>
-                        </figure>
-                        <div class="media-content">
-                            <ul>
-                                <li class="job-opening-title pb-5">
-                                    <a href="#" class="">
-                                        Python backend developer
-                                    </a>
-                                </li>
-                                <li class="job-opening-subtitle pb-5">
-                                    <a href="#" class="">PINCOIN</a>
-                                </li>
-                                <li class="level mb-10">
-                                    <ul class="level-left">
-                                        <li class="level-item job-opening-detail">
-                                            <span class="icon"><i class="fas fa-desktop"></i></span>
-                                            <span>경력 무관</span>
-                                        </li>
-                                        <li class="level-item job-opening-detail">
-                                            <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
-                                            <span>서울 서초구 강남대로</span>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="tags are-medium">
-                                    <span class="tag tech-stack-tag">Python</span>
-                                    <span class="tag tech-stack-tag">REST-API</span>
-                                    <span class="tag tech-stack-tag">Websocket</span>
-                                    <span class="tag tech-stack-tag">Python</span>
-                                    <span class="tag tech-stack-tag">REST-API</span>
-                                    <span class="tag tech-stack-tag">Websocket</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
+                {% for job in jobs %}
+                    <div class="column is-full">
+                        <article class="media">
+                            <figure class="media-left is-hidden-mobile">
+                                <p class="image is-128x128">
+                                    <img src="https://via.placeholder.com/128" alt="company logo">
+                                </p>
+                            </figure>
+                            <div class="media-content">
+                                <ul>
+                                    <li class="job-opening-title pb-5">
+                                        <a href="#" class="">
+                                            {{ job.title }}
+                                        </a>
+                                    </li>
+                                    <li class="job-opening-subtitle pb-5">
+                                        <a href="#" class="">{{ job.company.title }}</a>
+                                    </li>
+                                    <li class="level mb-10">
+                                        <ul class="level-left">
+                                            <li class="level-item job-opening-detail">
+                                                <span class="icon"><i class="fas fa-desktop"></i></span>
+                                                <span>경력 무관</span>
+                                            </li>
+                                            <li class="level-item job-opening-detail">
+                                                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                                                <span>{{ job.company.address }}</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="tags are-medium">
+                                        <span class="tag tech-stack-tag">Python</span>
+                                        <span class="tag tech-stack-tag">REST-API</span>
+                                        <span class="tag tech-stack-tag">Websocket</span>
+                                        <span class="tag tech-stack-tag">Python</span>
+                                        <span class="tag tech-stack-tag">REST-API</span>
+                                        <span class="tag tech-stack-tag">Websocket</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </section>

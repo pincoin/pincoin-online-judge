@@ -39,6 +39,7 @@ INSTALLED_APPS = [
 
 INSTALLED_APPS += [
     'mptt',
+    'taggit',
     'rest_framework',
     'allauth',
     'allauth.account',

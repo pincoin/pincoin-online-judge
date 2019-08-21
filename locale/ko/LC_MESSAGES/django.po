@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-20 03:56+0000\n"
+"POT-Creation-Date: 2019-08-21 03:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,82 +21,85 @@ msgstr ""
 msgid "Invalid reCAPTCHA. Please try again."
 msgstr "보안문자를 체크하세요."
 
-#: conf/models.py:11
+#: conf/models.py:11 quest/models.py:15
 msgid "Parent"
 msgstr "부모"
 
-#: conf/models.py:20 member/models.py:235
+#: conf/models.py:20 member/models.py:235 quest/models.py:65
 msgid "Title"
 msgstr "제목"
 
-#: conf/models.py:25
+#: conf/models.py:25 quest/models.py:24
 msgid "Slug"
 msgstr "슬러그"
 
-#: conf/models.py:26
+#: conf/models.py:26 quest/models.py:25
 msgid ""
 "A short label containing only letters, numbers, underscores or hyphens for "
 "URL"
 msgstr "알파벳, 숫자, 밑줄 또는 하이픈으로 짧은 URL"
 
-#: conf/settings/local.py:10 member/models.py:93
+#: conf/settings/local.py:10 job/models.py:86 member/models.py:93
+#: quest/models.py:44
 msgid "Thai"
 msgstr "태국어"
 
-#: conf/settings/local.py:11 member/models.py:94
+#: conf/settings/local.py:11 job/models.py:87 member/models.py:94
+#: quest/models.py:45
 msgid "English"
 msgstr "영어"
 
-#: conf/settings/local.py:12 member/models.py:95
+#: conf/settings/local.py:12 job/models.py:88 member/models.py:95
+#: quest/models.py:46
 msgid "Korean"
 msgstr "한국어"
 
-#: conf/templates/conf/base.html:52
+#: conf/templates/conf/base.html:57
 msgid "Problem Archive"
 msgstr "문제은행"
 
-#: conf/templates/conf/base.html:56
+#: conf/templates/conf/base.html:61
 msgid "By Level"
 msgstr "단계별로 풀어보기"
 
-#: conf/templates/conf/base.html:59
+#: conf/templates/conf/base.html:64
 msgid "By Category"
 msgstr "알고리즘 분류"
 
-#: conf/templates/conf/base.html:64
+#: conf/templates/conf/base.html:69
 msgid "Programming Contest"
 msgstr "대회"
 
-#: conf/templates/conf/base.html:67
+#: conf/templates/conf/base.html:72
 msgid "Stat"
 msgstr "채점현황"
 
-#: conf/templates/conf/base.html:70
+#: conf/templates/conf/base.html:75
 msgid "Ranking"
 msgstr "순위"
 
-#: conf/templates/conf/base.html:73
+#: conf/templates/conf/base.html:78
 msgid "Jobs"
 msgstr "채용"
 
-#: conf/templates/conf/base.html:76
+#: conf/templates/conf/base.html:81
 msgid "Help"
 msgstr "도움말"
 
-#: conf/templates/conf/base.html:86
+#: conf/templates/conf/base.html:91
 msgid "Sign In"
 msgstr "로그인"
 
-#: conf/templates/conf/base.html:93
+#: conf/templates/conf/base.html:98
 msgid "Me"
 msgstr "나"
 
-#: conf/templates/conf/base.html:98 member/admin.py:18 member/models.py:31
+#: conf/templates/conf/base.html:103 member/admin.py:18 member/models.py:31
 #: member/templates/member/account/profile_base.html:16 member/views.py:258
 msgid "Profile"
 msgstr "프로필"
 
-#: conf/templates/conf/base.html:103
+#: conf/templates/conf/base.html:108
 #: member/templates/member/account/logout.html:30
 msgid "Sign Out"
 msgstr "로그아웃"
@@ -104,6 +107,102 @@ msgstr "로그아웃"
 #: job/apps.py:7
 msgid "Job App"
 msgstr "채용"
+
+#: job/models.py:11
+msgid "Company title"
+msgstr "회사 이름"
+
+#: job/models.py:16
+msgid "Company address"
+msgstr "회사 이메일"
+
+#: job/models.py:21
+msgid "Number of employees from"
+msgstr "사원수(from)"
+
+#: job/models.py:26
+msgid "Number of employees to"
+msgstr "사원수(upto)"
+
+#: job/models.py:31
+msgid "Company description"
+msgstr "회사 설명"
+
+#: job/models.py:35
+msgid "Phone number"
+msgstr "전화번호"
+
+#: job/models.py:42
+msgid "Fax number"
+msgstr "팩스번호"
+
+#: job/models.py:49 member/models.py:240
+msgid "URL"
+msgstr "URL"
+
+#: job/models.py:54 job/models.py:95 member/models.py:186
+msgid "Company"
+msgstr "회사"
+
+#: job/models.py:55
+msgid "Companies"
+msgstr "회사"
+
+#: job/models.py:63 job/models.py:72 job/models.py:107
+msgid "Job field"
+msgstr "직무"
+
+#: job/models.py:68
+msgid "Sort order"
+msgstr "정렬 순서"
+
+#: job/models.py:73
+msgid "Job fields"
+msgstr "직무"
+
+#: job/models.py:81 member/models.py:88 quest/models.py:85
+msgid "Draft"
+msgstr "초안"
+
+#: job/models.py:82 member/models.py:89 quest/models.py:86
+msgid "Published"
+msgstr "발행"
+
+#: job/models.py:89 member/models.py:96 quest/models.py:47
+msgid "Chinese"
+msgstr "중국어"
+
+#: job/models.py:90 member/models.py:97 quest/models.py:48
+msgid "Japanese"
+msgstr "일본어"
+
+#: job/models.py:101
+msgid "Job opening title"
+msgstr "구인공고 제목"
+
+#: job/models.py:113
+msgid "Job description"
+msgstr "구인공고 설명"
+
+#: job/models.py:117 member/models.py:180 member/models.py:208
+msgid "End date"
+msgstr "종료일"
+
+#: job/models.py:129 member/models.py:131 quest/models.py:160
+msgid "Status"
+msgstr "상태"
+
+#: job/models.py:136
+msgid "Job opening"
+msgstr "구인공고"
+
+#: job/models.py:137
+msgid "Job openings"
+msgstr "구인공고"
+
+#: job/views.py:22
+msgid "Job Openings"
+msgstr "구인공고"
 
 #: member/adapters.py:30
 msgid "Your email domain is not allowed."
@@ -209,22 +308,6 @@ msgstr "차단된 이메일 주소"
 msgid "Banned Email Addresses"
 msgstr "차단된 이메일 주소"
 
-#: member/models.py:88 quest/models.py:24
-msgid "Draft"
-msgstr "초안"
-
-#: member/models.py:89 quest/models.py:25
-msgid "Published"
-msgstr "발행"
-
-#: member/models.py:96
-msgid "Chinese"
-msgstr "중국어"
-
-#: member/models.py:97
-msgid "Japanese"
-msgstr "일본어"
-
 #: member/models.py:101
 msgid "UUID"
 msgstr "UUID"
@@ -232,10 +315,6 @@ msgstr "UUID"
 #: member/models.py:125
 msgid "Primary resume"
 msgstr "기본 이력서"
-
-#: member/models.py:131 quest/models.py:89
-msgid "Status"
-msgstr "상태"
 
 #: member/models.py:138
 msgid "Language"
@@ -246,7 +325,7 @@ msgstr "언어"
 msgid "Resume"
 msgstr "이력서"
 
-#: member/models.py:161 quest/models.py:120
+#: member/models.py:161 quest/models.py:191
 msgid "Position"
 msgstr "위치"
 
@@ -257,14 +336,6 @@ msgstr "현재"
 #: member/models.py:176 member/models.py:204
 msgid "Start date"
 msgstr "시작일"
-
-#: member/models.py:180 member/models.py:208
-msgid "End date"
-msgstr "종료일"
-
-#: member/models.py:186
-msgid "Company"
-msgstr "회사"
 
 #: member/models.py:191
 msgid "Job title"
@@ -285,10 +356,6 @@ msgstr "전공"
 #: member/models.py:229
 msgid "Research topics"
 msgstr "연구분야"
-
-#: member/models.py:240
-msgid "URL"
-msgstr "URL"
 
 #: member/templates/member/account/account_inactive.html:16
 msgid "This account is inactive."
@@ -649,94 +716,122 @@ msgstr "이력서 - {}"
 msgid "Quest App"
 msgstr "문제은행"
 
-#: quest/models.py:15 quest/models.py:81
+#: quest/models.py:32 quest/models.py:53 quest/models.py:152
 msgid "Category"
 msgstr "카테고리"
 
-#: quest/models.py:16
+#: quest/models.py:33
 msgid "Categories"
 msgstr "카테고리"
 
-#: quest/models.py:30
+#: quest/models.py:70
+msgid "Category description"
+msgstr "카테고리 설명"
+
+#: quest/models.py:74
+msgid "i18n Category"
+msgstr "카테고리(다국어)"
+
+#: quest/models.py:75
+msgid "i18n Categories"
+msgstr "카테고리(다국어)"
+
+#: quest/models.py:90
+msgid "Level 1"
+msgstr "레벨 1"
+
+#: quest/models.py:91
+msgid "Level 2"
+msgstr "레벨 2"
+
+#: quest/models.py:92
+msgid "Level 3"
+msgstr "레벨 3"
+
+#: quest/models.py:93
+msgid "Level 4"
+msgstr "레벨 4"
+
+#: quest/models.py:94
+msgid "Level 5"
+msgstr "레벨 5"
+
+#: quest/models.py:99
 msgid "Author"
 msgstr "출제자"
 
-#: quest/models.py:40
+#: quest/models.py:109
 msgid "Problem title"
 msgstr "문제 제목"
 
-#: quest/models.py:45
+#: quest/models.py:114
 msgid "Problem content"
 msgstr "문제 내용"
 
-#: quest/models.py:49
+#: quest/models.py:118
 msgid "Input description"
 msgstr "입력 설명"
 
-#: quest/models.py:53
+#: quest/models.py:122
 msgid "Output description"
 msgstr "출력 설명"
 
-#: quest/models.py:57
+#: quest/models.py:126
 msgid "Sample input data"
 msgstr "예제 입력 데이터"
 
-#: quest/models.py:61
+#: quest/models.py:130
 msgid "Sample output data"
 msgstr "예제 출력 데이터"
 
-#: quest/models.py:65
+#: quest/models.py:134
 msgid "Time limit"
 msgstr "시간 제한"
 
-#: quest/models.py:66
+#: quest/models.py:135
 msgid "Seconds"
 msgstr "초"
 
-#: quest/models.py:70
+#: quest/models.py:139
 msgid "Memory limit"
 msgstr "메모리 제한"
 
-#: quest/models.py:71
+#: quest/models.py:140
 msgid "MB"
 msgstr "MB"
 
-#: quest/models.py:75
+#: quest/models.py:144
 msgid "Level"
 msgstr "레벨"
 
-#: quest/models.py:96 quest/models.py:106
+#: quest/models.py:167 quest/models.py:177
 msgid "Problem"
 msgstr "문제"
 
-#: quest/models.py:97
+#: quest/models.py:168
 msgid "Problems"
 msgstr "문제"
 
-#: quest/models.py:112
+#: quest/models.py:183
 msgid "Input data"
 msgstr "입력 데이터"
 
-#: quest/models.py:116
+#: quest/models.py:187
 msgid "Output data"
 msgstr "출력 데이터"
 
-#: quest/models.py:124
+#: quest/models.py:195
 msgid "Test set"
 msgstr "테스트 세트"
 
-#: quest/models.py:125
+#: quest/models.py:196
 msgid "Test sets"
 msgstr "테스트 세트"
 
 #: quest/views.py:10
-#, fuzzy
-#| msgid "By Level"
 msgid "Problems By Level"
 msgstr "단계별로 풀어보기"
 
 #: quest/views.py:19
-#, fuzzy
-#| msgid "By Category"
 msgid "Problems By Category"
 msgstr "알고리즘 분류"
