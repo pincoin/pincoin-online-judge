@@ -1,3 +1,17 @@
 .tech-stack-tag {
     background: #f0f4c3 !important;
 }
+
+.job-opening-title a {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #006064;
+}
+
+.job-opening-subtitle a {
+    color: #827717;
+}
+
+.job-opening-detail {
+    justify-content: left;
+}
