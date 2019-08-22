@@ -60,6 +60,7 @@ class MemberSetPasswordForm(GoogleRecaptchaMixin, allauth_forms.SetPasswordForm)
 class MemberUnregisterForm(forms.Form):
     agree = forms.BooleanField(
         label=_('I really would like to unregister.'),
+        widget=forms.CheckboxInput(),
     )
 
 
