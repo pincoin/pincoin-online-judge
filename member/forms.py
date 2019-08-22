@@ -29,27 +29,6 @@ class MemberLoginForm(GoogleRecaptchaMixin, allauth_forms.LoginForm):
         return cleaned_data
 
 
-class MemberResetPasswordForm(GoogleRecaptchaMixin, allauth_forms.ResetPasswordForm):
-    def __init__(self, *args, **kwargs):
-        super(MemberResetPasswordForm, self).__init__(*args, **kwargs)
-
-        self.fields['email'].widget.attrs['class'] = 'input'
-
-    def clean(self):
-        self.validate_google_recaptcha()
-
-        cleaned_data = super(MemberResetPasswordForm, self).clean()
-        return cleaned_data
-
-
-class MemberResetPasswordKeyForm(allauth_forms.ResetPasswordKeyForm):
-    def __init__(self, *args, **kwargs):
-        super(MemberResetPasswordKeyForm, self).__init__(*args, **kwargs)
-
-        self.fields['password1'].widget.attrs['class'] = 'input'
-        self.fields['password2'].widget.attrs['class'] = 'input'
-
-
 class MemberChangePasswordForm(GoogleRecaptchaMixin, allauth_forms.ChangePasswordForm):
     def __init__(self, *args, **kwargs):
         super(MemberChangePasswordForm, self).__init__(*args, **kwargs)
@@ -77,6 +56,27 @@ class MemberSetPasswordForm(GoogleRecaptchaMixin, allauth_forms.SetPasswordForm)
 
         cleaned_data = super(MemberSetPasswordForm, self).clean()
         return cleaned_data
+
+
+class MemberResetPasswordForm(GoogleRecaptchaMixin, allauth_forms.ResetPasswordForm):
+    def __init__(self, *args, **kwargs):
+        super(MemberResetPasswordForm, self).__init__(*args, **kwargs)
+
+        self.fields['email'].widget.attrs['class'] = 'input'
+
+    def clean(self):
+        self.validate_google_recaptcha()
+
+        cleaned_data = super(MemberResetPasswordForm, self).clean()
+        return cleaned_data
+
+
+class MemberResetPasswordKeyForm(allauth_forms.ResetPasswordKeyForm):
+    def __init__(self, *args, **kwargs):
+        super(MemberResetPasswordKeyForm, self).__init__(*args, **kwargs)
+
+        self.fields['password1'].widget.attrs['class'] = 'input'
+        self.fields['password2'].widget.attrs['class'] = 'input'
 
 
 class MemberUnregisterForm(forms.Form):
