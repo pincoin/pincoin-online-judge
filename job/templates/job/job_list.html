@@ -1,6 +1,7 @@
 {% extends 'conf/base.html' %}
 
 {% load static %}
+{% load thumbnail %}
 
 {% block title %}{{ page_title }}{% endblock %}
 
@@ -77,10 +78,16 @@
                 {% for job in jobs %}
                     <div class="column is-full">
                         <article class="media">
-                            <figure class="media-left is-hidden-mobile">
-                                <p class="image is-128x128">
-                                    <img src="https://via.placeholder.com/128" alt="company logo">
-                                </p>
+                            <figure class="image is-128x128 media-left is-hidden-mobile">
+                                {% if job.company.logo %}
+                                    <a href="#">
+                                        <img src="{{ job.company.logo|thumbnail_url:'company_logo' }}"
+                                             alt="{{ job.comapny.title }}">
+                                    </a>
+                                {% else %}
+                                    <img src="https://via.placeholder.com/128/b2ebf2/006064?text=LOGO"
+                                         alt="{{ job.comapny.title }}">
+                                {% endif %}
                             </figure>
                             <div class="media-content">
                                 <ul>

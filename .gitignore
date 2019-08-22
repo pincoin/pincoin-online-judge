@@ -252,4 +252,5 @@ sandbox/clib/sandbox
 secret.json
 *.class
 assets/
+media/
 GeoLite2-Country.mmdb

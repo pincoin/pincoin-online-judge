@@ -1,9 +1,18 @@
+import uuid
+
 from django.db import models
+from django.utils.timezone import now
 from django.utils.translation import gettext_lazy as _
+from easy_thumbnails.fields import ThumbnailerImageField
 from model_utils import Choices
 from model_utils.models import (
     TimeStampedModel, SoftDeletableModel
 )
+
+
+def upload_directory_path(instance, filename):
+    # File will be uploaded to MEDIA_ROOT/job/company_logo/<today>/<uuid>.<ext>
+    return 'job/company_logo/{}/{}.{}'.format(now().strftime('%Y-%m-%d'), uuid.uuid4(), filename.split('.')[-1])
 
 
 class Company(SoftDeletableModel, TimeStampedModel):
@@ -29,6 +38,12 @@ class Company(SoftDeletableModel, TimeStampedModel):
 
     description = models.TextField(
         verbose_name=_('Company description'),
+    )
+
+    logo = ThumbnailerImageField(
+        verbose_name=_('Company logo'),
+        upload_to=upload_directory_path,
+        blank=True,
     )
 
     phone = models.CharField(

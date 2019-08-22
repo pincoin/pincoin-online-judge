@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 INSTALLED_APPS += [
     'mptt',
     'taggit',
+    'easy_thumbnails',
     'rest_framework',
     'allauth',
     'allauth.account',
@@ -135,4 +136,12 @@ SOCIALACCOUNT_PROVIDERS = {
     },
 }
 
+# GEO IP
 GEOIP_PATH = os.path.join(BASE_DIR, 'GeoLite2-Country.mmdb')
+
+# easy-thumbnail
+THUMBNAIL_ALIASES = {
+    'job': {
+        'company_logo': {'size': (128, 128), 'crop': 'smart', 'quality': 100},
+    },
+}
