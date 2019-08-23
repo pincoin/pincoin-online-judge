@@ -16,14 +16,12 @@ def upload_directory_path(instance, filename):
 
 
 class Company(SoftDeletableModel, TimeStampedModel):
-    title = models.CharField(
-        verbose_name=_('Company title'),
+    slug = models.SlugField(
+        verbose_name=_('Slug'),
+        help_text=_('A short label containing only letters, numbers, underscores or hyphens for URL'),
         max_length=255,
-    )
-
-    address = models.CharField(
-        verbose_name=_('Company address'),
-        max_length=255,
+        unique=True,
+        allow_unicode=True,
     )
 
     number_of_employees_from = models.IntegerField(
@@ -34,10 +32,6 @@ class Company(SoftDeletableModel, TimeStampedModel):
     number_of_employees_to = models.IntegerField(
         verbose_name=_('Number of employees to'),
         default=1,
-    )
-
-    description = models.TextField(
-        verbose_name=_('Company description'),
     )
 
     logo = ThumbnailerImageField(
@@ -72,13 +66,62 @@ class Company(SoftDeletableModel, TimeStampedModel):
         verbose_name_plural = _('Companies')
 
     def __str__(self):
+        return self.slug
+
+
+class CompanyTranslation(TimeStampedModel):
+    LANGUAGE = Choices(
+        ('th', _('Thai')),
+        ('en', _('English')),
+        ('ko', _('Korean')),
+        ('cn', _('Chinese')),
+        ('ja', _('Japanese')),
+    )
+
+    company = models.ForeignKey(
+        'job.Company',
+        verbose_name=_('Company'),
+        db_index=True,
+        on_delete=models.CASCADE,
+    )
+
+    language = models.CharField(
+        choices=LANGUAGE,
+        max_length=2,
+        default=LANGUAGE.th,
+    )
+
+    title = models.CharField(
+        verbose_name=_('Company title'),
+        max_length=255,
+    )
+
+    address = models.CharField(
+        verbose_name=_('Company address'),
+        max_length=255,
+    )
+
+    description = models.TextField(
+        verbose_name=_('Company description'),
+    )
+
+    class Meta:
+        verbose_name = _('i18n Company')
+        verbose_name_plural = _('i18n Companies')
+
+        unique_together = ('company', 'language')
+
+    def __str__(self):
         return self.title
 
 
 class JobField(TimeStampedModel):
-    title = models.CharField(
-        verbose_name=_('Job field'),
+    slug = models.SlugField(
+        verbose_name=_('Slug'),
+        help_text=_('A short label containing only letters, numbers, underscores or hyphens for URL'),
         max_length=255,
+        unique=True,
+        allow_unicode=True,
     )
 
     position = models.IntegerField(
@@ -88,6 +131,43 @@ class JobField(TimeStampedModel):
     class Meta:
         verbose_name = _('Job field')
         verbose_name_plural = _('Job fields')
+
+    def __str__(self):
+        return self.slug
+
+
+class JobFieldTranslation(TimeStampedModel):
+    LANGUAGE = Choices(
+        ('th', _('Thai')),
+        ('en', _('English')),
+        ('ko', _('Korean')),
+        ('cn', _('Chinese')),
+        ('ja', _('Japanese')),
+    )
+
+    job_field = models.ForeignKey(
+        'job.JobField',
+        verbose_name=_('Job field'),
+        db_index=True,
+        on_delete=models.CASCADE,
+    )
+
+    language = models.CharField(
+        choices=LANGUAGE,
+        max_length=2,
+        default=LANGUAGE.th,
+    )
+
+    title = models.CharField(
+        verbose_name=_('Job field title'),
+        max_length=255,
+    )
+
+    class Meta:
+        verbose_name = _('i18n Job field')
+        verbose_name_plural = _('i18n Job fields')
+
+        unique_together = ('job_field', 'language')
 
     def __str__(self):
         return self.title

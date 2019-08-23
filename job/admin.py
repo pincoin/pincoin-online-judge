@@ -4,14 +4,14 @@ from . import models
 
 
 class CompanyAdmin(admin.ModelAdmin):
-    list_display = ('title', 'phone', 'fax', 'url')
+    list_display = ('slug', 'phone', 'fax', 'url')
     search_fields = ('title', 'address')
     ordering = ('-created',)
     readonly_fields = ('is_removed',)
 
 
 class JobFieldAdmin(admin.ModelAdmin):
-    list_display = ('title', 'position')
+    list_display = ('slug', 'position')
     ordering = ('position',)
 
 
