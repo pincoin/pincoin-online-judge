@@ -1,20 +1,18 @@
 from django.contrib import admin
 from mptt.admin import DraggableMPTTAdmin
 
-from .models import (
-    Problem, TestSet, Category, CategoryTranslation
-)
+from . import models
 
 
 class TestSetInline(admin.StackedInline):
-    model = TestSet
+    model = models.TestSet
     extra = 1
     fields = ('input_data', 'output_data', 'position')
     ordering = ('position',)
 
 
 class CategoryLanguageSetInline(admin.StackedInline):
-    model = CategoryTranslation
+    model = models.CategoryTranslation
     extra = 1
     fields = ('language', 'title', 'description')
 
@@ -43,5 +41,5 @@ class CategoryAdmin(DraggableMPTTAdmin):
     inlines = (CategoryLanguageSetInline,)
 
 
-admin.site.register(Problem, ProblemAdmin)
-admin.site.register(Category, CategoryAdmin)
+admin.site.register(models.Problem, ProblemAdmin)
+admin.site.register(models.Category, CategoryAdmin)

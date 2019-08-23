@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-21 03:23+0000\n"
+"POT-Creation-Date: 2019-08-23 02:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,28 +29,28 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: conf/models.py:25 quest/models.py:24
+#: conf/models.py:25 job/models.py:20 job/models.py:120 quest/models.py:24
 msgid "Slug"
 msgstr ""
 
-#: conf/models.py:26 quest/models.py:25
+#: conf/models.py:26 job/models.py:21 job/models.py:121 quest/models.py:25
 msgid ""
 "A short label containing only letters, numbers, underscores or hyphens for "
 "URL"
 msgstr ""
 
-#: conf/settings/local.py:10 job/models.py:86 member/models.py:93
-#: quest/models.py:44
+#: conf/settings/local.py:10 job/models.py:74 job/models.py:141
+#: job/models.py:183 member/models.py:93 quest/models.py:44
 msgid "Thai"
 msgstr ""
 
-#: conf/settings/local.py:11 job/models.py:87 member/models.py:94
-#: quest/models.py:45
+#: conf/settings/local.py:11 job/models.py:75 job/models.py:142
+#: job/models.py:184 member/models.py:94 quest/models.py:45
 msgid "English"
 msgstr ""
 
-#: conf/settings/local.py:12 job/models.py:88 member/models.py:95
-#: quest/models.py:46
+#: conf/settings/local.py:12 job/models.py:76 job/models.py:143
+#: job/models.py:185 member/models.py:95 quest/models.py:46
 msgid "Korean"
 msgstr ""
 
@@ -95,7 +95,7 @@ msgid "Me"
 msgstr ""
 
 #: conf/templates/conf/base.html:103 member/admin.py:18 member/models.py:31
-#: member/templates/member/account/profile_base.html:16 member/views.py:258
+#: member/templates/member/account/profile_base.html:16 member/views.py:282
 msgid "Profile"
 msgstr ""
 
@@ -108,99 +108,133 @@ msgstr ""
 msgid "Job App"
 msgstr ""
 
-#: job/models.py:11
+#: job/forms.py:8 job/forms.py:11
+msgid "Tech stack"
+msgstr ""
+
+#: job/forms.py:17 job/forms.py:20 job/models.py:95
 msgid "Company title"
 msgstr ""
 
-#: job/models.py:16
+#: job/forms.py:26 job/models.py:100
 msgid "Company address"
 msgstr ""
 
-#: job/models.py:21
+#: job/forms.py:29
+msgid "Address (District|Province)"
+msgstr ""
+
+#: job/models.py:28
 msgid "Number of employees from"
 msgstr ""
 
-#: job/models.py:26
+#: job/models.py:33
 msgid "Number of employees to"
 msgstr ""
 
-#: job/models.py:31
-msgid "Company description"
+#: job/models.py:38
+msgid "Company logo"
 msgstr ""
 
-#: job/models.py:35
+#: job/models.py:44
 msgid "Phone number"
 msgstr ""
 
-#: job/models.py:42
+#: job/models.py:51
 msgid "Fax number"
 msgstr ""
 
-#: job/models.py:49 member/models.py:240
+#: job/models.py:58 member/models.py:240
 msgid "URL"
 msgstr ""
 
-#: job/models.py:54 job/models.py:95 member/models.py:186
+#: job/models.py:65 job/models.py:83 job/models.py:192 member/models.py:186
 msgid "Company"
 msgstr ""
 
-#: job/models.py:55
+#: job/models.py:66
 msgid "Companies"
 msgstr ""
 
-#: job/models.py:63 job/models.py:72 job/models.py:107
-msgid "Job field"
-msgstr ""
-
-#: job/models.py:68
-msgid "Sort order"
-msgstr ""
-
-#: job/models.py:73
-msgid "Job fields"
-msgstr ""
-
-#: job/models.py:81 member/models.py:88 quest/models.py:85
-msgid "Draft"
-msgstr ""
-
-#: job/models.py:82 member/models.py:89 quest/models.py:86
-msgid "Published"
-msgstr ""
-
-#: job/models.py:89 member/models.py:96 quest/models.py:47
+#: job/models.py:77 job/models.py:144 job/models.py:186 member/models.py:96
+#: quest/models.py:47
 msgid "Chinese"
 msgstr ""
 
-#: job/models.py:90 member/models.py:97 quest/models.py:48
+#: job/models.py:78 job/models.py:145 job/models.py:187 member/models.py:97
+#: quest/models.py:48
 msgid "Japanese"
 msgstr ""
 
-#: job/models.py:101
+#: job/models.py:105
+msgid "Company description"
+msgstr ""
+
+#: job/models.py:109
+msgid "i18n Company"
+msgstr ""
+
+#: job/models.py:110
+msgid "i18n Companies"
+msgstr ""
+
+#: job/models.py:128
+msgid "Sort order"
+msgstr ""
+
+#: job/models.py:132 job/models.py:150 job/models.py:204
+msgid "Job field"
+msgstr ""
+
+#: job/models.py:133
+msgid "Job fields"
+msgstr ""
+
+#: job/models.py:162
+msgid "Job field title"
+msgstr ""
+
+#: job/models.py:167
+msgid "i18n Job field"
+msgstr ""
+
+#: job/models.py:168
+msgid "i18n Job fields"
+msgstr ""
+
+#: job/models.py:178 member/models.py:88 quest/models.py:85
+msgid "Draft"
+msgstr ""
+
+#: job/models.py:179 member/models.py:89 quest/models.py:86
+msgid "Published"
+msgstr ""
+
+#: job/models.py:198
 msgid "Job opening title"
 msgstr ""
 
-#: job/models.py:113
+#: job/models.py:210
 msgid "Job description"
 msgstr ""
 
-#: job/models.py:117 member/models.py:180 member/models.py:208
+#: job/models.py:214 member/models.py:180 member/models.py:208
 msgid "End date"
 msgstr ""
 
-#: job/models.py:129 member/models.py:131 quest/models.py:160
+#: job/models.py:226 member/models.py:131 quest/models.py:160
 msgid "Status"
 msgstr ""
 
-#: job/models.py:136
+#: job/models.py:233
 msgid "Job opening"
 msgstr ""
 
-#: job/models.py:137
+#: job/models.py:234
 msgid "Job openings"
 msgstr ""
 
-#: job/views.py:22
+#: job/views.py:28
 msgid "Job Openings"
 msgstr ""
 
@@ -228,23 +262,23 @@ msgstr ""
 msgid "You haven't logged for {} days."
 msgstr ""
 
-#: member/forms.py:62
+#: member/forms.py:84
 msgid "I really would like to unregister."
 msgstr ""
 
-#: member/forms.py:72 member/models.py:116
+#: member/forms.py:99 member/models.py:116
 msgid "Resume title"
 msgstr ""
 
-#: member/forms.py:77 member/models.py:121
+#: member/forms.py:104 member/models.py:121
 msgid "Resume description"
 msgstr ""
 
-#: member/forms.py:88
+#: member/forms.py:115
 msgid "You cannot have more than {} resumes."
 msgstr ""
 
-#: member/forms.py:105
+#: member/forms.py:132
 msgid "Resume does not exist."
 msgstr ""
 
@@ -321,7 +355,7 @@ msgid "Language"
 msgstr ""
 
 #: member/models.py:145 member/models.py:146 member/models.py:155
-#: member/templates/member/account/profile_base.html:20 member/views.py:275
+#: member/templates/member/account/profile_base.html:20 member/views.py:299
 msgid "Resume"
 msgstr ""
 
@@ -365,47 +399,47 @@ msgstr ""
 msgid "The following e-mail addresses are associated with your account:"
 msgstr ""
 
-#: member/templates/member/account/email.html:53
+#: member/templates/member/account/email.html:52
 msgid "Primary"
 msgstr ""
 
-#: member/templates/member/account/email.html:59
+#: member/templates/member/account/email.html:56
 msgid "Verified"
 msgstr ""
 
-#: member/templates/member/account/email.html:63
+#: member/templates/member/account/email.html:58
 msgid "Unverified"
 msgstr ""
 
-#: member/templates/member/account/email.html:78
+#: member/templates/member/account/email.html:72
 msgid "Make Primary"
 msgstr ""
 
-#: member/templates/member/account/email.html:86
+#: member/templates/member/account/email.html:80
 msgid "Re-send Verification"
 msgstr ""
 
-#: member/templates/member/account/email.html:94
-#: member/templates/member/socialaccount/connections.html:62
+#: member/templates/member/account/email.html:88
+#: member/templates/member/socialaccount/connections.html:60
 msgid "Remove"
 msgstr ""
 
-#: member/templates/member/account/email.html:104
+#: member/templates/member/account/email.html:98
 msgid ""
 "Warning: You currently do not have any e-mail address set up. You should "
 "really add an e-mail address so you can receive notifications, reset your "
 "password, etc."
 msgstr ""
 
-#: member/templates/member/account/email.html:111
+#: member/templates/member/account/email.html:105
 msgid "Add E-mail Address"
 msgstr ""
 
-#: member/templates/member/account/email.html:153
+#: member/templates/member/account/email.html:142
 msgid "Add E-mail"
 msgstr ""
 
-#: member/templates/member/account/email.html:167
+#: member/templates/member/account/email.html:156
 msgid "Do you really want to remove the selected e-mail address?"
 msgstr ""
 
@@ -482,9 +516,8 @@ msgstr ""
 msgid "Are you sure you want to sign out?"
 msgstr ""
 
-#: member/templates/member/account/password_change.html:106
-#: member/templates/member/account/password_reset_from_key.html:89
-#: member/templates/member/account/profile_base.html:36
+#: member/templates/member/account/password_change.html:91
+#: member/templates/member/account/password_reset_from_key.html:79
 msgid "Change password"
 msgstr ""
 
@@ -494,11 +527,11 @@ msgid ""
 "to reset it."
 msgstr ""
 
-#: member/templates/member/account/password_reset.html:70
+#: member/templates/member/account/password_reset.html:65
 msgid "Reset My Password"
 msgstr ""
 
-#: member/templates/member/account/password_reset.html:76
+#: member/templates/member/account/password_reset.html:71
 msgid "Please contact us if you have any trouble resetting your password."
 msgstr ""
 
@@ -522,12 +555,12 @@ msgid ""
 "                                    ."
 msgstr ""
 
-#: member/templates/member/account/password_reset_from_key.html:96
+#: member/templates/member/account/password_reset_from_key.html:86
 #: member/templates/member/account/password_reset_from_key_done.html:16
 msgid "Your password is now changed."
 msgstr ""
 
-#: member/templates/member/account/password_set.html:79
+#: member/templates/member/account/password_set.html:69
 msgid "Set password"
 msgstr ""
 
@@ -543,11 +576,11 @@ msgstr ""
 msgid "Notifications"
 msgstr ""
 
-#: member/templates/member/account/profile_base.html:40
+#: member/templates/member/account/profile_base.html:36
 msgid "Billing"
 msgstr ""
 
-#: member/templates/member/account/profile_base.html:44
+#: member/templates/member/account/profile_base.html:40
 #: member/templates/member/account/unregister.html:47 member/views.py:96
 msgid "Unregister"
 msgstr ""
@@ -613,12 +646,12 @@ msgid ""
 "accounts:"
 msgstr ""
 
-#: member/templates/member/socialaccount/connections.html:75
+#: member/templates/member/socialaccount/connections.html:73
 msgid ""
 "You currently have no social network accounts connected to this account."
 msgstr ""
 
-#: member/templates/member/socialaccount/connections.html:84
+#: member/templates/member/socialaccount/connections.html:82
 msgid "Add a 3rd Party Account"
 msgstr ""
 
@@ -660,7 +693,7 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
-#: member/views.py:68 member/views.py:234
+#: member/views.py:68 member/views.py:258
 msgid "Sign up"
 msgstr ""
 
@@ -668,47 +701,47 @@ msgstr ""
 msgid "Account Inactive"
 msgstr ""
 
-#: member/views.py:129
+#: member/views.py:135
 msgid "Password Change"
 msgstr ""
 
-#: member/views.py:139
+#: member/views.py:151
 msgid "Password Set"
 msgstr ""
 
-#: member/views.py:150 member/views.py:170
+#: member/views.py:168 member/views.py:194
 msgid "Password Reset"
 msgstr ""
 
-#: member/views.py:160 member/views.py:179
+#: member/views.py:178 member/views.py:203
 msgid "Password Reset Done"
 msgstr ""
 
-#: member/views.py:188
+#: member/views.py:212
 msgid "Email Verification Sent"
 msgstr ""
 
-#: member/views.py:197
+#: member/views.py:221
 msgid "Confirm Email Request"
 msgstr ""
 
-#: member/views.py:207
+#: member/views.py:231
 msgid "Email Management"
 msgstr ""
 
-#: member/views.py:216
+#: member/views.py:240
 msgid "Login Cancelled"
 msgstr ""
 
-#: member/views.py:225
+#: member/views.py:249
 msgid "Social Network Login Failure"
 msgstr ""
 
-#: member/views.py:243
+#: member/views.py:267
 msgid "Connect with SNS accounts"
 msgstr ""
 
-#: member/views.py:292
+#: member/views.py:316
 msgid "Resume - {}"
 msgstr ""
 

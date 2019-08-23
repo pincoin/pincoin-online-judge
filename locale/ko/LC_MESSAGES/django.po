@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-21 03:23+0000\n"
+"POT-Creation-Date: 2019-08-23 02:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,28 +29,28 @@ msgstr "부모"
 msgid "Title"
 msgstr "제목"
 
-#: conf/models.py:25 quest/models.py:24
+#: conf/models.py:25 job/models.py:20 job/models.py:120 quest/models.py:24
 msgid "Slug"
 msgstr "슬러그"
 
-#: conf/models.py:26 quest/models.py:25
+#: conf/models.py:26 job/models.py:21 job/models.py:121 quest/models.py:25
 msgid ""
 "A short label containing only letters, numbers, underscores or hyphens for "
 "URL"
 msgstr "알파벳, 숫자, 밑줄 또는 하이픈으로 짧은 URL"
 
-#: conf/settings/local.py:10 job/models.py:86 member/models.py:93
-#: quest/models.py:44
+#: conf/settings/local.py:10 job/models.py:74 job/models.py:141
+#: job/models.py:183 member/models.py:93 quest/models.py:44
 msgid "Thai"
 msgstr "태국어"
 
-#: conf/settings/local.py:11 job/models.py:87 member/models.py:94
-#: quest/models.py:45
+#: conf/settings/local.py:11 job/models.py:75 job/models.py:142
+#: job/models.py:184 member/models.py:94 quest/models.py:45
 msgid "English"
 msgstr "영어"
 
-#: conf/settings/local.py:12 job/models.py:88 member/models.py:95
-#: quest/models.py:46
+#: conf/settings/local.py:12 job/models.py:76 job/models.py:143
+#: job/models.py:185 member/models.py:95 quest/models.py:46
 msgid "Korean"
 msgstr "한국어"
 
@@ -95,7 +95,7 @@ msgid "Me"
 msgstr "나"
 
 #: conf/templates/conf/base.html:103 member/admin.py:18 member/models.py:31
-#: member/templates/member/account/profile_base.html:16 member/views.py:258
+#: member/templates/member/account/profile_base.html:16 member/views.py:282
 msgid "Profile"
 msgstr "프로필"
 
@@ -108,99 +108,133 @@ msgstr "로그아웃"
 msgid "Job App"
 msgstr "채용"
 
-#: job/models.py:11
+#: job/forms.py:8 job/forms.py:11
+msgid "Tech stack"
+msgstr "기술스택"
+
+#: job/forms.py:17 job/forms.py:20 job/models.py:95
 msgid "Company title"
 msgstr "회사 이름"
 
-#: job/models.py:16
+#: job/forms.py:26 job/models.py:100
 msgid "Company address"
-msgstr "회사 이메일"
+msgstr "회사 주소"
 
-#: job/models.py:21
+#: job/forms.py:29
+msgid "Address (District|Province)"
+msgstr "주소(시/군/구)"
+
+#: job/models.py:28
 msgid "Number of employees from"
 msgstr "사원수(from)"
 
-#: job/models.py:26
+#: job/models.py:33
 msgid "Number of employees to"
 msgstr "사원수(upto)"
 
-#: job/models.py:31
-msgid "Company description"
-msgstr "회사 설명"
+#: job/models.py:38
+msgid "Company logo"
+msgstr "회사 로고"
 
-#: job/models.py:35
+#: job/models.py:44
 msgid "Phone number"
 msgstr "전화번호"
 
-#: job/models.py:42
+#: job/models.py:51
 msgid "Fax number"
 msgstr "팩스번호"
 
-#: job/models.py:49 member/models.py:240
+#: job/models.py:58 member/models.py:240
 msgid "URL"
 msgstr "URL"
 
-#: job/models.py:54 job/models.py:95 member/models.py:186
+#: job/models.py:65 job/models.py:83 job/models.py:192 member/models.py:186
 msgid "Company"
 msgstr "회사"
 
-#: job/models.py:55
+#: job/models.py:66
 msgid "Companies"
 msgstr "회사"
 
-#: job/models.py:63 job/models.py:72 job/models.py:107
-msgid "Job field"
-msgstr "직무"
-
-#: job/models.py:68
-msgid "Sort order"
-msgstr "정렬 순서"
-
-#: job/models.py:73
-msgid "Job fields"
-msgstr "직무"
-
-#: job/models.py:81 member/models.py:88 quest/models.py:85
-msgid "Draft"
-msgstr "초안"
-
-#: job/models.py:82 member/models.py:89 quest/models.py:86
-msgid "Published"
-msgstr "발행"
-
-#: job/models.py:89 member/models.py:96 quest/models.py:47
+#: job/models.py:77 job/models.py:144 job/models.py:186 member/models.py:96
+#: quest/models.py:47
 msgid "Chinese"
 msgstr "중국어"
 
-#: job/models.py:90 member/models.py:97 quest/models.py:48
+#: job/models.py:78 job/models.py:145 job/models.py:187 member/models.py:97
+#: quest/models.py:48
 msgid "Japanese"
 msgstr "일본어"
 
-#: job/models.py:101
+#: job/models.py:105
+msgid "Company description"
+msgstr "회사 설명"
+
+#: job/models.py:109
+msgid "i18n Company"
+msgstr "회사(다국어)"
+
+#: job/models.py:110
+msgid "i18n Companies"
+msgstr "회사(다국어)"
+
+#: job/models.py:128
+msgid "Sort order"
+msgstr "정렬 순서"
+
+#: job/models.py:132 job/models.py:150 job/models.py:204
+msgid "Job field"
+msgstr "직무"
+
+#: job/models.py:133
+msgid "Job fields"
+msgstr "직무"
+
+#: job/models.py:162
+msgid "Job field title"
+msgstr "직무 이름"
+
+#: job/models.py:167
+msgid "i18n Job field"
+msgstr "직무(다국어)"
+
+#: job/models.py:168
+msgid "i18n Job fields"
+msgstr "직무(다국어)"
+
+#: job/models.py:178 member/models.py:88 quest/models.py:85
+msgid "Draft"
+msgstr "초안"
+
+#: job/models.py:179 member/models.py:89 quest/models.py:86
+msgid "Published"
+msgstr "발행"
+
+#: job/models.py:198
 msgid "Job opening title"
 msgstr "구인공고 제목"
 
-#: job/models.py:113
+#: job/models.py:210
 msgid "Job description"
 msgstr "구인공고 설명"
 
-#: job/models.py:117 member/models.py:180 member/models.py:208
+#: job/models.py:214 member/models.py:180 member/models.py:208
 msgid "End date"
 msgstr "종료일"
 
-#: job/models.py:129 member/models.py:131 quest/models.py:160
+#: job/models.py:226 member/models.py:131 quest/models.py:160
 msgid "Status"
 msgstr "상태"
 
-#: job/models.py:136
+#: job/models.py:233
 msgid "Job opening"
 msgstr "구인공고"
 
-#: job/models.py:137
+#: job/models.py:234
 msgid "Job openings"
 msgstr "구인공고"
 
-#: job/views.py:22
+#: job/views.py:28
 msgid "Job Openings"
 msgstr "구인공고"
 
@@ -228,23 +262,23 @@ msgstr "회원 관리"
 msgid "You haven't logged for {} days."
 msgstr "{}일 동안 로그인하지 않았습니다."
 
-#: member/forms.py:62
+#: member/forms.py:84
 msgid "I really would like to unregister."
 msgstr "회원탈퇴를 원합니다."
 
-#: member/forms.py:72 member/models.py:116
+#: member/forms.py:99 member/models.py:116
 msgid "Resume title"
 msgstr "이력서 제목"
 
-#: member/forms.py:77 member/models.py:121
+#: member/forms.py:104 member/models.py:121
 msgid "Resume description"
 msgstr "이력서 요약"
 
-#: member/forms.py:88
+#: member/forms.py:115
 msgid "You cannot have more than {} resumes."
 msgstr "이력서는 {}개까지 등록 가능합니다."
 
-#: member/forms.py:105
+#: member/forms.py:132
 msgid "Resume does not exist."
 msgstr "이력서 없음"
 
@@ -321,7 +355,7 @@ msgid "Language"
 msgstr "언어"
 
 #: member/models.py:145 member/models.py:146 member/models.py:155
-#: member/templates/member/account/profile_base.html:20 member/views.py:275
+#: member/templates/member/account/profile_base.html:20 member/views.py:299
 msgid "Resume"
 msgstr "이력서"
 
@@ -365,47 +399,47 @@ msgstr "비활성화 계정"
 msgid "The following e-mail addresses are associated with your account:"
 msgstr "계정과 연결된 이메일 주소입니다."
 
-#: member/templates/member/account/email.html:53
+#: member/templates/member/account/email.html:52
 msgid "Primary"
 msgstr "로그인 이메일"
 
-#: member/templates/member/account/email.html:59
+#: member/templates/member/account/email.html:56
 msgid "Verified"
 msgstr "인증"
 
-#: member/templates/member/account/email.html:63
+#: member/templates/member/account/email.html:58
 msgid "Unverified"
 msgstr "미인증"
 
-#: member/templates/member/account/email.html:78
+#: member/templates/member/account/email.html:72
 msgid "Make Primary"
 msgstr "로그인 이메일"
 
-#: member/templates/member/account/email.html:86
+#: member/templates/member/account/email.html:80
 msgid "Re-send Verification"
 msgstr "인증메일 재발송"
 
-#: member/templates/member/account/email.html:94
-#: member/templates/member/socialaccount/connections.html:62
+#: member/templates/member/account/email.html:88
+#: member/templates/member/socialaccount/connections.html:60
 msgid "Remove"
 msgstr "삭제"
 
-#: member/templates/member/account/email.html:104
+#: member/templates/member/account/email.html:98
 msgid ""
 "Warning: You currently do not have any e-mail address set up. You should "
 "really add an e-mail address so you can receive notifications, reset your "
 "password, etc."
 msgstr ""
 
-#: member/templates/member/account/email.html:111
+#: member/templates/member/account/email.html:105
 msgid "Add E-mail Address"
 msgstr "이메일 추가"
 
-#: member/templates/member/account/email.html:153
+#: member/templates/member/account/email.html:142
 msgid "Add E-mail"
 msgstr "이메일 추가"
 
-#: member/templates/member/account/email.html:167
+#: member/templates/member/account/email.html:156
 msgid "Do you really want to remove the selected e-mail address?"
 msgstr "이메일 주소 삭제할까요?"
 
@@ -482,9 +516,8 @@ msgstr ""
 msgid "Are you sure you want to sign out?"
 msgstr "정말로 로그아웃할까요?"
 
-#: member/templates/member/account/password_change.html:106
-#: member/templates/member/account/password_reset_from_key.html:89
-#: member/templates/member/account/profile_base.html:36
+#: member/templates/member/account/password_change.html:91
+#: member/templates/member/account/password_reset_from_key.html:79
 msgid "Change password"
 msgstr "비밀번호 변경"
 
@@ -494,11 +527,11 @@ msgid ""
 "to reset it."
 msgstr "비밀번호 재설정 링크를 받기 위해 로그인 이메일 주소를 입력하세요."
 
-#: member/templates/member/account/password_reset.html:70
+#: member/templates/member/account/password_reset.html:65
 msgid "Reset My Password"
 msgstr "비밀번호 초기화"
 
-#: member/templates/member/account/password_reset.html:76
+#: member/templates/member/account/password_reset.html:71
 msgid "Please contact us if you have any trouble resetting your password."
 msgstr "5분 이내로 메일을 받지 못하면 저희에게 연락바랍니다."
 
@@ -522,12 +555,12 @@ msgid ""
 "                                    ."
 msgstr ""
 
-#: member/templates/member/account/password_reset_from_key.html:96
+#: member/templates/member/account/password_reset_from_key.html:86
 #: member/templates/member/account/password_reset_from_key_done.html:16
 msgid "Your password is now changed."
 msgstr "비밀번호를 변경했습니다."
 
-#: member/templates/member/account/password_set.html:79
+#: member/templates/member/account/password_set.html:69
 msgid "Set password"
 msgstr "비밀번호 설정"
 
@@ -543,11 +576,11 @@ msgstr "SNS 로그인"
 msgid "Notifications"
 msgstr "알림설정"
 
-#: member/templates/member/account/profile_base.html:40
+#: member/templates/member/account/profile_base.html:36
 msgid "Billing"
 msgstr "청구내역"
 
-#: member/templates/member/account/profile_base.html:44
+#: member/templates/member/account/profile_base.html:40
 #: member/templates/member/account/unregister.html:47 member/views.py:96
 msgid "Unregister"
 msgstr "회원탈퇴"
@@ -613,12 +646,12 @@ msgid ""
 "accounts:"
 msgstr ""
 
-#: member/templates/member/socialaccount/connections.html:75
+#: member/templates/member/socialaccount/connections.html:73
 msgid ""
 "You currently have no social network accounts connected to this account."
 msgstr "아직 SNS 계정 로그인 설정이 없습니다."
 
-#: member/templates/member/socialaccount/connections.html:84
+#: member/templates/member/socialaccount/connections.html:82
 msgid "Add a 3rd Party Account"
 msgstr "SNS 로그인 연동"
 
@@ -660,7 +693,7 @@ msgstr "로그인"
 msgid "Logout"
 msgstr "로그아웃"
 
-#: member/views.py:68 member/views.py:234
+#: member/views.py:68 member/views.py:258
 msgid "Sign up"
 msgstr "회원가입"
 
@@ -668,47 +701,47 @@ msgstr "회원가입"
 msgid "Account Inactive"
 msgstr "비활성화 계정"
 
-#: member/views.py:129
+#: member/views.py:135
 msgid "Password Change"
 msgstr "비밀번호 변경"
 
-#: member/views.py:139
+#: member/views.py:151
 msgid "Password Set"
 msgstr "비밀번호 설정"
 
-#: member/views.py:150 member/views.py:170
+#: member/views.py:168 member/views.py:194
 msgid "Password Reset"
 msgstr "비밀번호 재설정"
 
-#: member/views.py:160 member/views.py:179
+#: member/views.py:178 member/views.py:203
 msgid "Password Reset Done"
 msgstr "비밀번호 재설정 완료"
 
-#: member/views.py:188
+#: member/views.py:212
 msgid "Email Verification Sent"
 msgstr "인증 이메일 발송"
 
-#: member/views.py:197
+#: member/views.py:221
 msgid "Confirm Email Request"
 msgstr ""
 
-#: member/views.py:207
+#: member/views.py:231
 msgid "Email Management"
 msgstr "로그인 이메일 관리"
 
-#: member/views.py:216
+#: member/views.py:240
 msgid "Login Cancelled"
 msgstr "로그인 취소"
 
-#: member/views.py:225
+#: member/views.py:249
 msgid "Social Network Login Failure"
 msgstr "SNS 로그인 실패"
 
-#: member/views.py:243
+#: member/views.py:267
 msgid "Connect with SNS accounts"
 msgstr "SNS 로그인"
 
-#: member/views.py:292
+#: member/views.py:316
 msgid "Resume - {}"
 msgstr "이력서 - {}"
 

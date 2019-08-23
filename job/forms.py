@@ -6,7 +6,6 @@ from django.utils.translation import ugettext_lazy as _
 class JobSearchForm(forms.Form):
     tech_stack = forms.CharField(
         label=_('Tech stack'),
-        help_text=_(''),
         max_length=255,
         widget=forms.TextInput(attrs={
             'placeholder': _('Tech stack'),
@@ -16,7 +15,6 @@ class JobSearchForm(forms.Form):
 
     company = forms.CharField(
         label=_('Company title'),
-        help_text=_(''),
         max_length=255,
         widget=forms.TextInput(attrs={
             'placeholder': _('Company title'),
@@ -26,7 +24,6 @@ class JobSearchForm(forms.Form):
 
     address = forms.CharField(
         label=_('Company address'),
-        help_text=_(''),
         max_length=255,
         widget=forms.TextInput(attrs={
             'placeholder': _('Address (District|Province)'),

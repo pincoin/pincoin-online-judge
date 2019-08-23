@@ -86,6 +86,7 @@ class CompanyTranslation(TimeStampedModel):
     )
 
     language = models.CharField(
+        verbose_name=_('Language'),
         choices=LANGUAGE,
         max_length=2,
         default=LANGUAGE.th,
@@ -153,6 +154,7 @@ class JobFieldTranslation(TimeStampedModel):
     )
 
     language = models.CharField(
+        verbose_name=_('Language'),
         choices=LANGUAGE,
         max_length=2,
         default=LANGUAGE.th,
@@ -217,6 +219,7 @@ class JobOpenings(TimeStampedModel):
     )
 
     language = models.CharField(
+        verbose_name=_('Language'),
         choices=LANGUAGE,
         max_length=2,
         default=LANGUAGE.th,

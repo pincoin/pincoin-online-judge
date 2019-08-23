@@ -56,6 +56,7 @@ class CategoryTranslation(TimeStampedModel):
     )
 
     language = models.CharField(
+        verbose_name=_('Language'),
         choices=LANGUAGE,
         max_length=2,
         default=LANGUAGE.th,
